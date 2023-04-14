@@ -1,0 +1,17 @@
+---
+pagetitle: R Language series | Data Lab Zone
+title: Series
+subtitle: "Acquire a thorough grasp of the R language, beginning with fundamental concepts and progressing to an advanced level, while also incorporating knowledge related to statistics."
+search: false
+listing:
+  contents:
+    - R
+    - "!index.qmd"
+  sort: "data desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  page-size: 30
+  feed: true
+---

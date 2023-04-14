@@ -1,0 +1,17 @@
+---
+pagetitle: Daily Posts | Data Lab Zone
+title: Posts
+subtitle: "Gaining insights into my journey of learning data science, the challenges I faced, and my thought process regarding these challenges."
+search: false
+listing:
+  contents:
+    - blogs
+    - "!index.qmd"
+  sort: "data desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  page-size: 30
+  feed: true
+---

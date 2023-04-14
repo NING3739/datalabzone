@@ -1,0 +1,126 @@
+---
+pagetitle: "Data Lab Zone"
+page-layout: custom
+section-divs: false
+editor: source
+sidebar: false
+search: false
+description: | 
+ a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R.
+image: images/My-project-logo.png
+listing:
+  - id: latest-content
+    contents: 
+     - /posts/blogs
+     - /series/fullcourse
+     - /projects
+     - /talks
+     - "!index.qmd"
+    sort: "date desc"
+    type: grid
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    max-items: 3
+    feed: false
+
+  - id: blog
+    contents: 
+    - /posts/blogs
+    - "!index.qmd"
+    sort: "date desc"
+    type: grid
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    max-items: 3
+    feed: false
+
+  - id: series
+    contents: 
+    - /series/R
+    - "!index.qmd"
+    sort: "date desc"
+    type: grid
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    max-items: 3
+    feed: false
+
+  - id: talks
+    contents: 
+    - /talks/presentations
+    sort: "date desc"
+    type: grid
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    max-items: 3
+    feed: false
+toc: false
+---
+
+::: {.header-text} 
+::: {.content-container}
+::: {.header-block}
+Welcome to [Data Lab Zone](https://datalabzone.com/), a thriving community for diving into the captivating world of [R](https://www.r-project.org/), [python](https://www.python.org/)and statistics. Engage with my content, expand your knowledge, and connect with like-minded enthusiasts as we collectively explore the wonders of data science. Join in and elevate your skills!
+:::
+:::
+:::
+
+
+::: {.content-container}
+::: {.listing-block}
+<a href="latest-content.qmd"> 
+
+## Lastest Posts
+</a>
+
+::: {#latest-content}
+:::
+
+:::
+:::
+
+
+::: {.content-container}
+::: {.listing-block}
+<a href="posts/index.qmd">
+
+## Daily Blogs
+</a>
+
+::: {#blog}
+:::
+
+:::
+:::
+
+
+::: {.content-container}
+::: {.listing-block}
+<a href="series/index.qmd">
+
+## R Language Series
+</a>
+
+::: {#series}
+:::
+
+:::
+:::
+
+
+::: {.content-container}
+::: {.listing-block}
+<a href="talks/index.qmd">
+
+## Recent Presentations
+</a>
+
+::: {#talks}
+:::
+
+:::
+:::

@@ -1,0 +1,17 @@
+---
+pagetitle: Talks | Data Lab Zone
+title: Talks
+subtitle: "Discover how R can solve real-world problems on my project page, where I showcase practical applications of this powerful tool."
+search: false
+listing:
+  contents:
+    - presentations
+    - "!index.qmd"
+  sort: "data desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  page-size: 30
+  feed: true
+---

@@ -1,0 +1,94 @@
+project:
+  type: website
+
+website:
+  title: "Data Lab Zone"
+  image: images/My-project-logo.png
+  favicon: images/My-project-favicon.png
+  twitter-card: 
+    site: "@ningli3739"
+  open-graph: true
+  site-url: https://datalabzone.com/
+  repo-url: https://github.com/NING3739/DataLabZone
+  repo-actions: [edit, issue]
+  google-analytics: 
+    anonymize-ip: true
+    tracking-id: "G-Y96LK2RNJD" 
+ 
+  # navgation bar
+  navbar:
+    background: "#ECF2FF"
+    logo: images/My-project-logo.png
+    logo-alt: "Data Lab Zone brand"
+    title: false
+    collapse-below: lg
+    right:
+      - posts/index.qmd
+      - series/index.qmd
+      - projects/index.qmd
+      - talks/index.qmd
+      - about.qmd
+    sidebar:
+       - title: "About Me"
+         contents:
+         - about-me.qmd
+         - feedback.qmd
+         - contact.qmd
+       - title: "FAQ"
+         contents:
+         - faq.qmd
+         - terms.qmd
+         - license.qmd
+       - title: "Posts"
+         contents:
+         - posts/index.qmd
+         - posts/blogs/index.qmd
+       - title: "Series"
+         contents:
+         - series/index.qmd
+       - title: "projects"
+         contents:
+         - projects/index.qmd
+       - title: "Talks"
+         contents:
+         - talks/index.qmd
+  
+  # page footer
+  page-footer:
+     background: "#ECF2FF"
+     left: "&copy; 2023 [Data Lab Zone](index.qmd)"
+     center: 
+       - text: "FAQ"
+         href: faq.qmd
+       - text: "Feedback"
+         href: feedback.qmd
+       - text: "Terms"
+         href: terms.qmd
+       - text: "Contact"
+         href: contact.qmd
+     right:
+       - href: https://github.com/NING3739/statsr
+         icon: github
+         aria-label: GitHub
+       - href: https://twitter.com/ningli3739
+         icon: twitter
+         aria-label: Twitter
+     
+format:
+  html:
+    theme: [lux, dlz.scss]
+    css: dlz.css
+    code-overflow: scroll
+    code-link: true
+    code-line-numbers: true
+    code-block-bg: "#F0F0F0"
+    code-block-border-left: "#2192FF"
+    toc: true
+    grid:
+      sidebar-width: 0px
+      body-width: 1000px
+      margin-width: 250px
+
+execute:
+  freeze: auto
+

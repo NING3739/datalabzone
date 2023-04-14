@@ -1,0 +1,21 @@
+---
+sidebar: false
+page-layout: article
+toc: false
+title-block-banner: false
+---
+
+```{=html5}
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="container">
+    <h1 class="text-center">Thank You!</h1>
+    <div class="text-center">
+      <p>Your form has been submitted successfully.</p>
+      <p>I will be in touch with you soon.</p>
+      <a href="/" class="btn btn-primary">Back to Home</a>
+  </div>
+</body>
+</html>
+```

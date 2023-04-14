@@ -1,0 +1,43 @@
+---
+title: "About"
+sidebar: false
+page-layout: article
+toc: false
+title-block-banner: false
+
+about:
+   template: trestles
+   image: https://github.com/NING3739/my-personal-website/blob/797a74d18665e9f6136ef9e862e990067f7627c8/NING%20LI.jpeg?raw=true
+   links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/ningli3739
+    
+    - icon: github
+      text: Github
+      href: https://github.com/NING3739
+---
+
+::: panel-tabset
+# About Me
+
+Hi, I' m **Ning**, an aspiring data analyst.
+
+My current focus is **statistics**, **R-based data analysis** and **corporate-related political risk issues**.
+
+My background is in **Accountancy**. If you have any doubts about corporate auditing issues, maybe i can help you.
+
+I really hate graphical interface data analysis software, because it always gives me extra results that I didn't ask for.
+
+My current short-term goal is to publish my first **peer-reviewed paper** and start my **PhD** by 2023.
+
+In my free time, I like listening to **music**, **hiking** and **reading**. If you also like these activities, please feel free to contact me.
+
+# Education
+
+Massey University, Auckland \| Master in Accountancy \| February 2019 - June 2020
+
+# Experience
+
+Life Maid Easy \| Head Marketing \| December 2020 - present
+:::
