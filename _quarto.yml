@@ -9,7 +9,7 @@ website:
     site: "@ningli3739"
   open-graph: true
   site-url: https://datalabzone.com/
-  repo-url: https://github.com/NING3739/DataLabZone
+  repo-url: https://github.com/NING3739/datalabzone
   repo-actions: [edit, issue]
   google-analytics: 
     anonymize-ip: true
@@ -67,7 +67,7 @@ website:
        - text: "Contact"
          href: contact.qmd
      right:
-       - href: https://github.com/NING3739/statsr
+       - href: https://github.com/NING3739/datalabzone
          icon: github
          aria-label: GitHub
        - href: https://twitter.com/ningli3739

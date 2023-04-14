@@ -1,5 +1,4 @@
 ---
-title: "&nbsp;"
 sidebar: false
 page-layout: article
 toc: false
