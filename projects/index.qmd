@@ -5,7 +5,7 @@ subtitle: "Discover how R can solve real-world problems on my project page, wher
 search: false
 listing:
   contents:
-    - shiny
+    - "shiny"
     - "!index.qmd"
   sort: "data desc"
   type: grid
@@ -14,4 +14,5 @@ listing:
   filter-ui: false
   page-size: 30
   feed: true
+  date-format: MMM DD, YYYY
 ---

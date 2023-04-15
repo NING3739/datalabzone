@@ -5,7 +5,7 @@ subtitle: "Gaining insights into my journey of learning data science, the challe
 search: false
 listing:
   contents:
-    - blogs
+    - "blogs"
     - "!index.qmd"
   sort: "data desc"
   type: grid
@@ -14,4 +14,5 @@ listing:
   filter-ui: false
   page-size: 30
   feed: true
+  date-format: MMM DD, YYYY
 ---

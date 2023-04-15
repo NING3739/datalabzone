@@ -2,19 +2,16 @@
 pagetitle: "Data Lab Zone"
 page-layout: custom
 section-divs: false
-editor: source
-sidebar: false
 search: false
-description: | 
- a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R.
+description: "a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R."
 image: images/My-project-logo.png
 listing:
   - id: latest-content
     contents: 
-     - /posts/blogs
-     - /series/fullcourse
-     - /projects
-     - /talks
+     - "/posts/blogs"
+     - "/series/fullcourse"
+     - "/projects"
+     - "/talks"
      - "!index.qmd"
     sort: "date desc"
     type: grid
@@ -26,7 +23,7 @@ listing:
 
   - id: blog
     contents: 
-    - /posts/blogs
+    - "/posts/blogs"
     - "!index.qmd"
     sort: "date desc"
     type: grid
@@ -38,7 +35,7 @@ listing:
 
   - id: series
     contents: 
-    - /series/R
+    - "/series/R"
     - "!index.qmd"
     sort: "date desc"
     type: grid
@@ -50,7 +47,7 @@ listing:
 
   - id: talks
     contents: 
-    - /talks/presentations
+    - "/talks/presentations"
     sort: "date desc"
     type: grid
     categories: false

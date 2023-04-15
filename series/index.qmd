@@ -5,7 +5,7 @@ subtitle: "Acquire a thorough grasp of the R language, beginning with fundamenta
 search: false
 listing:
   contents:
-    - R
+    - "R"
     - "!index.qmd"
   sort: "data desc"
   type: grid
@@ -14,4 +14,5 @@ listing:
   filter-ui: false
   page-size: 30
   feed: true
+  date-format: MMM DD, YYYY
 ---

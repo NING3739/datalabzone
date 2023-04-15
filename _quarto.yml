@@ -8,13 +8,15 @@ website:
   twitter-card: 
     site: "@ningli3739"
   open-graph: true
-  site-url: https://datalabzone.com/
-  repo-url: https://github.com/NING3739/datalabzone
+  #publish site on quarto pub use site-path
+  #site-path: "/data-lab-zone/"
+  #publish site on netlify use site-url
+  site-url: "https://datalabzone.com/"
+  repo-url: "https://github.com/NING3739/datalabzone"
   repo-actions: [edit, issue]
   google-analytics: 
     anonymize-ip: true
     tracking-id: "G-Y96LK2RNJD" 
- 
   # navgation bar
   navbar:
     background: "#ECF2FF"
@@ -28,44 +30,20 @@ website:
       - projects/index.qmd
       - talks/index.qmd
       - about.qmd
-    sidebar:
-       - title: "About Me"
-         contents:
-         - about-me.qmd
-         - feedback.qmd
-         - contact.qmd
-       - title: "FAQ"
-         contents:
-         - faq.qmd
-         - terms.qmd
-         - license.qmd
-       - title: "Posts"
-         contents:
-         - posts/index.qmd
-         - posts/blogs/index.qmd
-       - title: "Series"
-         contents:
-         - series/index.qmd
-       - title: "projects"
-         contents:
-         - projects/index.qmd
-       - title: "Talks"
-         contents:
-         - talks/index.qmd
-  
   # page footer
   page-footer:
      background: "#ECF2FF"
      left: "&copy; 2023 [Data Lab Zone](index.qmd)"
      center: 
+       - text: "Contact"
+         href: contact.qmd
        - text: "FAQ"
          href: faq.qmd
        - text: "Feedback"
          href: feedback.qmd
        - text: "Terms"
          href: terms.qmd
-       - text: "Contact"
-         href: contact.qmd
+     
      right:
        - href: https://github.com/NING3739/datalabzone
          icon: github
@@ -85,7 +63,6 @@ format:
     code-block-border-left: "#2192FF"
     toc: true
     grid:
-      sidebar-width: 0px
       body-width: 1000px
       margin-width: 250px
 

@@ -1,11 +1,11 @@
 ---
-sidebar: false
+title: "&nbsp;"
 page-layout: article
 toc: false
 title-block-banner: false
 ---
 
-```{=html5}
+```{=html}
 <!DOCTYPE html>
 <html>
 <body>

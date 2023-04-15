@@ -1,9 +1,6 @@
 .Rproj.user
 .RData
 .Rhistory
-*.html
 /_freeze
 /_site
-
-
 /.quarto/

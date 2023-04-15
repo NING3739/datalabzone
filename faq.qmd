@@ -1,6 +1,5 @@
 ---
 title: "FAQ"
-sidebar: false
 page-layout: article
 toc: false
 title-block-banner: true

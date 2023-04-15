@@ -3,7 +3,6 @@ pagetitle: Latest content | Data Lab Zone
 title: Latest content
 subtitle: Your sizzling data feast awaits!  
 title-block-banner: true
-sidebar: false
 search: false
 page-layout: article  
 listing:
