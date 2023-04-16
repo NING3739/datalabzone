@@ -11,7 +11,6 @@
   border-bottom: 1px solid black;
 }
 
-
 .navbar-brand.navbar-brand-logo {
   display: flex;
   padding-top: 0;
@@ -40,6 +39,13 @@
   align-items: baseline;
 }
 }
+
+/*-- navbar toggler remove border --*/
+.navbar-toggler {
+    border: none;
+    background: none;
+}
+
 
 .navbar-dark .navbar-nav .nav-link {
   color: black;
@@ -666,6 +672,8 @@ body:not(.floating) .nav-footer {
 }
 
 .nav-footer-center {
+  font-family: 'Montserrat';
+  font-weight: 400;
   margin-top: 0;
   position: relative;
 }
