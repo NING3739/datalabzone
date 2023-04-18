@@ -644,7 +644,6 @@ div.quarto-post a {
   font-weight: 400;
   padding-bottom: 0 !important;
   padding-top: 0 !important;
-  position: relative;
 }
 
 body:not(.floating) .nav-footer {
@@ -668,7 +667,6 @@ body:not(.floating) .nav-footer {
 .nav-footer-left .footer-items .nav-item, .nav-footer-center .footer-items .nav-item, .nav-footer-right .footer-items .nav-item {
   margin-top: 0;
   position: relative;
-  
 }
 
 .nav-footer-center {

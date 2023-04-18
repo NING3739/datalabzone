@@ -5,13 +5,15 @@ section-divs: false
 search: false
 description: "a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R."
 image: images/My-project-logo.png
+comments: false
 listing:
   - id: latest-content
     contents: 
-     - "/posts/blogs"
-     - "/series/fullcourse"
-     - "/projects"
-     - "/talks"
+     - "/posts/blogsforr"
+     - "/posts/blogsforpython"
+     - "/series/R"
+     - "/projects/shiny"
+     - "/talks/presentations"
      - "!index.qmd"
     sort: "date desc"
     type: grid
@@ -19,11 +21,10 @@ listing:
     sort-ui: false
     filter-ui: false
     max-items: 3
-    feed: false
-
   - id: blog
     contents: 
-    - "/posts/blogs"
+    - "/posts/blogsforr"
+    - "/posts/blogsforpythons/"
     - "!index.qmd"
     sort: "date desc"
     type: grid
@@ -31,8 +32,6 @@ listing:
     sort-ui: false
     filter-ui: false
     max-items: 3
-    feed: false
-
   - id: series
     contents: 
     - "/series/R"
@@ -43,8 +42,6 @@ listing:
     sort-ui: false
     filter-ui: false
     max-items: 3
-    feed: false
-
   - id: talks
     contents: 
     - "/talks/presentations"
@@ -54,7 +51,6 @@ listing:
     sort-ui: false
     filter-ui: false
     max-items: 3
-    feed: false
 toc: false
 ---
 

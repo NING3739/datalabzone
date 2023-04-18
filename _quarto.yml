@@ -43,7 +43,6 @@ website:
          href: feedback.qmd
        - text: "Terms"
          href: terms.qmd
-     
      right:
        - href: https://github.com/NING3739/datalabzone
          icon: github
@@ -61,10 +60,21 @@ format:
     code-line-numbers: true
     code-block-bg: "#F0F0F0"
     code-block-border-left: "#2192FF"
+    date-format: MMM DD, YYYY
     toc: true
     grid:
       body-width: 1000px
       margin-width: 250px
+
+comments: 
+  giscus: 
+    repo: NING3739/my-personal-website
+    repo-id: R_kgDOIYBxAA
+    category: Comments
+    category-id: DIC_kwDOIYBxAM4CS2io
+    mapping: url
+    input-position: bottom
+    theme: preferred_color_scheme
 
 execute:
   freeze: auto

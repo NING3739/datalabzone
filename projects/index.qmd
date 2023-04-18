@@ -3,16 +3,15 @@ pagetitle: Real-world Projects | Data Lab Zone
 title: Projects
 subtitle: "Discover how R can solve real-world problems on my project page, where I showcase practical applications of this powerful tool."
 search: false
+comments: false
 listing:
   contents:
     - "shiny"
     - "!index.qmd"
-  sort: "data desc"
+  sort: "date desc"
   type: grid
   categories: true
   sort-ui: false
   filter-ui: false
-  page-size: 30
-  feed: true
-  date-format: MMM DD, YYYY
+  page-size: 12
 ---

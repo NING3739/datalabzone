@@ -7,10 +7,11 @@ search: false
 page-layout: article  
 listing:
   contents: 
-     - /posts/blogs
-     - /series/fullcourse
-     - /projects
-     - /talks
+     - "/posts/blogsforr"
+     - "/posts/blogsforpython"
+     - "/series/R"
+     - "/projects/shiny"
+     - "/talks/presentations"
      - "!index.qmd"
   sort: "date desc"
   type: grid
@@ -18,5 +19,5 @@ listing:
   sort-ui: true
   filter-ui: true
   page-size: 30
-  feed: true
+comments: false
 ---

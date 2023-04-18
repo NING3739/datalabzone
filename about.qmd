@@ -3,7 +3,7 @@ title: "About"
 page-layout: article
 toc: false
 title-block-banner: false
-
+comments: false
 about:
    template: trestles
    image: https://github.com/NING3739/my-personal-website/blob/797a74d18665e9f6136ef9e862e990067f7627c8/NING%20LI.jpeg?raw=true

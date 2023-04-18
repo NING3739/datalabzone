@@ -1,6 +1,7 @@
 ---
 title: "&nbsp;"
 page-layout: article
+comments: false
 toc: false
 title-block-banner: false
 ---
