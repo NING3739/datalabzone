@@ -1,15 +1,15 @@
 /*-- navbar --*/
 
 .navbar {
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 35%);
   padding-top: 0;
   padding-bottom: 0;
   font-family: 'Oswald';
   font-size: 1em;
+  text-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 11%);
 }
 
-#quarto-header {
-  border-bottom: 1px solid black;
-}
+
 
 .navbar-brand.navbar-brand-logo {
   display: flex;
@@ -109,10 +109,10 @@
 
 #title-block-header {
   margin-block-end: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 30%);
   position: relative;
   margin-top: -1px;
   margin-bottom: 1.8em;
-  border-bottom: 1px solid black;
   background-color: #E3DFFD;
 }
 
@@ -144,6 +144,14 @@
   font-weight: 400;
   font-size: 1.2em;
   color: black;
+}
+
+/*--subtitle lead--*/
+.lead {
+  margin-top: 1.5em;
+    font-weight: 400;
+    font-size: 1.2em;
+    color: black;
 }
 
 .quarto-title .quarto-categories {
@@ -420,6 +428,7 @@ p > a {
   /* text-decoration: none;  */
 }
 
+
 b, strong a {
   /* text-decoration: none; */
   color: #939bc9;
@@ -461,7 +470,7 @@ tr {
 /*-- listing styles --*/
 
 div.quarto-post {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0,0,0,.100);
 }
 
 div.quarto-post .metadata {
@@ -480,6 +489,10 @@ div.quarto-post .listing-categories .listing-category {
 
 div.quarto-post a {
   color: black;
+}
+
+.input-group-sm>.form-select{
+  padding: 0.5rem 1rem;
 }
 
 .quarto-listing-category-title {
@@ -523,8 +536,11 @@ div.quarto-post a {
 }
 
 .quarto-grid-item div.post-contents {
-  padding: 0;
+  padding: 1rem 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 20%);
 }
+
+
 
 .quarto-grid-item .card-title {
   margin-top: 0.5em;
@@ -566,8 +582,16 @@ div.quarto-post a {
 /*-- callout styles --*/
 .callout {
   background-color: white;
+  
 }
 
+
+/*-- sourceCode styles --*/
+div.sourceCode {
+    background-color: rgba(233,236,239,.65);
+    border: 1px solid rgba(233,236,239,.65);
+    border-radius: 0.25rem;
+}
 
 /*-- background styles --*/
 
@@ -623,7 +647,7 @@ div.quarto-post a {
   margin: 0 auto;
   padding-bottom: 1.8em; 
   box-sizing: border-box;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0,0,0,.05);
 }
 
 .listing-block h2 {
@@ -638,6 +662,7 @@ div.quarto-post a {
 
 /*-- nav footer styles --*/
 .nav-footer {
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 100%);
   color: black;
   font-family: 'Oswald';
   font-size: 16px;
@@ -647,7 +672,7 @@ div.quarto-post a {
 }
 
 body:not(.floating) .nav-footer {
-  border-top: 1px solid #F6F6F6;
+  border-top: 1px solid rgba(0,0,0,.05);
 }
 
 .nav-footer a {

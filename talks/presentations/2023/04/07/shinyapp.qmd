@@ -1,9 +1,10 @@
 ---
 title: "A talk about Shiny App"
 date: "2023-04-07"
-categories: [Shiny]
-image: "https://ericrayanderson.github.io/shinymaterial/img/shinyLogo.png"
-description: "Explaination about how to build a shiny app"
+author: NING LI
+categories: [R, Shiny, Tutorial]
+image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzN8fGFwcCUyMGFuZCUyMGNvZGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+description: "This presentation will provide an overview of what shiny is and demonstrate how it can be used to create a functional app using customer service pricing as an example."
 format:
   html:
     code-fold: false
