@@ -1,7 +1,7 @@
 - source: project
   quarto-pub:
     - id: 961a123e-3d93-40f6-94c1-2a378c9be713
-      url: 'https://quartopub.com/sites/ningli/data-lab-zone'
+      url: 'https://ningli.quarto.pub/data-lab-zone'
   netlify:
     - id: 5568dbd3-2419-4d27-9395-d672b4ea07a9
       url: 'https://datalabzone.com'

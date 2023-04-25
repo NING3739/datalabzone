@@ -1,6 +1,7 @@
 ---
 title: "Contact"
 page-layout: article
+back-to-top-navigation: false
 toc: false
 title-block-banner: true
 ---

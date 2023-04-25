@@ -2,50 +2,51 @@
 
 .navbar {
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 35%);
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-family: 'Oswald';
   font-size: 1em;
   text-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 11%);
 }
 
-
-
+ 
 .navbar-brand.navbar-brand-logo {
-  display: flex;
+  display: inline-flex;
+  margin-right: 4px;
+}
+
+.navbar-brand {
   padding-top: 0;
   padding-bottom: 0;
-  margin-right: 0;
-  margin-left: 1.5em;
 }
 
 @media (max-width: 991px) {
   .navbar-brand.navbar-brand-logo {
     margin-left: 5vw;
     margin-right: 10vw;
+
 }
 }
 
 .navbar-logo {
   max-height: 150px;
   width: auto;
-  align-items: baseline;
+  padding-right: 4px;
 }
+
 
 @media (max-width: 991px) {
 .navbar-logo {
-  max-height: 100px;
+  max-height: 50px;
   width: auto;
   align-items: baseline;
 }
 }
 
-/*-- navbar toggler remove border --*/
 .navbar-toggler {
     border: none;
     background: none;
 }
-
 
 .navbar-dark .navbar-nav .nav-link {
   color: black;
@@ -193,7 +194,6 @@
   opacity: 0.8;
   font-size: 0.9em;
 }
-
 
 /*-- main content --*/
 
@@ -662,11 +662,14 @@ div.sourceCode {
 
 /*-- nav footer styles --*/
 .nav-footer {
+  align-items: center;
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 100%);
   color: black;
+  display: grid;
   font-family: 'Oswald';
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
+  justify-content: center;
   padding-bottom: 0 !important;
   padding-top: 0 !important;
 }
@@ -685,33 +688,64 @@ body:not(.floating) .nav-footer {
   /* text-decoration: none; */
 }
 
-.nav-footer-left .footer-items .nav-link, .nav-footer-center .footer-items .nav-link, .nav-footer-right .footer-items .nav-link {
+.nav-footer .nav-footer-left {
+    font-size: 0;
+}
+
+.nav-footer .nav-footer-right {
+    font-size: 0;
+}
+
+.nav-footer-center .footer-items .nav-link {
   text-transform: uppercase;
 }
 
-.nav-footer-left .footer-items .nav-item, .nav-footer-center .footer-items .nav-item, .nav-footer-right .footer-items .nav-item {
-  margin-top: 0;
-  position: relative;
-}
-
-.nav-footer-center {
+.nav-footer-center .footer-items .nav-item {
   font-family: 'Montserrat';
   font-weight: 400;
   margin-top: 0;
-  position: relative;
+  margin-bottom: 0;
 }
 
-.nav-footer-left {
-  font-family: 'Montserrat';
-  font-size: 6px;
-  font-weight: 700;
-  position: relative;
+.nav-footer .toc-actions {
+    font-size: 0;
+    color: #ecf2ff;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
-.nav-footer-right {
-  font-family: 'Montserrat';
-  position: relative;
+/*--- Back to Top ---*/
+#quarto-back-to-top{
+  color: black;
+  bottom: 200px;
+  left: 95%;
 }
 
 
+/*--- Profile Photo ---*/
+.round {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: 20%;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 100%);
+}
 
+/*--- Social Media ---*/
+div.quarto-about-marquee .about-link {
+  color: #939;
+  transition: color 0.2s;
+  margin:0 10px;
+}
+
+.about-link:hover{
+  color: black;
+}
+
+/*--- remove table border ---*/
+.table>:not(caption)>*>* {
+    padding: 0.5rem 0.5rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 0;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}

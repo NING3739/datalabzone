@@ -1,42 +1,100 @@
 ---
-title: "About"
 page-layout: article
+back-to-top-navigation: false
 toc: false
 title-block-banner: false
 comments: false
 about:
-   template: trestles
-   image: https://github.com/NING3739/my-personal-website/blob/797a74d18665e9f6136ef9e862e990067f7627c8/NING%20LI.jpeg?raw=true
-   links:
+    template: marquee
+    links:
+    - icon: envelope
+      text: Email
+      href: mailto:ln729500172@outlook.com
     - icon: twitter
       text: Twitter
       href: https://twitter.com/ningli3739
-    
     - icon: github
       text: Github
       href: https://github.com/NING3739
 ---
 
-::: panel-tabset
-# About Me
+```{=html}
+<!DOCTYPE html>
+<html>
 
-Hi, I' m **Ning**, an aspiring data analyst.
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NING's Profile Page</title>
+    <link rel="stylesheet" href="dlz.css">
 
-My current focus is **statistics**, **R-based data analysis** and **corporate-related political risk issues**.
+<body>
+    <table>
+        <tr>
+            <td>
+                <h1>NING LI</h1>
+                <p><em>Accountant, Data Science Enthusiast, Founder of <strong><a href="https://datalabzone.com/">Data
+                                Lab
+                                Zone</a></strong></em></p>
+            </td>
+            <td>
+                <img src="https://raw.githubusercontent.com/NING3739/my-personal-website/eb2bc55f0145dc89afff74253bf1f56a9da7b3b8/CACE4A7A-360D-4127-B1D8-E9493FA64409_1_105_c.jpeg"
+                    alt="NING's Profile Photo" class="round">
+            </td>
 
-My background is in **Accountancy**. If you have any doubts about corporate auditing issues, maybe i can help you.
+        </tr>
+    </table>
 
-I really hate graphical interface data analysis software, because it always gives me extra results that I didn't ask for.
 
-My current short-term goal is to publish my first **peer-reviewed paper** and start my **PhD** by 2023.
+    <p>I'm excited to pursue a career as a <strong>data analyst</strong> . I'm currently focusing on
+        <strong>statistics</strong>, data analysis using <strong>R</strong>,
+        and exploring corporate-related <strong>political risks</strong>. <br>My academic background is in
+        <strong>Accountancy</strong> , which means I could
+        be of help if you have any queries regarding corporate auditing issues. <br> I'm not a big fan of graphical
+        interface
+        data analysis software, as it tends to give me extra results that I don't need. <br> My short-term goal is to
+        get my
+        first <strong>peer-reviewed paper</strong> published and begin my <strong>PhD</strong> program by 2023. <br>
+        During my free time, I love indulging in
+        my hobbies such as listening to <strong>music</strong>, <strong>hiling</strong>, and <strong>redaing</strong>.
+        If you share any of these interests, don't hesitate
+        to reach out to me.
+    </p>
 
-In my free time, I like listening to **music**, **hiking** and **reading**. If you also like these activities, please feel free to contact me.
+    <table>
+        <tr>
+            <td>
+                <h3>Education and Certification</h3>
+                <ul>
+                    <li>Massey University, Auckland | Master in Accountancy</li>
+                    <li>Achieved certification <a
+                            href="https://courses.edx.org/certificates/727b5c8746044927b64949c3c6544de4?_gl=1*y244mi*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                            Science: R Basics</a> in 2022 </li>
+                    <li>Achieved certification <a
+                            href="https://courses.edx.org/certificates/9469b06f65e04fd69cf9457ab9b5faae?_gl=1*17ocv1p*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                            Science: Visualization</a> in 2022</li>
+                    <li>Achieved certification <a
+                            href="https://courses.edx.org/certificates/c7384f60d38e42fbab723630389f0e46?_gl=1*127i4ma*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                            Science: Probability</a> in 2022</li>
+                    <li>Achieved certification <a
+                            href="https://courses.edx.org/certificates/26656df35d8c44ad8c61094b4ffb7069?_gl=1*1twwabc*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                            Science: Productivity Tools</a> in 2022</li>
+                </ul>
+            </td>
+            <td>
+                <h3>Interests</h3>
+                <ul>
+                    <li>Data Analysis</li>
+                    <li>Data Visualisation</li>
+                    <li>Statistics and Mathematics</li>
+                    <li>Learning New Knowledge</li>
+                    <li>Reading, Hiking and Listen to Music</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</body>
 
-# Education
-
-Massey University, Auckland \| Master in Accountancy \| February 2019 - June 2020
-
-# Experience
-
-Life Maid Easy \| Head Marketing \| December 2020 - present
-:::
+</html>
+```

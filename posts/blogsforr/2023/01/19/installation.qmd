@@ -8,7 +8,6 @@ description: "A tutorial for R and Rstudio installation on Mac"
 format:
   html:
     code-fold: false
-    number-sections: true
 ---
 
 # What is R?

@@ -1,8 +1,0 @@
----
-title: "Terms"
-page-layout: article
-toc: false
-title-block-banner: true
----
-
-66666

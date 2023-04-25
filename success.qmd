@@ -1,4 +1,5 @@
 ---
+back-to-top-navigation: false
 comments: false
 page-layout: article
 toc: false
