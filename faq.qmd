@@ -99,5 +99,3 @@ Good reference management software will greatly improve your efficiency in selec
 ### Flowchart software
 
 -   [Diagrams.net](https://app.diagrams.net/)
-
-[![](https://api.netlify.com/api/v1/badges/5568dbd3-2419-4d27-9395-d672b4ea07a9/deploy-status)](https://app.netlify.com/sites/datalabzone/deploys)

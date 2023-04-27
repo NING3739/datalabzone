@@ -219,6 +219,7 @@ shinyApp(ui, server)
 
 ```
 
-```{=html}
-<iframe height="1000" width="800" frameborder="no" style="border: none;" src="https://myshinyappforpractice.shinyapps.io/sheet/"></iframe>
-```
+
+👉 [Run Cost Calculator App](https://myshinyappforpractice.shinyapps.io/sheet/)
+
+

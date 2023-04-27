@@ -56,7 +56,7 @@ about:
         get my
         first <strong>peer-reviewed paper</strong> published and begin my <strong>PhD</strong> program by 2023. <br>
         During my free time, I love indulging in
-        my hobbies such as listening to <strong>music</strong>, <strong>hiling</strong>, and <strong>redaing</strong>.
+        my hobbies such as listening to <strong>music</strong>, <strong>hiking</strong>, and <strong>reading</strong>.
         If you share any of these interests, don't hesitate
         to reach out to me.
     </p>
