@@ -4,18 +4,6 @@ back-to-top-navigation: false
 toc: false
 title-block-banner: false
 comments: false
-about:
-    template: marquee
-    links:
-    - icon: envelope
-      text: Email
-      href: mailto:ln729500172@outlook.com
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/ningli3739
-    - icon: github
-      text: Github
-      href: https://github.com/NING3739
 ---
 
 ```{=html}
@@ -27,18 +15,21 @@ about:
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NING's Profile Page</title>
     <link rel="stylesheet" href="dlz.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
     <table>
         <tr>
             <td>
                 <h1>NING LI</h1>
+                <a href="mailto:ln729500172@outlook.com" class="fa fa-regular fa-envelope"></a>
+                <a href="https://twitter.com/ningli3739" class="fa fa-twitter"></a>
+                <a href="https://github.com/NING3739/datalabzone" class="fa fa-github"></a>
                 <p><em>Accountant, Data Science Enthusiast, Founder of <strong><a href="https://datalabzone.com/">Data
                                 Lab
                                 Zone</a></strong></em></p>
             </td>
             <td>
-                <img src="https://raw.githubusercontent.com/NING3739/my-personal-website/eb2bc55f0145dc89afff74253bf1f56a9da7b3b8/CACE4A7A-360D-4127-B1D8-E9493FA64409_1_105_c.jpeg"
+                <img src="https://github.com/NING3739/my-personal-website/blob/main/NING%20LI.jpeg?raw=true"
                     alt="NING's Profile Photo" class="round">
             </td>
 
