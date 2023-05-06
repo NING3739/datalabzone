@@ -1,0 +1,10 @@
+---
+title: "Discrete Probability"
+date: "2022-12-08"
+author: NING LI
+categories: [Probability, Discrete Probability]
+description: "The course covered an introduction to Discrete Probability, Combinations and Permutations, as well as the Addition Rule and Monty Hall problem."
+image: https://images.unsplash.com/photo-1609017909889-d7b582c072f7?ixlib=rb-1.2.1&q=80&cs=tinysrgb&fm=jpg&crop=entropy&w=3600
+code-fold: false
+editor: visual
+---

@@ -1,0 +1,570 @@
+---
+title: "Indexing, Data Wrangling and Plots"
+date: "2022-11-29"
+author: NING LI
+categories: [R Basic, Indexing, Data Wrangling, Plots]
+description: "The course covers R commands and techniques for managing, analyzing, and visualizing data, including manipulating vectors, using dplyr for data wrangling, data visualization, data summarization, grouping, and sorting with data.table."
+image: https://images.unsplash.com/photo-1586448317606-cb1ec00298fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGRhdGElMjBwbG90c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60
+code-fold: false
+editor: visual
+---
+
+# Indexing, Data Wrangling, Plots
+
+In this section, I will introduce the R commands and techniques that help you wrangle, analyze, and visualize data.
+
+In Indexing, you will: - Subset a vector based on properties of another vector.
+
+-   Use multiple logical operators to index vectors.
+
+-   Extract the indices of vector elements satisfying one or more logical conditions.
+
+-   Extract the indices of vector elements matching with another vector.
+
+-   Determine which elements in one vector are present in another vector.
+
+In basic data wrangling, you will:
+
+-   Wrangle data tables using functions in the dplyr package.
+
+-   Modify a data table by adding or changing columns.
+
+-   Subset rows in a data table.
+
+-   Subset columns in a data table.
+
+-   Perform a series of operations using the pipe operator.
+
+-   Create data frames.
+
+In basic plots, you will: - Plot data in scatter plots, box plots, and histograms.
+
+In summarizing with dplyr, you will: - Use summarize() to facilitate summarizing data in dplyr.
+
+-   Learn about the dot placeholder.
+
+-   Learn how to group and then summarize in dplyr.
+
+-   Learn how to sort data tables in dplyr.
+
+In the rest section, you will: - Learn how to subset and summarize data using data.table.
+
+-   Learn how to sort data frames using data.table.
+
+## Indexing
+
+### Key Point
+
+-   We can use logicals to index vectors.
+
+-   Using the function sum()on a logical vector returns the number of entries that are true.
+
+-   The logical operator "&" makes two logicals true only when they are both true.
+
+### Code
+
+```{r, eval=FALSE}
+# defining murder rate as before
+murder_rate <- murders$total / murders$population * 100000
+# creating a logical vector that specifies if the murder rate in that state is less than or equal to 0.71
+index <- murder_rate <= 0.71
+# determining which states have murder rates less than or equal to 0.71
+murders$state[index]
+# calculating how many states have a murder rate less than or equal to 0.71
+sum(index)
+
+# creating the two logical vectors representing our conditions
+west <- murders$region == "West"
+safe <- murder_rate <= 1
+# defining an index and identifying states with both conditions true
+index <- safe & west
+murders$state[index]
+```
+
+## Indexing Functions
+
+### Key Points
+
+-   The function `which()` gives us the entries of a logical vector that are true.
+
+-   The function `match()` looks for entries in a vector and returns the index needed to access them.
+
+-   We use the function `%in%` if we want to know whether or not each element of a first vector is in a second vector.
+
+### Code
+
+```{r, eval=FALSE}
+x <- c(FALSE, TRUE, FALSE, TRUE, TRUE, FALSE)
+which(x)    # returns indices that are TRUE
+
+# to determine the murder rate in Massachusetts we may do the following
+index <- which(murders$state == "Massachusetts")
+index
+murder_rate[index]
+
+# to obtain the indices and subsequent murder rates of New York, Florida, Texas, we do:
+index <- match(c("New York", "Florida", "Texas"), murders$state)
+index
+murders$state[index]
+murder_rate[index]
+
+x <- c("a", "b", "c", "d", "e")
+y <- c("a", "d", "f")
+y %in% x
+
+# to see if Boston, Dakota, and Washington are states
+c("Boston", "Dakota", "Washington") %in% murders$state
+```
+
+## Basic Data Wrangling
+
+### Key Points
+
+-   To change a data table by **adding a new column**, or changing an existing one, we use the `mutate()` function.
+
+-   To **filter the data** by subsetting rows, we use the function `filter()`.
+
+-   To subset the data by **selecting specific columns**, we use the `select()` function.
+
+-   We can perform a series of operations by sending the results of one function to another function using the **pipe operator**, `%>%`.
+
+## Creating Data Frames
+
+### Note
+
+The default settings in R have changed as of version 4.0, and it is no longer necessary to include the code `stringsAsFactors = FALSE` in order to keep strings as characters. Putting the entries in quotes, as in the example, is adequate to keep strings as characters. The `stringsAsFactors = FALSE` code is useful in certain other situations, but you do not need to include it when you create data frames in this manner.
+
+### Key Points
+
+-   We can use the `data.frame()` function to create data frames.
+
+-   Formerly, the `data.frame()` function turned characters into factors by default. To avoid this, we could utilize the `stringsAsFactors` argument and set it equal to false. As of R 4.0, it is no longer necessary to include the `stringsAsFactors` argument, because R no longer turns characters into factors by default.
+
+### Code
+
+```{r, eval=FALSE}
+# creating a data frame with stringAsFactors = FALSE
+grades <- data.frame(names = c("John", "Juan", "Jean", "Yao"), 
+                     exam_1 = c(95, 80, 90, 85), 
+                     exam_2 = c(90, 85, 85, 90),
+                     stringsAsFactors = FALSE)
+```
+
+## Basic Plots
+
+### Key Points
+
+-   We can create a simple scatterplot using the function `plot()`.
+
+-   Histograms are graphical summaries that give you a general overview of the types of values you have. In R, they can be produced using the `hist()` function.
+
+-   Boxplots provide a more compact summary of a distribution than a histogram and are more useful for comparing distributions. They can be produced using the `boxplot()` function.
+
+### Code
+
+```{r, output=FALSE}
+library(dplyr)
+library(dslabs)
+data("murders")
+```
+
+```{r}
+# a simple scatterplot of total murders versus population
+x <- murders$population /10^6
+y <- murders$total
+plot(x, y)
+```
+
+```{r}
+# a histogram of murder rates
+murders <- mutate(murders, rate = total / population * 100000)
+hist(murders$rate)
+
+# boxplots of murder rates by region
+boxplot(rate~region, data = murders)
+```
+
+## The summarize function
+
+### Key Points
+
+-   Summarizing data is an important part of data analysis.
+
+-   Some summary ststistics are the **mean**, **median**, and **standard deviation**.
+
+-   The `summarize()` function from **dplyr** provides an easy way to compute summary statics.
+
+### Code
+
+```{r, output=FALSE}
+library(tidyverse)
+library(dplyr)
+library(dslabs)
+data(murders)
+murders <- mutate(murders, rate = total / population * 10^5)
+```
+
+```{r}
+# minimum, median, and maximum murder rate for the states in the West region
+s <- murders %>% 
+  filter(region == "West") %>%
+  summarize(minimum = min(rate), 
+            median = median(rate), 
+            maximum = max(rate))
+s
+
+# accessing the components with the accessor $
+s$median
+s$maximum
+
+# average rate unadjusted by population size
+mean(murders$rate)
+
+# average rate adjusted by population size
+us_murder_rate <- murders %>% 
+  summarize(rate = sum(total) / sum(population) * 10^5)
+us_murder_rate
+```
+
+## Summarizing with more than one value
+
+### Key Points
+
+-   The `quantile()` function can be used to return the min, median, and max in a single line of code.
+
+### Code
+
+```{r, output=FALSE}
+library(tidyverse)
+library(dplyr)
+library(dslabs)
+data(murders)
+murders <- mutate(murders, rate = total / population * 10^5)
+```
+
+```{r}
+# minimum, median, and maximum murder rate for the states in the West region using quantile
+# note that this returns a vector
+murders %>% 
+  filter(region == "West") %>%
+  summarize(range = quantile(rate, c(0, 0.5, 1)))
+
+# returning minimum, median, and maximum as a data frame
+my_quantile <- function(x){
+  r <-  quantile(x, c(0, 0.5, 1))
+  data.frame(minimum = r[1], median = r[2], maximum = r[3]) 
+}
+murders %>% 
+  filter(region == "West") %>%
+  summarize(my_quantile(rate))
+```
+
+## Pull to access to columns
+
+### Key Points
+
+-   The `pull()` function can be used to access values stored in data when using pipes: when a data object is piped that object and its columns can be accessed using the `pull()` function.
+
+### Code
+
+```{r, output=FALSE}
+library(tidyverse)
+library(dplyr)
+library(dslabs)
+data(murders)
+murders <- mutate(murders, rate = total / population * 10^5)
+```
+
+```{r}
+# average rate adjusted by population size
+us_murder_rate <- murders %>% 
+  summarize(rate = sum(total) / sum(population) * 10^5)
+us_murder_rate
+
+# us_murder_rate is stored as a data frame
+class(us_murder_rate)
+
+# the pull function can return it as a numeric value
+us_murder_rate %>% pull(rate)
+
+# using pull to save the number directly
+us_murder_rate <- murders %>% 
+  summarize(rate = sum(total) / sum(population) * 10^5) %>%
+  pull(rate)
+us_murder_rate
+
+# us_murder_rate is now stored as a number
+class(us_murder_rate)
+```
+
+## The dot placeholder
+
+### Key Points
+
+-   The `dot (.)` can be thought of as a placeholder for the data being passed through the pipe.
+
+```{r, output=FALSE}
+library(tidyverse)
+library(dplyr)
+library(dslabs)
+data(murders)
+murders <- mutate(murders, rate = total / population * 10^5)
+```
+
+```{r}
+# average rate adjusted by population size
+us_murder_rate <- murders %>% 
+  summarize(rate = sum(total) / sum(population) * 10^5)
+us_murder_rate
+
+# using the dot to access the rate
+us_murder_rate <- murders %>% 
+  summarize(rate = sum(total) / sum(population) * 10^5) %>%
+  .$rate
+us_murder_rate
+class(us_murder_rate)
+```
+
+## Group then summarize
+
+### Key Points
+
+-   Splitting data into groups and then computing summaries for each group is a common operation in data exploration.
+
+-   We can use the **dplyr** `group_by()` function to create a special grouped data frame to facilitate such summaries.
+
+```{r, output=FALSE}
+library(tidyverse)
+library(dplyr)
+library(dslabs)
+data(murders)
+murders <- mutate(murders, rate = total / population * 10^5)
+```
+
+```{r}
+# group by region
+murders %>% group_by(region)
+
+# summarize after grouping
+murders %>% 
+  group_by(region) %>%
+  summarize(median = median(rate))
+```
+
+## Sorting data tables
+
+### Key Points
+
+-   To order an entire table, we can use the **dplyr** function `arrange()`.
+
+-   We can also use nested sorting to order by additional columns.
+
+-   The function `head()` returns on the first few lines of a table.
+
+-   The function `top_n()` returns the top n rows of a table.
+
+### Code
+
+```{r, output=FALSE}
+library(tidyverse)
+library(dplyr)
+library(dslabs)
+data(murders)
+murders <- mutate(murders, rate = total / population * 10^5)
+```
+
+```{r}
+# order the states by population size
+murders %>% arrange(population) %>% head()
+
+# order the states by murder rate - the default is ascending order
+murders %>% arrange(rate) %>% head()
+
+# order the states by murder rate in descending order
+murders %>% arrange(desc(rate)) %>% head()
+
+# order the states by region and then by murder rate within region
+murders %>% arrange(region, rate) %>% head()
+
+# return the top 10 states by murder rate
+murders %>% top_n(10, rate)
+
+# return the top 10 states ranked by murder rate, sorted by murder rate
+murders %>% arrange(desc(rate)) %>% top_n(10)
+```
+
+## Introduction to data.table
+
+### Key Points
+
+-   In this course, we often use tidyverse packages to illustrate because these packages tend to have code that is very readable for beginners.
+
+-   There are other approaches to wrangling and analyzing data in R that are faster and better at handling large objects, such as the data.table package.
+
+-   Selecting in data.table uses notation similar to that used with matrices.
+
+-   To add a column in data.table, you can use the := function.
+
+-   Because the data.table package is designed to avoid wasting memory, when you make a copy of a table, it does not create a new object. The := function changes by reference. If you want to make an actual copy, you need to use the copy() function.
+
+-   Side note: the R language has a new, built-in pipe operator as of version 4.1: \|\>. This works similarly to the pipe %\>% you are already familiar with. You can [read more about the \|\> pipe here External link](https://www.r-bloggers.com/2021/05/the-new-r-pipe/).
+
+### Code
+
+```{r, eval=FALSE}
+# install the data.table package before you use it!
+install.packages("data.table")
+
+# load data.table package
+library(data.table)
+
+# load other packages and datasets
+library(tidyverse)
+library(dplyr)
+library(dslabs)
+data(murders)
+
+# convert the data frame into a data.table object
+murders <- setDT(murders)
+
+# selecting in dplyr
+select(murders, state, region)
+
+# selecting in data.table - 2 methods
+murders[, c("state", "region")] |> head()
+murders[, .(state, region)] |> head()
+
+# adding or changing a column in dplyr
+murders <- mutate(murders, rate = total / population * 10^5)
+
+# adding or changing a column in data.table
+murders[, rate := total / population * 100000]
+head(murders)
+murders[, ":="(rate = total / population * 100000, rank = rank(population))]
+
+# y is referring to x and := changes by reference
+x <- data.table(a = 1)
+y <- x
+
+x[,a := 2]
+y
+
+y[,a := 1]
+x
+
+# use copy to make an actual copy
+x <- data.table(a = 1)
+y <- copy(x)
+x[,a := 2]
+y
+```
+
+## Subsetting with data.table
+
+### Key Points
+
+[Subsetting in **data.table**](http://rafalab.dfci.harvard.edu/dsbook/data-table.html#subsetting-1) uses notation similar to that used with matrices.
+
+### Code
+
+```{r, eval=FALSE}
+# load packages and prepare the data
+library(tidyverse)
+library(dplyr)
+library(dslabs)
+data(murders)
+library(data.table)
+murders <- setDT(murders)
+murders <- mutate(murders, rate = total / population * 10^5)
+murders[, rate := total / population * 100000]
+
+# subsetting in dplyr
+filter(murders, rate <= 0.7)
+
+# subsetting in data.table
+murders[rate <= 0.7]
+
+# combining filter and select in data.table
+murders[rate <= 0.7, .(state, rate)]
+
+# combining filter and select in dplyr
+murders %>% filter(rate <= 0.7) %>% select(state, rate)
+```
+
+## Summarizing with data.table
+
+### Key Points
+
+-   In data.table we can call functions inside `.()`and they will be applied to rows.
+
+-   The `group_by` followed by summarize in **dplyr** is performed in one line in data.table using the by argument.
+
+### Code
+
+```{r, eval=FALSE}
+# load packages and prepare the data - heights dataset
+library(tidyverse)
+library(dplyr)
+library(dslabs)
+data(heights)
+heights <- setDT(heights)
+
+# summarizing in dplyr
+s <- heights %>% 
+  summarize(average = mean(height), standard_deviation = sd(height))
+  
+# summarizing in data.table
+s <- heights[, .(average = mean(height), standard_deviation = sd(height))]
+
+# subsetting and then summarizing in dplyr
+s <- heights %>% 
+  filter(sex == "Female") %>%
+  summarize(average = mean(height), standard_deviation = sd(height))
+  
+# subsetting and then summarizing in data.table
+s <- heights[sex == "Female", .(average = mean(height), standard_deviation = sd(height))]
+
+# previously defined function
+median_min_max <- function(x){
+  qs <- quantile(x, c(0.5, 0, 1))
+  data.frame(median = qs[1], minimum = qs[2], maximum = qs[3])
+}
+
+# multiple summaries in data.table
+heights[, .(median_min_max(height))]
+
+# grouping then summarizing in data.table
+heights[, .(average = mean(height), standard_deviation = sd(height)), by = sex]
+```
+
+## [Sorting data frames](http://rafalab.dfci.harvard.edu/dsbook/tidyverse.html#sorting-data-frames)
+
+### Key Points
+
+-   To order rows in a data frame using data.table, we can use the same approach we used for filtering.
+
+-   The default sort is an ascending order, but we can also sort tables in descending order.
+
+-   We can also perform nested sorting by including multiple variables in the desired sort order.
+
+### Code
+
+```{r, eval=FALSE}
+# load packages and datasets and prepare the data
+library(tidyverse)
+library(dplyr)
+library(data.table)
+library(dslabs)
+data(murders)
+murders <- setDT(murders)
+murders[, rate := total / population * 100000]
+
+# order by population
+murders[order(population)] |> head()
+
+# order by population in descending order
+murders[order(population, decreasing = TRUE)] 
+
+# order by region and then murder rate
+murders[order(region, rate)]
+```
