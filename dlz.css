@@ -10,6 +10,7 @@
   text-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 11%);
 }
 
+
 .navbar-brand.navbar-brand-logo {
   display: flex;
   padding-top: 0;
@@ -68,6 +69,16 @@
 .nav-item {
   margin-top: 5rem; 
 }
+
+.nav-item {
+  transition: all 0.5s ease-in;
+}
+
+.nav-item:hover {
+  text-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  transition: all 0.5s ease-in-out;
+} 
+
 
 @media (max-width: 1200px) {
   .nav-item {
@@ -529,6 +540,37 @@ div.quarto-post a {
 
 /*-- grid listing --*/
 
+.card {
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+
+.card:hover {
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  transition: all 0.2s ease-in;
+}
+
+.card:hover .card-img-top img {
+  opacity: 0.7;
+  -webkit-transform:scale(1.15);
+  -moz-transform:scale(1.15);
+  -ms-transform:scale(1.15);
+  -o-transform:scale(1.15);
+}
+
+.card .card-img-top img {
+  -webkit-transition:all .9s ease; 
+  -moz-transition:all .9s ease; 
+  -o-transition:all .9s ease;
+  -ms-transition:all .9s ease; 
+}
+
+.quarto-grid-item {
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+  border-radius: 5px;
+}
+
 .quarto-grid-item {
   border: none;
   background-color: #f0eeeb;
@@ -783,3 +825,5 @@ div.quarto-about-marquee .about-link {
 .fa-github {
     color: black;
 }
+
+
