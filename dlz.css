@@ -897,3 +897,15 @@ label {
 .btn-secondary:hover {
     background-color: #5a6268;
 }
+
+/*--- profile animation ---*/
+
+.round {
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.round:hover {
+  transform: scale(1.1);
+}
+
