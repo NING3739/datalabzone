@@ -8,6 +8,7 @@ description: "This sample employs the Shiny package to create a service fee calc
 format:
   html:
     code-fold: true
+code-line-numbers: false
 ---
 
 # Introduction to Shiny
@@ -47,6 +48,7 @@ In summary, this Shiny app is a user-friendly service fee calculator that helps 
 # Code
 
 ```{r, echo=TRUE, eval=FALSE}
+    
 library(shiny)
 library(dplyr)
 library(ggplot2)
@@ -216,10 +218,6 @@ server <- function(input, output, session) {
 
 # 运行应用程序
 shinyApp(ui, server)
-
 ```
 
-
 👉 [Run Cost Calculator App](https://myshinyappforpractice.shinyapps.io/sheet/)
-
-

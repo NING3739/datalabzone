@@ -8,15 +8,22 @@ description: "Merry Christmas make by ggplot2 package!!!"
 format:
   html:
     code-fold: false
+code-annotations: hover
 ---
 
 Let us use **ggplot2** to make a Christmas Tree.
 
 # Code
 
+@fig-christmas-tree shows use ggplot2 to make a Christmas Tree.
+
 ```{r, warning=FALSE}
+#| label: fig-christmas-tree
+#| fig-cap: Christmas Tree
+#| fig-width: 10
+
 rm(list = ls())
-library(ggplot2)
+library(ggplot2) # <1>
 
 # create data
 x <- c(8,7,6,7,6,5,6,5,4,5,4,3,4,3,2,3,2,1,0.5,0.1)
@@ -68,3 +75,5 @@ axis.ticks.y=element_blank()) +
 ggtitle('Merry Christmas') +
 theme(plot.title = element_text(color = "red", hjust = 0.5))
 ```
+
+1.  load package

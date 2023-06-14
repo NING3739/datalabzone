@@ -58,12 +58,12 @@
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: #939bc9;
+  color: red;
   font-weight: 400;
 }
 
 .navbar-dark .navbar-nav .show>.nav-link, .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active {
-  color: #939bc9;
+  color: red;
 }
 
 .nav-item {
@@ -157,6 +157,7 @@
 
 #title-block-header.quarto-title-block.default .description {
   margin-top: 1.5em;
+  font-family: Roboto Slab;
   font-weight: 400;
   font-size: 1.2em;
   color: black;
@@ -165,6 +166,7 @@
 /*--subtitle lead--*/
 .lead {
   margin-top: 1.5em;
+    font-family: 'Roboto Slab';
     font-weight: 400;
     font-size: 1.2em;
     color: black;
@@ -182,7 +184,7 @@
   font-family: 'Oswald';
   font-size: .9em;
   font-weight: 400;
-  color: #939bc9;
+  color: red;
   text-transform: uppercase;
   border: solid 1px;
   border-radius: 0.25rem;
@@ -194,7 +196,7 @@
 }
 
 #title-block-header.quarto-title-block.default .quarto-title-meta-heading {
-  font-family: 'Oswald';
+  font-family: 'Roboto Slab';
   text-transform: uppercase;
   margin-top: 1em;
   font-size: 0.9em;
@@ -203,7 +205,7 @@
 }
 
 #title-block-header.quarto-title-block.default .quarto-title-meta-contents {
-  font-family: 'Oswald';
+  font-family: 'Roboto Slab';
   text-transform: uppercase;
   font-weight: 300;
   opacity: 0.8;
@@ -250,7 +252,7 @@ blockquote {
 
 .citation a, .footnote-ref {
   /* text-decoration: none; */
-  color: #939bc9;
+  color: red;
   font-weight: 700;
 }
 
@@ -316,13 +318,13 @@ div.csl-entry {
 
 .toc-actions a {
   /* text-decoration: none; */
-  font-family: 'Montserrat';
+  font-family: 'Roboto Slab';
   font-weight: 500;
   color: black;
 }
 
 .toc-actions a:hover {
-  color: #939bc9;
+  color: red;
 }
 
 .toc-actions .bi:before {
@@ -339,7 +341,7 @@ div.csl-entry {
 
 .column-margin, .figure-caption a {
   /* text-decoration: none; */
-  color: #939bc9;
+  color: red;
   font-weight: 700;
 }
 
@@ -438,7 +440,7 @@ a {
 }
 
 p > a {
-  color: #939bc9;
+  color: red;
   font-weight: 700;
   /* text-decoration: none;  */
 }
@@ -446,17 +448,17 @@ p > a {
 
 b, strong a {
   /* text-decoration: none; */
-  color: #939bc9;
+  color: red;
 }
 
 ul a {
-  color: #939bc9;
+  color: red;
   font-weight: 700;
   /* text-decoration: none;  */
 }
 
 dd a {
-  color: #939bc9;
+  color: red;
   font-weight: 700;
   /* text-decoration: none;  */
 }
@@ -495,8 +497,8 @@ div.quarto-post .metadata {
 }
 
 div.quarto-post .listing-categories .listing-category {
-  color: #939bc9;
-  border: solid 1px #939bc9;
+  color: red;
+  border: solid 1px red;
   font-family: 'Oswald';
   font-weight: 400;
   font-size: .75em;
@@ -523,7 +525,7 @@ div.quarto-post a {
 
 .quarto-listing-category .category.active {
   font-weight: 500;
-  color: #939bc9;
+  color: red;
 }
 
 .nav-page .nav-page-text {
@@ -600,8 +602,8 @@ div.quarto-post a {
 }
 
 .quarto-grid-item .listing-categories .listing-category {
-  color: #939bc9;
-  border: solid 1px #939bc9 !important;
+  color: red;
+  border: solid 1px black !important;
   font-family: 'Oswald';
   font-weight: 400;
   font-size: .75em;
@@ -612,7 +614,7 @@ div.quarto-post a {
 }
 
 .quarto-grid-item .card-attribution {
-  font-family: 'Oswald';
+  font-family: 'Roboto Slab';
   font-weight: 300;
   color: black;
   flex-grow: 10;
@@ -677,7 +679,7 @@ div.sourceCode {
 }
 
 .listing-block h2:hover {
-  color: #939bc9;
+  color: red;
 }
 
 /*-- nav footer styles --*/
@@ -704,7 +706,7 @@ body:not(.floating) .nav-footer {
 }
 
 .nav-footer a:hover {
-  color: #939bc9;
+  color: red;
   /* text-decoration: none; */
 }
 
@@ -866,11 +868,6 @@ div.quarto-about-marquee .about-link {
 /* Elements with animations */
 .container {
     animation: fadeIn 1s ease-out;
-}
-
-.form-control {
-    animation: inputSlideIn 1s ease-out;
-    border-radius: 10px;
 }
 
 label {
