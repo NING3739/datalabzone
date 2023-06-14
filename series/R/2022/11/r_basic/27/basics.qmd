@@ -1,211 +1,244 @@
 ---
-title: "R Basic, Functions and Data Types"
+title: "An Introduction to R: Mastering the Basics"
 date: "2022-11-27"
 author: NING LI
 categories: [R Basic, Functions, Data Types]
 description: "An overall introduction to R programming, covering the basics of objects, operations, functions, and data types."
 image: https://images.unsplash.com/photo-1600173845923-ad1412bfab75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
 code-fold: false
+mermaid: 
+  theme: forest
 editor: visual
 ---
 
-# R Basics, Functions, and Data Types
+# Introduction
 
-In this section, I will introduce you to R Basics, Functions, and Datatypes.
+It provides a comprehensive set of tools and libraries that make it a preferred choice among data scientists, statisticians, and researcher[^1]. It provides a comprehensive set of tools and libraries that make it a preferred choice among data scientists, statisticians, and researcher.
 
-In this part, you will learn to:
+[^1]: https://www.r-project.org/about.html
 
--   Appreciate the rationale for data analysis using R.
+In this blog, I will mainly explore the basics of R programming, including [**objects, operations, functions, and data types**]{style="color: red"}.
 
--   Define objects and perform basic arithmetic and logical operations.
+However, before start this blog, please [make sure you already set up R development environment]{.underline}.
 
--   Use pre-defined functions to perform operations on objects.
+For more information about how to setting up, you can read posts: [how to install r and Rstudio](/posts/blogsforr/2023/01/19/installation.qmd).
 
--   Distinguish between various data types.
+# How to Install R Packages?
 
-## Installing R
+Packages in R are collections of functions, sample data, and code in a well-defined format. They extend the capabilities of R by providing additional functions for a variety of statistical techniques, graphical devices, data manipulation, and more[^2].
 
-### Why Install R and RStudio?
+[^2]: https://www.tutorialspoint.com/r/r_packages.htm
 
--   To complete this course, you should install R locally on your computer. We also highly recommend installing RStudio, an integrated development environment (IDE), to edit and test your code.
+I am highly recommend using Rstudio for package installation over R itself. The provided compatible with R and Rstudio. Rstudio offers a user-friendly graphical interface for package management, enabling effortless browsing, installation, loading, and updates of packages[^3].
 
--   In order to complete some assignments in the course, you will need your own copy of R. You may also find it helpful to follow along with the course videos in R or RStudio.
+[^3]: https://www.theanalysisfactor.com/the-advantages-of-rstudio/
 
--   Both R and RStudio can be freely downloaded and installed.
+Once a package has been installed, it is technically added onto R (even if you use RStudio to install it), which is why packages must be re-installed when R is updated. However, since we use R through RStudio, any packages that are installed can be used in both R and RStudio, regardless of which one was used to install the packages.
 
-### Key Points
+To install a package in Rstudio:
 
--   You need to install R before using RStudio, which is an interactive desktop environment.
+-   Install packages from [Rstudio Interface]{style="color: red"} (allows auto-complete):
 
--   Select base subdirectory in [CRAN](https://cran.r-project.org/) and click download.
+    -   Click on the "Packages" tab in the lower right window.
 
--   Select all default choices in the installation process.
+    -   Click "Install" and a window will pop up.
 
--   We recommend selecting English for language to help you better follow the course.
+    -   Type the name of package you want to install (e.g., "ggplot2") and click "Install".
 
--   You can try using the R console, but for productivity purposes, we can switch to RStudio.
+-   Install packages from [R console]{style="color: red"}:
 
-## Installing Rstudio
+    -   `install.packages("pkg_name", dependencies = TRUE)`
+    -   The option `dependencies = TRUE`, which tells R to install the other things that are necessary for package or packages to run smoothly.
 
-### Key Points
+Once installed, you can use `library(pkg_name)` to load a package each time you want to use it.
 
--   You can download the latest version of RStudio at the [RStudio website](https://posit.co/download/rstudio-desktop/).
+```{r}
+#| label: Packages Installation
+#| eval: false
 
--   The free desktop version is more than enough for this course.
-
--   Make sure to choose the version for your own operating system.
-
--   Choose "Yes" for all defaults in the installation process.
-
-## Using RStudio for the First Time
-
-### Key Points
-
--   The free desktop version of RStudio can be launched like other applications on your computer.
-
--   When you start RStudio for the first time, you will see three panes. The left pane shows you the R console. On the right, the top pane includes three tabs, while the bottom pane shows you five tabs, file, plots, packages, help, and viewer.
-
--   You can download a cheat sheet of the most common RStudio commands directly from RStudio by going to "Help -\> Cheat Sheets -\> RStudio IDE Cheat Sheet."
-
-## Getting Started Using R
-
-### Key Points:
-
--   R was developed by statisticians and data analysts as an interactive environment for data analysis.
-
--   Some of the advantages of R are that:
-
-    -   it is free and open source;
-
-    -   it has the capability to save scripts;
-
-    -   there are numerous resources for learning;
-
-    -   it is easy for developers to share software implementation.
-
--   Expressions are evaluated in the R console when you type the expression into the console and hit Return.
-
--   A great advantage of R over point and click analysis software is that you can save your work as scripts.
-
--   "Base R" is what you get after you first install R. Additional components are available via packages.
-
-### Some Addition Notes
-
-In RStudio, you can upload additional functions and datasets in addition to the base R functions and datasets that come with R automatically. A common way to do this is by installing packages, which often contain extra functions and datasets. For this course, there are a few packages you will need to install. You only need to install each individual package once, but after you install a package, there are other steps you have to do whenever you want to use something from that package.
-
-To install a package, you use the code `install.packages("package_name", dependencies = TRUE)`.
-
-To load a package, you use the code `library(package_name)`.
-
-If you also want to use a dataset from a package you have loaded, then you use the code `data(dataset_name)`. To see the dataset, you can take the additional step of `View(dataset_name)`.
-
-## Installing Packahes
-
-### Note
-
-We recommend installing packages through RStudio, rather than through R, and the code provided works in both R and RStudio. Once a package has been installed, it is technically added onto R (even if you use RStudio to install it), which is why packages must be re-installed when R is updated. However, since we use R through RStudio, any packages that are installed can be used in both R and RStudio, regardless of which one was used to install the packages.
-
-### key points
-
--   The base version of R is quite minimal, but you can supplement its functions by installing additional packages.
--   We will be using **tidyverse** and **dslabs** packages for this course.
--   Install packages from R console: `install.packages("pkg_name")`
--   Install packages from RStudio interface: Tools \> Install Packages (allows autocomplete)
--   Once installed, we can use `library(pkg_name)` to load a package each time we want to use it
-
-### Additional Notes
-
--   If you try to load a package with `library(blahblah)` and get a message like *Error in library(blahblah) : there is no package called 'blahblah'*, it means you need to install that package first with `install.packages()`.
--   On the DataCamp interface we use for some problems in the course, you cannot install additional packages. The problems have been set up with the packages you need to solve them.
--   You can add the option `dependencies = TRUE`, which tells R to install the other things that are necessary for the package or packages to run smoothly. Otherwise, you may need to install additional packages to unlock the full functionality of a package.
--   Throughout the course materials and textbook, package names are in **bold**.
-
-### Code
-
-```{r, eval=FALSE}
-install.packages("dslabs") # to install a single package
-install.packages(c("tidyverse", "dslabs")) # to install two packages at the same time
-installed.packages() # to see the list of all installed packages
+install.packages("dslabs") # <1>
+install.packages(c("tidyverse", "dslabs")) # <2>
+installed.packages() # <3>
+library("dslabs") # <4>
 ```
 
-## Running Commands While Editing Scripts
+1.  To install a single package
+2.  To install two packages at the same time
+3.  To see the list of all installed packages
+4.  To load a package called `dslabs`
 
-### Key Points
+# Running Commands While Editing Scripts
 
--   RStudio has many useful features as an R editor, including the ability to **test code** easily as we write scripts and several **auto complete features**.
+Running commands while editing scripts in an IDE like Rstudio is an essential skill for efficient and effective programming. This practice allows you to test your code as you write it, helping you spot and correct any errors or bugs early in the development process[^4].
 
--   Keyboard shortcuts:
+[^4]: https://support.posit.co/hc/en-us/articles/200484448-Editing-and-Executing-Code-in-the-RStudio-IDE
 
-    -   **Save a script**: Ctrl+S on Windows and Command+S on Mac
-    -   **Run an entire script**: Ctrl+Shift+Enter on Windows Command+Shift+Return on Mac, or click "Source" on the editor pane
-    -   **Run a single line of script**: Ctrl+Enter on Windows and Command+Return on Mac while the cursor is pointing to that line, or select the chunk and click "run"
-    -   **Open a new script**: Ctrl+Shift+N on Windows and Command+Shift+N on Mac
+When working in Rstudio, you work area is typically divided into several panels:
 
-### Code
+-   The **Script** window, where you write longer pieces of code.
 
-```{r, eval=FALSE}
-# Here is an example how to running commends while editing scripts
-library(tidyverse)
-library(dslabs)
-data(murders)
+-   The **Console** window, where R code is executed.
 
-murders %>% 
-  ggplot(aes(population, total, label=abb, color=region)) +
-  geom_label()
+-   Other window for view variables, history, files, plots, packages, and help.
+
+## Running a Single Line of Code
+
+-   place the cursor anywhere on the line;
+
+-   press \`**Ctrl + Enter**\` on a Windows/Linux machine;
+
+-   press \`**Cmd + Enter**\` on a Mac;
+
+-   Or, click "source" on the editor pane.
+
+## Running an Entire Script
+
+-   place the cursor anywhere on the line;
+
+-   press \`**Ctrl+Shift+Enter**\` on a Windows/Linux machine;
+
+-   press \`**Command+Shift+Return**\` on Mac;
+
+-   Or click "Source" on the editor pane.
+
+# R Basic
+
+R is a versatile and powerful language due to its diverse range of [objects, operations, functions ,and data type]{style="color:red"}.
+
+## Objects
+
+In R, everything is an object. Object are entitles that hold data, which can be manipulated by invoking functions[^5]. Here are the common types of objects:
+
+[^5]: https://www.geeksforgeeks.org/r-objects/
+
+1.  **Vectors**: A vector is a basic data structure in R. It contains elements of the same type. For instance, **`numeric_vector <- c(1, 2, 3)`** creates a numeric vector.
+
+2.  **Matrices**: A matrix is a two-dimensional data structure where elements are arranged in [rows]{.underline} and [columns]{.underline}, and all elements are of the same type.
+
+3.  **Lists**: A list is an R-object that [can contain many different types of elements]{style="color:red"} inside it like vectors, functions, and even another list.
+
+4.  **Data frames**: Data frames are used for storing data tables. They are [a list of vectors of equal length]{style="color: red"}. For example, you might create a data frame to hold a dataset for data analysis.
+
+## Operations
+
+Operations in R refer to [the tasks that can be performed on R objects]{.underline}. They're a fundamental part of the language, allowing for the manipulation, comparison, and assignment of data[^6].
+
+[^6]: https://www.w3schools.com/r/r_operators.asp
+
+### **Arithmetic Operations**
+
+Arithmetic operations perform mathematical calculations. Here are some examples:
+
+-   **Addition** (**`+`**): **`5 + 3`** returns **`8`**
+
+-   **Subtraction** (**`-`**): **`5 - 3`** returns **`2`**
+
+-   **Multiplication** (**`*`**): **`5 * 3`** returns **`15`**
+
+-   **Division** (**`/`**): **`5 / 3`** returns **`1.6666667`**
+
+-   **Exponentiation** (**`^`** or **`**`**): **`5^3`** or **`5**3`** returns **`125`**
+
+-   **Modulus** (**`%%`**): **`5 %% 3`** returns **`2`** (remainder of the division)
+
+-   **Integer Division** (**`%/%`**): **`5 %/% 3`** returns **`1`** (quotient of the division)
+
+### **Relational Operations**
+
+Relational operations compare values and return a logical output (**`TRUE`** or **`FALSE`**). They're often used in conditional statements. Here are some examples:
+
+-   **Less than** (**`<`**): **`5 < 3`** returns **`FALSE`**
+
+-   **Greater than** (**`>`**): **`5 > 3`** returns **`TRUE`**
+
+-   **Less than or equal to** (**`<=`**): **`5 <= 3`** returns **`FALSE`**
+
+-   **Greater than or equal to** (**`>=`**): **`5 >= 3`** returns **`TRUE`**
+
+-   **Equals to** (**`==`**): **`5 == 3`** returns **`FALSE`**
+
+-   **Not equal to** (**`!=`**): **`5 != 3`** returns **`TRUE`**
+
+### **Logical Operations**
+
+Logical operations perform boolean logic on values. Here are some examples:
+
+-   **And** (**`&`**): Returns **`TRUE`** if both operands are **`TRUE`**. For example, **`TRUE & FALSE`** returns **`FALSE`**.
+
+-   **Or** (**`|`**): Returns **`TRUE`** if either operand is **`TRUE`**. For example, **`TRUE | FALSE`** returns **`TRUE`**.
+
+-   **Not** (**`!`**): Negates the value of the operand. For example, **`!TRUE`** returns **`FALSE`**.
+
+-   **Elementwise And** (**`&&`**): Similar to **`&`**, but only evaluates the first element of vectors and ignores the rest.
+
+-   **Elementwise Or** (**`||`**): Similar to **`|`**, but only evaluates the first element of vectors and ignores the rest.
+
+### **Assignment Operations**
+
+Assignment operations store a value in a variable:
+
+-   **`<-`**: This is the most common assignment operator in R. For example, **`x <- 5`** assigns the value **`5`** to the variable **`x`**.
+
+-   **`=`**: Similar to **`<-`**, but usually used within functions. For example, **`mean(x = 1:5)`** computes the mean of the numbers from 1 to 5.
+
+-   **`<<-`**: This is the global assignment operator. It assigns a value to a variable in the global environment, even from within a function.
+
+# Functions
+
+Functions are the backbone of any programming language, and R is no exception. Functions are sets of instructions that perform a task, and R has a multitude of [built-in functions]{style="color:red"}, as well as the capability for [users to define their own]{style="color:red"}.
+
+## **Built-in Functions**
+
+R provides many built-in functions, which perform predefined tasks. Here are a few examples:
+
+-   **`mean(x)`**: Computes the arithmetic mean of a numeric vector **`x`**.
+
+-   **`sum(x)`**: Calculates the sum of all the values in **`x`**.
+
+-   **`max(x)`**: Finds the maximum value in **`x`**.
+
+-   **`min(x)`**: Finds the minimum value in **`x`**.
+
+-   **`sd(x)`**: Calculates the standard deviation of **`x`**.
+
+-   **`length(x)`**: Returns the number of elements in **`x`**.
+
+-   **`str(x)`**: Provides a compact, human-readable description of **`x`**.
+
+-   **`help(x)`** or ?function_name: To access **help** files documents of functions
+
+For each of these, **`x`** would be the argument, and it is typically a vector of some kind.
+
+## **User-Defined Functions**
+
+In addition to the built-in functions, R allows you to define your own functions. This is particularly useful for tasks you need to perform frequently. User-defined functions are created with the **`function()`** command. Here's an example:
+
+```{r}
+#| label: user-defined_functions
+#| eval: false
+# Define a function that calculates the average of squares of two numbers #<1>
+avg_of_squares <- function(a, b) {
+    return((a^2 + b^2)/2)
+}`
 ```
 
-## R Basics
+1.  To make your code more readable, use intuitive variable names and include comments (using the "\#" symbol) to remind yourself why you wrote a particular line of code.
 
-### Key Points
+In this function, **`a`** and **`b`** are the arguments. This function calculates the squares of **`a`** and **`b`**, sums them, and then divides by 2 to find the average. It then returns this result.
 
--   To define a variable, we may use the assignment symbol, `<-`.
+## **Special Functions**
 
--   
+There are some special types of functions in R, such as:
 
-    ## There are two ways to see the value stored in a variable:
+-   **Anonymous functions**: These are functions that are defined without a name. They are used when a function is only needed once, often in the context of apply-type functions. For example, **`sapply(1:5, function(x) x^2)`** applies the anonymous function **`function(x) x^2`** to the vector **`1:5`**.
 
-    ```         
-    (1) type the variable name into the console and hit Return;
-    ```
+-   **Primitive functions**: These are basic functions in R that are implemented in C for efficiency. Examples include basic arithmetic operations (**`+`**, **`-`**, **`*`**, **`/`**) and others like **`sum()`**, **`prod()`**, and **`mean()`**.
 
-    -   
+# Data Types
 
-        (2) use the `print()` function by typing `print(variable_name)` and hitting Return.
+Data types determine the kind of operations that can be performed on data, and R offers several basic data types[^7].
 
--   Objects are things that are stored in named containers in R. They can be variables, functions, etc.
-
--   The `ls()` function shows the names of the objects saved in your work space.
-
-### Code: example to solving the equation $x^{2} + x - 1 = 0$
-
-```{r, eval=FALSE}
-# assigning values to variables
-a <- 1
-b <- 1
-c <- -1
-
-# solving the quadratic equation
-(-b + sqrt(b^2 - 4*a*c))/(2*a)
-(-b - sqrt(b^2 - 4*a*c))/(2*a)
-```
-
-## Function
-
-### Key Points
-
--   In general, to evaluate a function we need to use **parentheses**. If we type a function without parenthesis, R shows us the code for the function. Most functions also require an argument, that is, something to be written inside the parenthesis.
-
--   To access **help** files, we may use the help function, `help(function_name)`, or write the question mark followed by the function name, ?function_name.
-
--   The help file shows you the arguments the function is expecting, some of which are required and some are optional. If an argument is optional, a default value is assigned with the equal sign. The `args()` function also shows the arguments a function needs.
-
--   To specify arguments, we use the equals sign. If no argument name is used, R assumes you're entering arguments in the order shown in the help file.
-
--   Creating and saving a script makes code much easier to execute.
-
--   To make your code more readable, **use intuitive variable names and include comments** (using the **"\#"** symbol) to remind yourself why you wrote a particular line of code.
-
-## Data Types
+[^7]: https://www.programiz.com/r/data-types
 
 ::: callout-note
 ### Note
@@ -213,30 +246,41 @@ c <- -1
 The code `data("dataset_name")` and `data(dataset_name)` do the same thing. The code will work regardless of whether the quotes are present. It is a bit faster to leave out the quotes (as we do in the Code at the bottom of this page), so that is usually what we recommend, but it is your choice.
 :::
 
-### Key Points
+## Numeric
 
--   The function `class()` helps us determine the type of an object.
+The numeric (or double) data type is used for [real numbers (numbers with decimal points)]{style="color:red"}. Numeric is the default computational data type in R. If you assign a number to a variable without explicitly declaring its type, R will interpret it as a numeric. For example, [x \<- 7.14 assigns a numeric value of 7.14 to x]{.underline}.
 
--   **Data frames** can be thought of as tables with rows representing observations and columns representing different variables.
+## Integer
 
--   To access data from columns of a data frame, we use the dollar sign symbol, `$`, which is called the accessor.
+The integer data type is used for integer numbers [(whole numbers without decimal points)]{style="color:red"}. In R, you declare an integer by appending an L to the integer value. For example, [x \<- 7L assigns an integer value of 7 to x]{.underline}.
 
--   A **vector** is an object consisting of several entries and can be a **numeric vector**, a **character vector**, or a **logical vector**.
+## Logical
 
--   We **use quotes** to distinguish between variable names and character strings.
+The logical data type is used for boolean values: [TRUE and FALSE]{style="color:red"}. Logical data types are often the result of logical operations. For example, the operation 5 \> 3 returns TRUE, which is a logical value.
 
--   Factors are useful for storing categorical data, and are more memory efficient than storing characters.
+## Character
+
+The character data type is used for [text or string data]{style="color:red"}. To create a character string in R, you enclose the text in either single or double quotes. For example, x \<- "Hello, R!" assigns a character string of Hello, R! to x.
+
+## Complex
+
+The complex data type is used for complex numbers, [which have both real and imaginary parts]{style="color:red"}. In R, complex numbers are represented as x + yi, where x is the real part and y is the imaginary part. For example, x \<- 3 + 2i assigns a complex value of 3 + 2i to x.
+
+## Raw
+
+The raw data type is used for "raw" bytes. It can hold a stream of raw bytes, which are displayed as hexadecimal. This is not commonly used unless you are doing something fairly advanced, like writing a package to interface to other software or reading binary data directly from a connection.
 
 ::: callout-note
 ### Knowledge Extension
 
 ```{mermaid}
 flowchart LR
-  A{Data Type}---> B[numeric]
+  A{Data Type}--->B[numeric]
   A{Data Type}--->C[integer]
   A{Data Type}--->D[complex]
   A{Data Type}--->E[character]
   A{Data Type}--->F[logical]
+  A{Data Type}--->G[Raw]
   
 linkStyle default stroke:red
 linkStyle 0 stroke:green
@@ -245,40 +289,51 @@ linkStyle 4 stroke:black
 ```
 :::
 
-[**Explanation**:**Numeric**: all real numbers with or without decimal values. e.g. 1, 2, 8, 1.1.**Integer(整数)**: specifies real values without decimal points. we use the suffix`L` to specify integer data.**Complex**: specify purely imaginary values in R. We use the suffix `i` to specify the imaginary part. e.g. 3 + 2i.**Character**:specify character or string values in a variable. `''` for character variables; `""` for string variables.**Logical**: is known as boolean data type. It can only have two values: `TRUE` and `FALSE`]{.aside}
+```{r}
+#| label: data_type
+#| eval: false
 
-### Code
+library(dslabs) #<1>
+data(murders) #<1>
 
-```{r, eval=FALSE}
-# loading the dslabs package and the murders dataset
-library(dslabs)
-data(murders)
+class(murders) #<2>
 
-# determining that the murders dataset is of the "data frame" class
-class(murders)
-# finding out more about the structure of the object
-str(murders)
-# showing the first 6 lines of the dataset
-head(murders)
+str(murders) # <3>
 
-# using the accessor operator to obtain the population column
-murders$population
-# displaying the variable names in the murders dataset
-names(murders)
-# determining how many entries are in a vector
-pop <- murders$population
-length(pop)
-# vectors can be of class numeric and character
-class(pop)
-class(murders$state)
+head(murders) #<4>
 
-# logical vectors are either TRUE or FALSE
-z <- 3 == 2
-z
-class(z)
+murders$population #<5>
 
-# factors are another type of class
-class(murders$region)
-# obtaining the levels of a factor
-levels(murders$region)
+names(murders) #<6>
+
+pop <- murders$population #<7>
+length(pop) #<7>
+
+class(pop) #<8>
+class(murders$state) #<8>
+
+z <- 3 == 2 #<9>
+z #<9>
+class(z) #<9>
+
+
+class(murders$region) #<10>
+
+levels(murders$region) #<11>
 ```
+
+1.  Loading the dslabs package and the murders dataset;
+2.  Determining that the murders dataset is of the "data frame" class;
+3.  Finding out more about [the structure of the object]{style="color:red"};
+4.  Showing [the first 6 lines of the dataset]{style="color:red"};
+5.  Using the accessor operator [\$]{style="color:red"} to obtain the population column;
+6.  Displaying [the variable names]{style="color:red"} in the murders dataset;
+7.  Determining [how many entries are in a vector]{style="color:red"};
+8.  Vectors can be of class numeric and character;
+9.  Logical vectors are either TRUE or FALSE;
+10. Factors are another type of class;
+11. Obtaining [the levels of a factor]{style="color:red"}.
+
+# Conclusion
+
+In summary, R is an incredibly robust and flexible tool for a myriad of statistical and data analysis tasks. This guide should provide you with a solid foundation to start exploring and utilizing its power. Happy coding!
