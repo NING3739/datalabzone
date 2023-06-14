@@ -13,7 +13,7 @@ editor: visual
 
 # Introduction
 
-It provides a comprehensive set of tools and libraries that make it a preferred choice among data scientists, statisticians, and researcher[^1]. It provides a comprehensive set of tools and libraries that make it a preferred choice among data scientists, statisticians, and researcher.
+R is a language and environment for statistical computing and graphics [^1]. It provides a comprehensive set of tools and libraries that make it a preferred choice among data scientists, statisticians, and researcher.
 
 [^1]: https://www.r-project.org/about.html
 
@@ -183,11 +183,11 @@ Assignment operations store a value in a variable:
 
 -   **`<<-`**: This is the global assignment operator. It assigns a value to a variable in the global environment, even from within a function.
 
-# Functions
+## Functions
 
 Functions are the backbone of any programming language, and R is no exception. Functions are sets of instructions that perform a task, and R has a multitude of [built-in functions]{style="color:red"}, as well as the capability for [users to define their own]{style="color:red"}.
 
-## **Built-in Functions**
+### **Built-in Functions**
 
 R provides many built-in functions, which perform predefined tasks. Here are a few examples:
 
@@ -209,7 +209,7 @@ R provides many built-in functions, which perform predefined tasks. Here are a f
 
 For each of these, **`x`** would be the argument, and it is typically a vector of some kind.
 
-## **User-Defined Functions**
+### **User-Defined Functions**
 
 In addition to the built-in functions, R allows you to define your own functions. This is particularly useful for tasks you need to perform frequently. User-defined functions are created with the **`function()`** command. Here's an example:
 
@@ -226,7 +226,7 @@ avg_of_squares <- function(a, b) {
 
 In this function, **`a`** and **`b`** are the arguments. This function calculates the squares of **`a`** and **`b`**, sums them, and then divides by 2 to find the average. It then returns this result.
 
-## **Special Functions**
+### **Special Functions**
 
 There are some special types of functions in R, such as:
 
@@ -234,7 +234,7 @@ There are some special types of functions in R, such as:
 
 -   **Primitive functions**: These are basic functions in R that are implemented in C for efficiency. Examples include basic arithmetic operations (**`+`**, **`-`**, **`*`**, **`/`**) and others like **`sum()`**, **`prod()`**, and **`mean()`**.
 
-# Data Types
+## Data Types
 
 Data types determine the kind of operations that can be performed on data, and R offers several basic data types[^7].
 
@@ -246,27 +246,27 @@ Data types determine the kind of operations that can be performed on data, and R
 The code `data("dataset_name")` and `data(dataset_name)` do the same thing. The code will work regardless of whether the quotes are present. It is a bit faster to leave out the quotes (as we do in the Code at the bottom of this page), so that is usually what we recommend, but it is your choice.
 :::
 
-## Numeric
+### Numeric
 
 The numeric (or double) data type is used for [real numbers (numbers with decimal points)]{style="color:red"}. Numeric is the default computational data type in R. If you assign a number to a variable without explicitly declaring its type, R will interpret it as a numeric. For example, [x \<- 7.14 assigns a numeric value of 7.14 to x]{.underline}.
 
-## Integer
+### Integer
 
 The integer data type is used for integer numbers [(whole numbers without decimal points)]{style="color:red"}. In R, you declare an integer by appending an L to the integer value. For example, [x \<- 7L assigns an integer value of 7 to x]{.underline}.
 
-## Logical
+### Logical
 
 The logical data type is used for boolean values: [TRUE and FALSE]{style="color:red"}. Logical data types are often the result of logical operations. For example, the operation 5 \> 3 returns TRUE, which is a logical value.
 
-## Character
+### Character
 
 The character data type is used for [text or string data]{style="color:red"}. To create a character string in R, you enclose the text in either single or double quotes. For example, x \<- "Hello, R!" assigns a character string of Hello, R! to x.
 
-## Complex
+### Complex
 
 The complex data type is used for complex numbers, [which have both real and imaginary parts]{style="color:red"}. In R, complex numbers are represented as x + yi, where x is the real part and y is the imaginary part. For example, x \<- 3 + 2i assigns a complex value of 3 + 2i to x.
 
-## Raw
+### Raw
 
 The raw data type is used for "raw" bytes. It can hold a stream of raw bytes, which are displayed as hexadecimal. This is not commonly used unless you are doing something fairly advanced, like writing a package to interface to other software or reading binary data directly from a connection.
 
