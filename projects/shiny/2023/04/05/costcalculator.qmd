@@ -2,12 +2,12 @@
 title: "Cost Calculator"
 date: "2023-04-05"
 author: NING LI
-categories: [R, Shiny]
+categories: [Shiny]
 image: "https://plus.unsplash.com/premium_photo-1678374802606-526973c76dcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Q09TVCUyMENBTENVTEFUT1J8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
 description: "This sample employs the Shiny package to create a service fee calculator app."
 format:
   html:
-    code-fold: true
+    code-fold: false
 code-line-numbers: false
 ---
 
@@ -45,10 +45,12 @@ e.  *Downloading service records*: Allows users to download service records as a
 
 In summary, this Shiny app is a user-friendly service fee calculator that helps users input various parameters, calculate the total cost, apply or remove GST, store and display service records, and generate a time series plot of service costs.
 
-# Code
+```{r}
+#| label: cost_calculator_shinyapp
+#| echo: true
+#| eval: false
 
-```{r, echo=TRUE, eval=FALSE}
-    
+# load packages    
 library(shiny)
 library(dplyr)
 library(ggplot2)
@@ -221,3 +223,5 @@ shinyApp(ui, server)
 ```
 
 👉 [Run Cost Calculator App](https://myshinyappforpractice.shinyapps.io/sheet/)
+
+<iframe height="800" width="100%" frameborder="no" src="https://myshinyappforpractice.shinyapps.io/sheet/"> </iframe>

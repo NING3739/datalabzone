@@ -21,7 +21,7 @@ In this blog, I will mainly explore the basics of R programming, including [**ob
 
 However, before start this blog, please [make sure you already set up R development environment]{.underline}.
 
-For more information about how to setting up, you can read posts: [how to install r and Rstudio](/posts/blogsforr/2023/01/19/installation.qmd).
+For more information about how to setting up, you can read posts: [how to install R and Rstudio](/posts/blogsforr/2023/01/19/installation.qmd).
 
 # How to Install R Packages?
 
@@ -40,14 +40,12 @@ To install a package in Rstudio:
 -   Install packages from [Rstudio Interface]{style="color: red"} (allows auto-complete):
 
     -   Click on the "Packages" tab in the lower right window.
-
     -   Click "Install" and a window will pop up.
-
     -   Type the name of package you want to install (e.g., "ggplot2") and click "Install".
 
 -   Install packages from [R console]{style="color: red"}:
 
-    -   `install.packages("pkg_name", dependencies = TRUE)`
+    -   `install.packages("pkg_name")`
     -   The option `dependencies = TRUE`, which tells R to install the other things that are necessary for package or packages to run smoothly.
 
 Once installed, you can use `library(pkg_name)` to load a package each time you want to use it.
@@ -274,6 +272,9 @@ The raw data type is used for "raw" bytes. It can hold a stream of raw bytes, wh
 ### Knowledge Extension
 
 ```{mermaid}
+%%| label: fig-mermaid
+%%| fig-cap: Data Type in R
+
 flowchart LR
   A{Data Type}--->B[numeric]
   A{Data Type}--->C[integer]
@@ -293,46 +294,44 @@ linkStyle 4 stroke:black
 #| label: data_type
 #| eval: false
 
-library(dslabs) #<1>
-data(murders) #<1>
+# Loading the dslabs package and the murders dataset
+library(dslabs) 
+data(murders) 
 
-class(murders) #<2>
+# Determining that the murders dataset is of the "data frame" class
+class(murders) 
 
-str(murders) # <3>
+# Finding out more about the structure of the object
+str(murders) 
 
-head(murders) #<4>
+# Showing the first 6 lines of the dataset
+head(murders) 
 
-murders$population #<5>
+# Using the accessor operator $ to obtain the population column
+murders$population 
 
-names(murders) #<6>
+# Displaying the variable names in the murders dataset
+names(murders) 
 
-pop <- murders$population #<7>
-length(pop) #<7>
+# Determining how many entries are in a vector
+pop <- murders$population 
+length(pop) 
 
-class(pop) #<8>
-class(murders$state) #<8>
+# Vectors can be of class numeric and character
+class(pop) 
+class(murders$state) 
 
-z <- 3 == 2 #<9>
-z #<9>
-class(z) #<9>
+# Logical vectors are either TRUE or FALSE
+z <- 3 == 2 
+z 
+class(z) 
 
+# Factors are another type of class
+class(murders$region) 
 
-class(murders$region) #<10>
-
-levels(murders$region) #<11>
+# Obtaining the levels of a factor
+levels(murders$region) 
 ```
-
-1.  Loading the dslabs package and the murders dataset;
-2.  Determining that the murders dataset is of the "data frame" class;
-3.  Finding out more about [the structure of the object]{style="color:red"};
-4.  Showing [the first 6 lines of the dataset]{style="color:red"};
-5.  Using the accessor operator [\$]{style="color:red"} to obtain the population column;
-6.  Displaying [the variable names]{style="color:red"} in the murders dataset;
-7.  Determining [how many entries are in a vector]{style="color:red"};
-8.  Vectors can be of class numeric and character;
-9.  Logical vectors are either TRUE or FALSE;
-10. Factors are another type of class;
-11. Obtaining [the levels of a factor]{style="color:red"}.
 
 # Conclusion
 

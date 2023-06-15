@@ -1,166 +1,309 @@
 ---
-title: "Vectors and Sorting"
+title: "Refining R Vectors and Essential Sorting Techniques"
 date: "2022-11-28"
 author: NING LI
 categories: [R Basic, Vectors, Sorting]
-description: "The course covers vectors and sorting functions in R. It includes creating and manipulating vectors of different types, sorting vectors, finding maximum and minimum elements, and performing arithmetic operations between vectors and numbers."
+description: "Learn essential R programming skills - creating, manipulating, and sorting vectors, performing arithmetic, and finding max/min elements."
 image: https://images.unsplash.com/photo-1587612049655-c1030366a74a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8U29ydGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60
 code-fold: false
+code-line-numbers: false
 editor: visual
 ---
 
-# Vectors, Sorting
+In today's blog, we'll delve into two fundamental R concepts: vectors and sorting. Both are crucial when dealing with data, and a good understanding of these will lay a solid foundation for more complex data operations.
 
-In this section, I will introduce you to vectors and functions such as sorting.
+# R Vectors
 
-In Vectors, you will:
+A vector in R is a basic data structure that stores an ordered set of similar data types. They can hold numeric value, character values, or logical values (TRUE or FALSE). Let's learn how to create, access and manipulate them.
 
--   Create numeric and character vectors.
+## Creating Numeric and Character Vectors
 
--   Name the columns of a vector.
+Creating vectors is straightforward. Use the `c()` function, which stand for " combine".
 
--   Generate numeric sequences.
+```{r}
+#| label: creating_numeric_and_character_vectors
+#| eval: false
 
--   Access specific elements or parts of a vector.
-
--   Coerce data into different data types as needed.
-
-In Sorting, you will:
-
--   Sort vectors in ascending and descending order.
-
--   Extract the indices of the sorted elements from the original vector.
-
--   Find the maximum and minimum elements, as well as their indices, in a vector.
-
--   Rank the elements of a vector in increasing order.
-
-In Vector Arithmetic, you will:
-
--   Perform arithmetic between a vector and a single number.
-
--   Perform arithmetic between two vectors of the same length.
-
-## Vectors
-
-### Key points
-
--   The function c(), which stands for concatenate, is useful for creating vectors.
-
--   Another useful function for creating vectors is the seq() function, which generates sequences.
-
--   Subsetting lets us access specific parts of a vector by using square brackets to access elements of a vector.
-
-### Code
-
-```{r, eval=FALSE}
-# We may create vectors of class numeric or character with the concatenate function
+# Number Vector
 codes <- c(380, 124, 818)
+codes
+
+# Character Vector
 country <- c("italy", "canada", "egypt")
+country
+```
 
-# We can also name the elements of a numeric vector
-# Note that the two lines of code below have the same result
-codes <- c(italy = 380, canada = 124, egypt = 818)
-codes <- c("italy" = 380, "canada" = 124, "egypt" = 818)
+## Naming the Elements of a Vector
 
-# We can also name the elements of a numeric vector using the names() function
-codes <- c(380, 124, 818)
-country <- c("italy","canada","egypt")
-names(codes) <- country
+-   Using `names()` function
 
-# Using square brackets is useful for subsetting to access specific elements of a vector
+    ```{r}
+    #| label: naming_by_names_function
+    #| eval: false
+
+    codes <- c(380, 124, 818)
+    country <- c("italy", "canada", "egypt")
+    names(codes) <- country
+    ```
+
+-   Using `c()` function
+
+    ```{r}
+    #| label: naming_by_c()_function
+    #| eval: false
+
+    # Note that two lines of code below have the same result
+    codes <- c(italy = 380, canada = 124, egypt = 818)
+    codes <- c("italy" = 380, "canada" = 124, "egypt" = 818)
+
+    ```
+
+## Generating Numeric Sequences
+
+For generating a sequence of numbers, use `seq()` or `:` operator.
+
+```{r}
+#| label: generating_numeric_sequences
+#| eval: false
+
+# Using seq()
+sequence <- seq(from = 1, to = 10, by =2)
+sequence 
+
+# Using :
+sequemce <- 1:10
+sequemce
+
+```
+
+## Accessing Specific Elements or Parts of a Vector
+
+To access specific elements in a vector, use brackets `[]` and specify the index.
+
+```{r}
+#| label: access_vector
+#| eval: false
+
+# Using square bracket to access specific elements of a vector
 codes[2]
-codes[c(1,3)]
+codes[c(1, 3)]
 codes[1:2]
 
 # If the entries of a vector are named, they may be accessed by referring to their name
 codes["canada"]
-codes[c("egypt","italy")]
+codes[c("egypt", "italy")]
 ```
 
-## Vector Coercion
+## Coercing Data into Different Types
 
-### Key Point
+Data coercion is the process of converting data from one type to another. Below are some common R functions used for coercion:
 
--   In general, coercion is an attempt by R to be flexible with data types by guessing what was meant when an entry does not match the expected. For example, when defining x as
+1.  **`as.numeric()`**: Converts to numeric type.
 
-```{r, eval=FALSE}
-    x <- c(1, "canada", 3)
-```
+    ```{r}
+    #| label: convert_to_numeric_type
+    #| eval: false
 
-R coerced the data into characters. It guessed that because you put a character string in the vector, you meant the 1 and 3 to actually be character strings, "1" and "3".
+    char_vector <- c("1", "2", "3")
+    num_vector <- as.numeric(char_vector)
+    print(num_vector)
 
--   The function `as.character()` turns numbers into characters.
+    # verify a data type
+    class(num_vector)
+    ```
 
--   The function `as.numeric()` turns characters into numbers.
+2.  **`as.character()`**: Converts to character type.
 
--   In R, missing data is assigned the value `NA`.
+    ```{r}
+    #| label: convert_to_character_type
+    #| eval: false
+
+    num_vector <- c(1, 2, 3)
+    char_vector <- as.character(num_vector)
+    print(char_vector)
+    ```
+
+3.  **`as.factor()`**: Converts to factor type.
+
+    ```{r}
+    #| label: convert_to_factor_type
+    #| eval: false
+
+    char_vector <- c("male", "female", "male")
+    factor_vector <- as.factor(char_vector)
+    print(factor_vector)
+    ```
+
+4.  **`as.integer()`**: Converts to integer type.
+
+    ```{r}
+    #| label: convert_to_integer_type
+    #| eval: false
+
+    num_vector <- c(1.2, 2.5, 3.7)
+    int_vector <- as.integer(num_vector)
+    print(int_vector)
+    ```
+
+5.  **`as.logical()`**: Converts to logical type.
+
+    Any non-zero numeric value will be converted to TRUE and zero will be converted to FALSE. For character vectors, "TRUE" will be converted to TRUE and anything else will be converted to FALSE.
+
+    ```{r}
+    #| label: convert_to_logical_type
+    #| eval: false
+
+    num_vector <- c(1, 0, 2)
+    logical_vector <- as.logical(num_vector)
+    print(logical_vector)
+    ```
+
+::: callout-important
+You can also coerce matrices and data frames to other types using these same functions. But remember that when coercing complex types like lists or data frames, every element must be convertible to the final type, or the operation will result in an error or NA values.
+:::
 
 ### Question
 
-1.  class(3L) is integer ?
-2.  3L-3 equals 0 ?
+1.  why class(3L) is integer ?
 
-## Sorting
+2.  why 3L-3 equals 0 ?
 
-|          |                       |                                            |                                           |
-|-----------------|-----------------|-------------------|-------------------|
-| Original | Sort(按从小到大排列） | Order(Sort对应数字在原来数字排列中的顺序） | Rank(Original原来数字在Sort顺序中的排名） |
-| 31       | 4                     | 2                                          | 3                                         |
-| 4        | 15                    | 3                                          | 1                                         |
-| 15       | 31                    | 1                                          | 2                                         |
-| 92       | 65                    | 5                                          | 5                                         |
-| 65       | 92                    | 4                                          | 4                                         |
+# R Sorting
 
-### Key Points
+Sorting is an important operation when working with data in R. It helps organize data in a way that's easier to understand and analyze.
 
--   The function `sort()` sorts a vector in increasing order.
+## Sorting Vectors
 
--   The function `order()` produces the indices needed to obtain the sorted vector, e.g. a result of 2 3 1 5 4 means the sorted vector will be produced by listing the 2nd, 3rd, 1st, 5th, and then 4th item of the original vector.
+To sort a vector in ascending or descending order, you can use the `sort()` function.
 
--   The function `rank()` gives us the ranks of the items in the original vector.
+```{r}
+#| label: sort_vector
+#| eval: false
 
--   The function `max()` returns the largest value, while `which.max()` returns the index of the largest value. The functions `min()` and `which.min()` work similarly for minimum values.
-
-### Code
-
-```{r, eval=FALSE}
+# load package and dataset
 library(dslabs)
 data(murders)
-sort(murders$total)
 
-x <- c(31, 4, 15, 92, 65)
-x
-sort(x)    # puts elements in order
+# Sorting
+x <- sort(murders$total) # puts elements in order
 
-index <- order(x)    # returns index that will put x in order
-x[index]    # rearranging by this index puts elements in order
+# Descending order
+y <- sort(murders$total, decreasing = TRUE) # put elements from big to small
+```
+
+## Finding Indices of Sorted Elements
+
+If you want to get the indices of the sorted elements (rather than the sorted elements themselves), you can use the `order()` function.
+
+```{r}
+#| label: finding_indices_of_sorted_elements
+#| eval: false
+
+index <- order(x) # returns index that will put x in order
+x[index] # rearrange by this index puts elements in order
 order(x)
 
-murders$state[1:10]
-murders$abb[1:10]
-
-index <- order(murders$total)
-murders$abb[index]    # order abbreviations by total murders
-
-max(murders$total)    # highest number of total murders
-i_max <- which.max(murders$total)    # index with highest number of murders
-murders$state[i_max]    # state name with highest number of total murders
-
-x <- c(31, 4, 15, 92, 65)
-x
-rank(x)    # returns ranks (smallest to largest)
+index <- order(murders$total) # order murder numbers by small to big
+murders$abb[index] # order abbreviations by total murders
 ```
+
+## Finding Maxima and Minima
+
+R provides function `max()`, `min()`, `which.max()`, and `which.min()` to find the maximum and minimum elements and their indices:
+
+```{r}
+#| label: find_maxima&minima
+#| eval: false
+
+# Max and Min
+max_value <- max(murders$total) # return the largest elements
+max_value
+
+min_value <- min(murders$total) # return the smallest elements
+min_value
+
+# Indices of Max and Min
+max_index <- which.max(murders$total) # index with highest number of murders(第几个数字最大)
+max_index # 第5个数字最大
+murders$state[max_index] # state name with highest number of total murders
+
+min_index <- which.min(murders$total) 
+min_index # 第46个数字最小
+murders$state[min_index] # state name with lowest number of total murders
+```
+
+## Ranking Elements
+
+The rank function provides the ranks of the elements in a vector:
+
+```{r}
+#| label: ranking_elements_of_vector
+#| eval: false
+
+rank(murders$population) 
+```
+
+::: {#sort_order_rank}
+|          |      |       |      |
+|----------|------|-------|------|
+| Original | Sort | Order | Rank |
+| 31       | 4    | 2     | 3    |
+| 4        | 15   | 3     | 1    |
+| 15       | 31   | 1     | 2    |
+| 92       | 65   | 5     | 5    |
+| 65       | 92   | 4     | 4    |
+
+: The Differences of Sort, Order and Rank {#tbl-letters}
+:::
+
+::: {#tips_for_sort_order_rank .callout-tip}
+Explanation of @tbl-letters
+
+-   Sort: 按从小到大排列
+
+-   Order: Sort对应数字在原来数字排列中的顺序
+
+-   Rank: Original原来数字在Sort顺序中的排名
+:::
 
 ## Vector Arithmetic
 
-### Key Point
+You can perform arithmetic operations between vectors and number, as well as between vectors themselves.
 
--   In R, arithmetic operation on vectors occur element-wise
+## Arithmetic with a Single Number
 
-### Code
+You can perform an operation between a vector and a single number, which applies the operation to each element of the vector:
 
-```{r, eval=FALSE}
+```{r}
+#| label: arithmetic_with_single_number
+#| eval: false
+
+# Adding 2 to all elements of a vector
+new_vec <- codes +2
+new_vec
+```
+
+## Arithmetic with Two Vectors
+
+You can also perform arithmetic operations between two vectors of the same length:
+
+```{r}
+#| label: arithmetic_with_two_vectors
+#| eval: false
+
+# Addition of two vectors
+vec1 <- c(1,2,3)
+vec2 <- c(4,5,6)
+result <- vec1 + vec2 # we add two vectors element-wise 
+print(result)
+```
+
+## Example for Vector Arithmetic by Murders dataset
+
+```{r}
+#| label: example_for_vector_arithmetic
+#| eval: false
+
 # The name of the state with the maximum population is found by doing the following
 murders$state[which.max(murders$population)]
 
@@ -170,3 +313,7 @@ murder_rate <- murders$total / murders$population * 100000
 # ordering the states by murder rate, in decreasing order
 murders$state[order(murder_rate, decreasing=TRUE)]
 ```
+
+# Conclusion
+
+To sum up, the deeper understanding of these concepts of vectors and sorting in R will be significantly beneficial for your data analysis journey. You will encounter these operations frequently, and mastering them will make your data manipulation tasks easier and more efficient.

@@ -737,6 +737,16 @@ body:not(.floating) .nav-footer {
     padding-top: 0;
 }
 
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
+    border-left: 1px solid red;
+    color: red !important;
+}
+
+.sidebar nav[role=doc-toc]>ul a {
+    border-left: 1px solid #e9ecef;
+    padding-left: 0.6rem;
+}
+
 /*--- Back to Top ---*/
 #quarto-back-to-top{
   color: black;
@@ -905,4 +915,6 @@ label {
 .round:hover {
   transform: scale(1.1);
 }
+
+
 
