@@ -8,7 +8,6 @@ image: https://images.unsplash.com/photo-1600173845923-ad1412bfab75?ixlib=rb-4.0
 code-fold: false
 mermaid: 
   theme: forest
-editor: visual
 ---
 
 # Introduction
@@ -21,7 +20,7 @@ In this blog, I will mainly explore the basics of R programming, including [**ob
 
 However, before start this blog, please [make sure you already set up R development environment]{.underline}.
 
-For more information about how to setting up, you can read posts: [how to install R and Rstudio](/posts/blogsforr/2023/01/19/installation.qmd).
+For more information about how to setting up, you can read **Posts** page: [how to install R and Rstudio](/posts/blogsforr/2023/01/19/installation.qmd).
 
 # How to Install R Packages?
 

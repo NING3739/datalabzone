@@ -9,6 +9,7 @@ listing:
   contents:
     - "presentations"
     - "!index.qmd"
+    - "!chalkboard.qmd"
   sort: "date desc"
   type: grid
   categories: true

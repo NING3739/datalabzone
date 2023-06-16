@@ -16,6 +16,7 @@ listing:
      - "/projects/shiny"
      - "/talks/presentations"
      - "!index.qmd"
+     - "!chalkboard.qmd"
     sort: "date desc"
     type: grid
     categories: false
@@ -46,6 +47,7 @@ listing:
   - id: talks
     contents: 
     - "/talks/presentations"
+    - "!chalkboard.qmd"
     sort: "date desc"
     type: grid
     categories: false

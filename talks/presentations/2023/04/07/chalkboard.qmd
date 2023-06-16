@@ -1,0 +1,141 @@
+---
+title: Introduction to Shiny
+subtitle: Building Interactive Web Applications in R
+date: "2023-04-07"
+author: NING LI
+format: 
+  revealjs:
+    chalkboard: true
+    logo: /images/My-project-logo.png
+    mainfont: "Atkinson Hyperlegible"
+    theme: simple
+    transition: slide
+    background-transition: fade
+---
+
+# **Agenda**
+
+-   Introduction to Shiny
+
+-   Shiny architecture
+
+-   Creating a simple Shiny app
+
+-   Advanced features
+
+-   Summary and Q&A
+
+# **Introduction to Shiny**
+
+-   Shiny is an open-source R package developed by RStudio that allows developers to [build interactive web apps straight from R]{style="color: red"}.
+
+-   It simplifies the process of integrating R code with HTML.
+
+-   [It doesn't require knowledge of HTML or JavaScript]{.underline}, although such knowledge can enhance customization.
+
+# **Shiny Architecture**
+
+-   Shiny apps consist of two main components: [the UI (User Interface) and the server]{style="color: red"}.
+
+-   The UI defines the layout and appearance of the app.
+
+-   The server contains the instructions required to build the app.
+
+# **UI**
+
+Creating a Simple Shiny App - UI
+
+## Code
+```{r}
+#| label: creating_a_simple_shiny_app
+#| echo: true
+
+# load shiny package
+library("shiny")
+
+# Define UI
+ui <- fluidPage(
+  titlePanel("My first Shiny App"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("obs", "Number of observations:", min = 0, max = 1000, value = 500)
+    ),
+    mainPanel(plotOutput("distPlot"))
+  )
+)
+
+```
+
+## Outline
+-   **`fluidPage()`**: creates a new page that automatically adjusts its layout to the browser's dimensions.
+
+-   **`titlePanel()`**: sets the title.
+
+-   **`sidebarLayout()`**, **`sidebarPanel()`**: create a sidebar.
+
+-   **`sliderInput()`**: creates an interactive slider.
+
+
+# **Server**
+
+Creating a Simple Shiny App - Server
+
+## Code
+```{r}
+#| label: server
+#| echo: true
+# Define server logic 
+server <- function(input, output) {
+  output$distPlot <- renderPlot({
+    hist(rnorm(input$obs))
+  })
+}
+```
+
+## Outline
+-   **`server`**: This function contains the processing logic of the app.
+
+-   **`output$distPlot`**: The output object is modified to include a plot named **`distPlot`**.
+
+-   **`renderPlot()`**: This function is used to render the plot.
+
+-   **`hist(rnorm(input$obs))`**: Generate a histogram based on the input value from the slider.
+
+
+
+
+# **Running the App**
+
+```{r}
+#| label: run_app
+#| eval: false
+#| echo: true
+#| warning: false
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+```
+
+-   **`shinyApp()`**: This function takes the UI and server to start the Shiny app.
+
+# **Advanced Features**
+
+-   [Reactivity]{style="color: red"}: One of the key features of Shiny is its built-in reactivity. This means when an input changes, the output changes automatically in response.
+
+-   [Widgets]{style="color: red"}: Shiny includes a variety of widgets for inputs like checkboxes, sliders, and more.
+
+-   [Customization]{style="color: red"}: With knowledge of HTML, CSS, and JavaScript, you can customize the appearance and functionality of your Shiny app far beyond the basic capabilities.
+
+# **Summary**
+
+-   Shiny is a powerful tool for creating interactive web applications using R.
+
+-   Shiny apps have two components, a UI and a server.
+
+-   Reactive programming in Shiny allows for automatic updates when inputs change.
+
+# **Q&A**
+
+-   Now that we've covered the basics of Shiny and how to create an app, let's open the floor for discussion.
+
+-   Any queries, doubts, or ideas you'd like to share or discuss? Let's dive into it!

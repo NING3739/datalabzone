@@ -75,7 +75,7 @@ comments:
     category-id: DIC_kwDOIYBxAM4CS2io
     mapping: url
     input-position: bottom
-    theme: preferred_color_scheme
+    theme: light_high_contrast
 
 execute:
   freeze: auto
