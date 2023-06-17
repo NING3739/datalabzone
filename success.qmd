@@ -1,4 +1,5 @@
 ---
+pagetitle: Sucess | Data Lab Zone
 back-to-top-navigation: false
 comments: false
 page-layout: article

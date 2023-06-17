@@ -2,6 +2,7 @@
 title: "An Introduction to R: Mastering the Basics"
 date: "2022-11-27"
 author: NING LI
+license: CC BY-NC
 categories: [R Basic, Functions, Data Types]
 description: "An overall introduction to R programming, covering the basics of objects, operations, functions, and data types."
 image: https://images.unsplash.com/photo-1600173845923-ad1412bfab75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
@@ -216,7 +217,7 @@ In addition to the built-in functions, R allows you to define your own functions
 # Define a function that calculates the average of squares of two numbers #<1>
 avg_of_squares <- function(a, b) {
     return((a^2 + b^2)/2)
-}`
+}
 ```
 
 1.  To make your code more readable, use intuitive variable names and include comments (using the "\#" symbol) to remind yourself why you wrote a particular line of code.

@@ -6,6 +6,7 @@ author: NING LI
 format: 
   revealjs:
     chalkboard: true
+    footer: "<https://datalabzone.com>"
     logo: /images/My-project-logo.png
     mainfont: "Atkinson Hyperlegible"
     theme: simple
@@ -46,6 +47,7 @@ format:
 Creating a Simple Shiny App - UI
 
 ## Code
+
 ```{r}
 #| label: creating_a_simple_shiny_app
 #| echo: true
@@ -67,6 +69,7 @@ ui <- fluidPage(
 ```
 
 ## Outline
+
 -   **`fluidPage()`**: creates a new page that automatically adjusts its layout to the browser's dimensions.
 
 -   **`titlePanel()`**: sets the title.
@@ -75,12 +78,12 @@ ui <- fluidPage(
 
 -   **`sliderInput()`**: creates an interactive slider.
 
-
 # **Server**
 
 Creating a Simple Shiny App - Server
 
 ## Code
+
 ```{r}
 #| label: server
 #| echo: true
@@ -93,6 +96,7 @@ server <- function(input, output) {
 ```
 
 ## Outline
+
 -   **`server`**: This function contains the processing logic of the app.
 
 -   **`output$distPlot`**: The output object is modified to include a plot named **`distPlot`**.
@@ -100,9 +104,6 @@ server <- function(input, output) {
 -   **`renderPlot()`**: This function is used to render the plot.
 
 -   **`hist(rnorm(input$obs))`**: Generate a histogram based on the input value from the slider.
-
-
-
 
 # **Running the App**
 
@@ -139,3 +140,8 @@ shinyApp(ui = ui, server = server)
 -   Now that we've covered the basics of Shiny and how to create an app, let's open the floor for discussion.
 
 -   Any queries, doubts, or ideas you'd like to share or discuss? Let's dive into it!
+
+# **Reference**
+
+-   **Shiny**:<https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html>
+-   **Mastering Shiny**:<https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html>

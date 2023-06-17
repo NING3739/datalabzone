@@ -1,6 +1,7 @@
 ---
+pagetitle: Feedback | Data Lab Zone
 title: "Feedback"
-subtitle: You feed it back into the site
+description: "You feed it back into the site."
 back-to-top-navigation: false
 page-layout: article
 toc: false

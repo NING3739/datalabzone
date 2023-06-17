@@ -1,7 +1,7 @@
 ---
 pagetitle: Daily Posts | Data Lab Zone
 title: Posts
-subtitle: "Gaining insights into my journey of learning data science, the challenges I faced, and my thought process regarding these challenges."
+description: "Gaining insights into my journey of learning data science, the challenges I faced, and my thought process regarding these challenges."
 search: false
 comments: false
 back-to-top-navigation: false

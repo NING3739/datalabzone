@@ -1,5 +1,7 @@
 ---
+pagetitle: FAQ | Data Lab Zone
 title: "FAQ"
+description: "Frequently Asked Questions."
 page-layout: article
 back-to-top-navigation: false
 toc: false

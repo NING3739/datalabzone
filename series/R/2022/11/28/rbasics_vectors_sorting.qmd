@@ -2,6 +2,7 @@
 title: "Refining R Vectors and Essential Sorting Techniques"
 date: "2022-11-28"
 author: NING LI
+license: CC BY-NC
 categories: [R Basic, Vectors, Sorting]
 description: "Learn essential R programming skills - creating, manipulating, and sorting vectors, performing arithmetic, and finding max/min elements."
 image: https://images.unsplash.com/photo-1587612049655-c1030366a74a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8U29ydGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60

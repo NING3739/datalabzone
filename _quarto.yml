@@ -30,6 +30,8 @@ website:
       - series/index.qmd
       - projects/index.qmd
       - talks/index.qmd
+      - text: "Papers"
+        href: papers.qmd
       - text: "About"
         href: about.qmd
   # page footer

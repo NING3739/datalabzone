@@ -3,7 +3,6 @@ pagetitle: "Data Lab Zone"
 page-layout: custom
 back-to-top-navigation: false
 section-divs: false
-search: false
 description: "a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R."
 image: images/My-project-logo.png
 comments: false
@@ -16,13 +15,13 @@ listing:
      - "/projects/shiny"
      - "/talks/presentations"
      - "!index.qmd"
-     - "!chalkboard.qmd"
     sort: "date desc"
     type: grid
     categories: false
     sort-ui: false
     filter-ui: false
-    max-items: 3
+    #max-items: 3
+    page-size: 3
   - id: blog
     contents: 
     - "/posts/blogsforr"
@@ -33,7 +32,8 @@ listing:
     categories: false
     sort-ui: false
     filter-ui: false
-    max-items: 3
+    #max-items: 3
+    page-size: 3
   - id: series
     contents: 
     - "/series/R"
@@ -43,17 +43,18 @@ listing:
     categories: false
     sort-ui: false
     filter-ui: false
-    max-items: 3
+    #max-items: 3
+    page-size: 3
   - id: talks
     contents: 
     - "/talks/presentations"
-    - "!chalkboard.qmd"
     sort: "date desc"
     type: grid
     categories: false
     sort-ui: false
     filter-ui: false
-    max-items: 3
+    #max-items: 3
+    page-size: 3
 toc: false
 ---
 

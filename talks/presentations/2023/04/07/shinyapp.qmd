@@ -2,6 +2,7 @@
 title: "A talk about Shiny App"
 date: "2023-04-07"
 author: NING LI
+license: CC BY-NC
 categories: [Shiny]
 image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzN8fGFwcCUyMGFuZCUyMGNvZGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
 description: "A talk about what shiny is and demonstrate how it can be used to create a functional app."
@@ -11,16 +12,16 @@ toc: false
 
 Good morning/afternoon/evening everyone. 
 
-Thank you for joining me today. I'm excited to share insights on a powerful tool that has revolutionized the way we build and interact with web applications using R programming language - Shiny. 
+Thank you for joining me today. I'm excited to share insights on a powerful tool that has revolutionized the way we build and interact with web applications using R programming language - [Shiny](https://shiny.posit.co/). 
 
 Whether you're a data scientist looking to share your insights in an interactive manner, a teacher hoping to make learning more engaging, or a developer wanting to harness the power of R in web application development, Shiny can be a game-changer. 
 
-In this presentation, we will cover what Shiny is, its architecture, and how to create a simple Shiny app. We'll also explore some of the advanced features that make Shiny a versatile tool for creating interactive web applications. 
+In this presentation, we will cover **what Shiny is**, its **architecture**, and **how to create a simple Shiny app**. We'll also explore some of the advanced features that make Shiny a versatile tool for creating interactive web applications. 
 
 Without further ado, let's delve into the fascinating world of Shiny!
 
 ```{=html}
-<iframe width="100%" height="533px" style="border:2px solid #dee2e6;" src="chalkboard.html"></iframe>
+<iframe width="100%" height="533px" style="border:2px solid #dee2e6;" src="/chalkboard/Introduction_to_Shiny.html"></iframe>
 ```
 
 For more Shiny practical projects, you can see **Projects** page: [Cost Calculator](/projects/shiny/2023/04/05/costcalculator.qmd).
