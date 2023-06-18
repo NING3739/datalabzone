@@ -30,11 +30,9 @@ website:
       - series/index.qmd
       - projects/index.qmd
       - talks/index.qmd
-      - text: "Papers"
-        href: papers.qmd
       - text: "About"
         href: about.qmd
-  # page footer
+# page footer
   page-footer:
      background: "#ECF2FF"
      center: 
@@ -52,6 +50,7 @@ website:
        - href: https://twitter.com/ningli3739
          icon: twitter
          aria-label: Twitter
+       
      
 format:
   html:

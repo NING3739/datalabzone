@@ -1,51 +1,46 @@
 /*-- navbar --*/
-
 .navbar {
-  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 35%);
-  display: flex;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-family: 'Oswald';
-  font-size: 1em;
-  text-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 11%);
-}
-
-
-.navbar-brand.navbar-brand-logo {
-  display: flex;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-right: 0;
-  margin-left: 1.5em;
-}
-
-
-.navbar-brand {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-@media (max-width: 991px) {
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 35%);
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-family: 'Oswald';
+    font-size: 1em;
+    text-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 11%);
+  }
+  
   .navbar-brand.navbar-brand-logo {
-    margin-left: 5vw;
-    margin-right: 10vw;
-}
-}
-
-
-.navbar-logo {
-  max-height: 150px;
-  width: auto;
-}
-
-
-@media (max-width: 991px) {
-.navbar-logo {
-  max-height: 95px;
-  width: auto;
-  align-items: baseline;
-}
-}
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+    margin-left: 1.5em;
+  }
+  
+  .navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .navbar-brand.navbar-brand-logo {
+      margin-left: 5vw;
+      margin-right: 10vw;
+  }
+  }
+  
+  .navbar-logo {
+    max-height: 150px;
+    width: auto;
+  }
+  
+  @media (max-width: 991px) {
+  .navbar-logo {
+    max-height: 95px;
+    width: auto;
+    align-items: baseline;
+  }
+  }
 
 .navbar-toggler {
     border: none;
@@ -121,7 +116,6 @@
 }
 
 /*-- quarto titles --*/
-
 #title-block-header {
   margin-block-end: 1rem;
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 30%);
@@ -736,16 +730,6 @@ body:not(.floating) .nav-footer {
     padding-top: 0;
 }
 
-.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
-    border-left: 1px solid red;
-    color: red !important;
-}
-
-.sidebar nav[role=doc-toc]>ul a {
-    border-left: 1px solid #e9ecef;
-    padding-left: 0.6rem;
-}
-
 /*--- Back to Top ---*/
 #quarto-back-to-top{
   color: black;
@@ -762,17 +746,6 @@ body:not(.floating) .nav-footer {
     border-radius: 50%;
     margin-left: 20%;
     box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 100%);
-}
-
-/*--- Social Media ---*/
-div.quarto-about-marquee .about-link {
-  color: #939;
-  transition: color 0.2s;
-  margin:0 10px;
-}
-
-.about-link:hover{
-  color: black;
 }
 
 /*--- remove table border ---*/
@@ -829,7 +802,7 @@ div.quarto-about-marquee .about-link {
     box-sizing: border-box;
 }
 
-/* Animations */
+/* contact form Animations */
 @keyframes fadeIn {
     0% {
         transform: translateY(-50px);

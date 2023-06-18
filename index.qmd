@@ -3,8 +3,9 @@ pagetitle: "Data Lab Zone"
 page-layout: custom
 back-to-top-navigation: false
 section-divs: false
-description: "a thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R."
+description: "A thriving community where you can engage with the content, expand your knowledge, and connect with others in the fascinating world of statistics and R."
 image: images/My-project-logo.png
+search: false
 comments: false
 listing:
   - id: latest-content
