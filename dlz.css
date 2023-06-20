@@ -515,6 +515,15 @@ div.sourceCode {
   border-radius: 0.25rem;
 }
 
+/*-- InlineCode styles --*/
+code {
+  color: #1f9bcf;
+}
+
+p code:not(.sourceCode) {
+  background-color: #edeeee;
+}
+
 /*-- Homepage styles --*/
 
 .content-container {
