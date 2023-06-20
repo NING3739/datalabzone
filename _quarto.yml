@@ -13,12 +13,14 @@ website:
   #publish site on netlify use site-url
   site-url: "https://datalabzone.com/"
   repo-url: "https://github.com/NING3739/datalabzone"
-  repo-actions: [edit, issue]
+  repo-actions: 
+    - edit
+    - issue
   back-to-top-navigation: true
   google-analytics: 
     anonymize-ip: true
     tracking-id: "G-QN8B58NY2E"
-# navgation bar
+
   navbar:
     background: "#ECF2FF"
     logo: images/My-project-logo.png
@@ -32,7 +34,7 @@ website:
       - talks/index.qmd
       - text: "About"
         href: about.qmd
-# page footer
+
   page-footer:
      background: "#ECF2FF"
      center: 
@@ -50,11 +52,12 @@ website:
        - href: https://twitter.com/ningli3739
          icon: twitter
          aria-label: Twitter
-       
-     
+
 format:
   html:
-    theme: [lux, dlz.scss]
+    theme: 
+      - lux
+      - dlz.scss
     css: dlz.css
     code-overflow: scroll
     code-link: true
@@ -80,4 +83,3 @@ comments:
 
 execute:
   freeze: auto
-
