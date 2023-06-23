@@ -151,7 +151,7 @@
 
 #title-block-header.quarto-title-block.default .quarto-title-meta-heading,
 #title-block-header.quarto-title-block.default .quarto-title-meta-contents {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   text-transform: uppercase;
   font-size: 0.9em;
   font-weight: 400;
@@ -412,6 +412,11 @@ div.quarto-post .metadata,
   text-transform: uppercase;
 }
 
+div.quarto-post .listing-description {
+  font-family: 'Montserrat';
+  font-weight: 300;
+}
+
 div.quarto-post .listing-categories .listing-category,
 .quarto-grid-item .listing-categories .listing-category {
   color: red;
@@ -486,6 +491,11 @@ div.quarto-post a {
   padding-bottom: .5em;
 }
 
+.quarto-grid-item .card-text {
+  font-family: Montserrat;
+  font-weight: 300;
+}
+
 .quarto-grid-item .card-attribution {
   font-family: 'Roboto Slab';
   font-weight: 300;
@@ -495,6 +505,7 @@ div.quarto-post a {
 }
 
 .quarto-grid-item .card-attribution.justify {
+  font-family: 'Nunito Sans';
   justify-content: left;
 }
 
