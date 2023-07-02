@@ -14,8 +14,8 @@ website:
   site-url: "https://datalabzone.com/"
   repo-url: "https://github.com/NING3739/datalabzone"
   repo-actions: 
-    - edit
-    - issue
+     - edit
+     - issue
   back-to-top-navigation: true
   google-analytics: 
     anonymize-ip: true
@@ -32,26 +32,26 @@ website:
       - series/index.qmd
       - projects/index.qmd
       - talks/index.qmd
-      - text: "About"
-        href: about.qmd
+      - text: "About" 
+        menu:
+          - text: "About Me"
+            href: about.qmd
+          - text: "FAQ"
+            href: faq.qmd
 
   page-footer:
      background: "#ECF2FF"
-     center: 
-       - text: "&copy; 2023 DLZ"
-         href: index.qmd
-       - text: "Contact"
-         href: contact.qmd
-       - text: "FAQ"
-         href: faq.qmd
-       - text: "Feedback"
-         href: feedback.qmd
+     left: "&copy; 2023 [DLZ](index.qmd) create with ❤️ by [NING](about.qmd)."
+         
+     right: 
        - href: https://github.com/NING3739/datalabzone
          icon: github
          aria-label: GitHub
        - href: https://twitter.com/ningli3739
          icon: twitter
          aria-label: Twitter
+       - href: mailto:ln729500172@outlook.com
+         icon: envelope
 
 format:
   html:

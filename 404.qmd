@@ -1,6 +1,5 @@
 ---
 pagetitle: 404 | Data Lab Zone
-title: "&nbsp;"
 back-to-top-navigation: false
 page-layout: article
 comments: false

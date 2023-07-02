@@ -14,6 +14,8 @@ title-block-banner: true
 
 -   [Can I use the content on your website for my own purposes?](#sec-can-i-use-the-content-on-your-website-for-my-own-purposes)
 
+-   [How can I reach out to you when I encounter problems?](#sec-how-can-i-reach-out-to-you-when-i-encounter-problems)
+
 -   [Do you accept guest posts or contributions?](#sec-do-you-accept-guest-posts-or-contributions)
 
 -   [How can I support your website or contribute to your work?](#sec-how-can-i-support-your-website-or-contribute-to-your-work)
@@ -52,13 +54,27 @@ If you incorporate my code or material into your project, kindly reference the f
 
 ***For example***:
 
-NING LI, *R Basic*, Data Lab Zone. Retrieved from https://datalabzone.com/series/R/2022/11/27/rbasic.html, accessed on March 6th, 2023.
+NING LI, *R Basic*, Data Lab Zone. Retrieved from:
+
+https://datalabzone.com/series/R/2022/ 11/27/rbasic.html, accessed on March 6th, 2023.
+
+## How can I reach out to you when I encounter problems? {#sec-how-can-i-reach-out-to-you-when-i-encounter-problems}
+
+Thank you for considering reaching out to me. To ensure prompt response, please use the following methods for best communication:
+
+-   [**Post questions as comments**]{style="color: red"} on the relevant article to benefit other readers and avoid duplication.
+
+-   [**Email inquiries will not be addressed**]{style="color: red"}, but redirected to the comments section.
+
+-   Report mistakes, bugs, or inaccuracies by [**creating an issue on**]{style="color: red"} [GitHub](https://github.com/NING3739). For those familiar with GitHub, feel free to edit the file and submit a pull request for speedy incorporation of your changes.
+
+-   Before contacting me, please [**check the comments section**]{style="color: red"} for a possible answer to your question. Thank you!
 
 ## Do you accept guest posts or contributions? {#sec-do-you-accept-guest-posts-or-contributions}
 
 Of course. I warmly welcome you to publish posts and make valuable contributions on my website.
 
-If you are interested in publishing a post on my website, please contact me through [Twitter](https://twitter.com/ningli3739) or [github](https://github.com/NING3739). Once your submission has been reviewed and approved, I will publish it on my website, and the copyright will belong to you. Additionally, if you have any suggestions or feedback regarding my content, please contact me through the [contact form](feedback.qmd). I will respond to your message promptly.
+If you are interested in publishing a post on my website, please contact me through [Twitter](https://twitter.com/ningli3739) or [github](https://github.com/NING3739). Once your submission has been reviewed and approved, I will publish it on my website, and the copyright will belong to you. Additionally, if you have any suggestions or feedback regarding my content, please contact me through the [contact form](about.qmd#please-leave-your-valuable-comments). I will respond to your message promptly.
 
 ## How can I support your website or contribute to your work? {#sec-how-can-i-support-your-website-or-contribute-to-your-work}
 

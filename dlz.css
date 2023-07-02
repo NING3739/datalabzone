@@ -99,18 +99,29 @@
   border: 0;
 }
 
+#quarto-header>nav {
+    padding-left: 0;
+    padding-right: 1.5em;
+}
+
 /*-- quarto titles --*/
 #title-block-header {
-  margin: -1px 0 1.8em;
+  /*--margin: -1px 0 1.8em;--*/
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 30%);
+  padding: 0.5em 0 0;
   position: relative;
   background-color: #E3DFFD;
+  margin-block-end: 0;
 }
 
 .quarto-title-banner {
-  margin-bottom: 0.75em;
-  padding: 2.5em 0 0;
+  margin-bottom: 0.1em;
+  padding: 0.5em 0 0;
   background-color: #E3DFFD;
+}
+
+p.subtitle {
+  margin-top: 1em;
 }
 
 .quarto-title-banner .quarto-title .title {
@@ -119,7 +130,7 @@
 
 #title-block-header.quarto-title-block.default .description,
 .lead {
-  margin-top: 1.5em;
+  margin-top: 1em;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
   font-size: 1.2em;
@@ -146,7 +157,7 @@
 }
 
 .quarto-title-meta {
-  margin-bottom: 2.5em;
+  margin-bottom: 1.5em;
 }
 
 #title-block-header.quarto-title-block.default .quarto-title-meta-heading,
@@ -587,61 +598,75 @@ p code:not(.sourceCode) {
 
 /*-- Nav Footer Styles --*/
 .nav-footer {
-  align-items: center;
-  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 100%);
-  color: black;
-  display: grid;
-  font-family: 'Oswald';
-  font-size: 14px;
-  font-weight: 400;
-  justify-content: center;
-  padding-bottom: 0 !important;
-  padding-top: 0 !important;
+    align-items: center;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 100%);
+    background-color: #ecf2ff;
+    color: black;
+    display: flex;
+    font-family: 'Oswald';
+    font-size: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 body:not(.floating) .nav-footer {
-  border-top: 1px solid rgba(0,0,0,.05);
+    border-top: 1px solid rgba(0,0,0,.05);
 }
 
 .nav-footer a {
-  color: black;
+    color: black;
 }
 
 .nav-footer a:hover {
-  color: red;
+    color: red;
+}
+
+.nav-footer .nav-item {
+    margin-top: 0;
+}
+
+.nav-footer .nav-item.compact {
+  margin-right: 0;
 }
 
 .nav-footer .nav-footer-left,
-.nav-footer .nav-footer-right,
+.nav-footer .nav-footer-right {
+    position: relative;
+    font-size: .825em;
+}
+
+.nav-footer-center {
+    display: inline-flex;
+    justify-content: center;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+.nav-footer .nav-footer-center,
 .nav-footer .toc-actions {
-  font-size: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-}
-
-.nav-footer-center .footer-items .nav-link {
-  text-transform: uppercase;
-}
-
-.nav-footer-center .footer-items .nav-item {
-  font-family: 'Montserrat';
-  font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.nav-footer .toc-actions {
-  color: #ecf2ff;
+    font-size: 0;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
 
 /*--- Back to Top ---*/
 #quarto-back-to-top {
-  color: black;
+  background-image: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>')!important;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50px;
   bottom: 120px;
-  border-radius: 30px;
-  left: 50%;
 }
+
+.bi.bi-arrow-up{
+  display: none;
+}
+
 
 /*--- Profile Photo ---*/
 .round {
@@ -691,6 +716,16 @@ body:not(.floating) .nav-footer {
 /*--- contact form ---*/
 
 /* first name & last name in same row, 50% width */
+.btn-secondary {
+    color: #000;
+    background-color: red;
+    border-color: red;
+}
+
+.container .form-control{
+  border-radius: 10px;
+}
+
 .form-group.row {
     display: flex;
     flex-wrap: wrap;
@@ -705,6 +740,8 @@ body:not(.floating) .nav-footer {
     padding-left: 15px;
     box-sizing: border-box;
 }
+
+
 
 /* contact form Animations */
 @keyframes fadeIn {
@@ -751,13 +788,9 @@ body:not(.floating) .nav-footer {
     }
 }
 
-/* Elements with animations */
+/* Contact Form Elements with animations */
 .container {
     animation: fadeIn 1s ease-out;
-}
-
-label {
-    animation: labelSlideIn 1s ease-out;
 }
 
 .btn {
@@ -774,11 +807,13 @@ label {
 }
 
 .btn-primary:hover {
-    background-color: #939bc9;
+    background-color: #fff;
+    color: #000;
 }
 
 .btn-secondary:hover {
     background-color: #5a6268;
+    color: #fff;
 }
 
 /*--- profile animation ---*/

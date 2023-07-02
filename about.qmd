@@ -18,76 +18,107 @@ comments: false
     <title>NING's Profile Page</title>
     <link rel="stylesheet" href="dlz.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <body>
     <table>
-        <tr>
-            <td>
-                <h1>NING LI</h1>
-                <a href="mailto:ln729500172@outlook.com" class="fa fa-regular fa-envelope"></a>
-                <a href="https://twitter.com/ningli3739" class="fa fa-twitter"></a>
-                <a href="https://github.com/NING3739/datalabzone" class="fa fa-github"></a>
-                <p><em>Accountant, Data Science Enthusiast, Founder of <strong><a href="https://datalabzone.com/">Data
-                                Lab
-                                Zone</a></strong></em></p>
-            </td>
-            <td>
-                <img src="https://github.com/NING3739/my-personal-website/blob/main/NING%20LI.jpeg?raw=true"
-                    alt="NING's Profile Photo" class="round">
-            </td>
+<tr>
+<td>
+    <h1>NING LI</h1>
+    <a href="mailto:ln729500172@outlook.com" class="fa fa-regular fa-envelope"></a>
+    <a href="https://twitter.com/ningli3739" class="fa fa-twitter"></a>
+    <a href="https://github.com/NING3739/datalabzone" class="fa fa-github"></a>
+    <p><em>Accountant, Data Science Enthusiast, Founder of <strong><a href="https://datalabzone.com/">Data
+                    Lab
+                    Zone</a></strong></em></p>
+</td>
+<td>
+    <img src="https://github.com/NING3739/my-personal-website/blob/main/NING%20LI.jpeg?raw=true"
+        alt="NING's Profile Photo" class="round">
+</td>
 
-        </tr>
-    </table>
+</tr>
+</table>
 
-
-    <p>I'm excited to pursue a career as a <strong>data analyst</strong> . I'm currently focusing on
-        <strong>statistics</strong>, data analysis using <strong>R</strong>,
-        and exploring corporate-related <strong>political risks</strong>. <br>My academic background is in
-        <strong>Accountancy</strong> , which means I could
-        be of help if you have any queries regarding corporate auditing issues. <br> I'm not a big fan of graphical
-        interface
-        data analysis software, as it tends to give me extra results that I don't need. <br> My short-term goal is to
-        get my
-        first <strong>peer-reviewed paper</strong> published and begin my <strong>PhD</strong> program by 2023. <br>
-        During my free time, I love indulging in
-        my hobbies such as listening to <strong>music</strong>, <strong>hiking</strong>, and <strong>reading</strong>.
-        If you share any of these interests, don't hesitate
-        to reach out to me.
+    <p>Hello there! My name is Ning Li, and I am a fervent admirer of Data Science hailing from China 🇨🇳. <br>
+    </p>
+    <p>In the year 2022, I founded <strong>Data Lab Zone</strong>, a platform specifically designed to disseminated
+        the wealth of Knowledge and deep insights I've gathered in the domain of data science. <br>
+    </p>
+    <p>At this moment, my primary focus lies in vital areas such as <strong>data wrangling</strong>, <strong>data
+            visualization</strong>, and <strong>statistical modeling</strong>. <br>
+        In addition, I find the practical applications of the R language in tackling <strong>real-world
+            challenges</strong> truly fascinating. <br>
+    </p>
+    <p>I heartily invite those who share a similar enthusiasm for these subjects,
+        or those who are keen to offer their innovative ideas, to get in touch with me. Please feel comfortable to reach
+        out.<br />
     </p>
 
     <table>
-        <tr>
-            <td>
-                <h3>Education and Certification</h3>
-                <ul>
-                    <li>Massey University, Auckland | Master in Accountancy</li>
-                    <li>Achieved certification <a
-                            href="https://courses.edx.org/certificates/727b5c8746044927b64949c3c6544de4?_gl=1*y244mi*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-                            Science: R Basics</a> in 2022 </li>
-                    <li>Achieved certification <a
-                            href="https://courses.edx.org/certificates/9469b06f65e04fd69cf9457ab9b5faae?_gl=1*17ocv1p*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-                            Science: Visualization</a> in 2022</li>
-                    <li>Achieved certification <a
-                            href="https://courses.edx.org/certificates/c7384f60d38e42fbab723630389f0e46?_gl=1*127i4ma*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-                            Science: Probability</a> in 2022</li>
-                    <li>Achieved certification <a
-                            href="https://courses.edx.org/certificates/26656df35d8c44ad8c61094b4ffb7069?_gl=1*1twwabc*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-                            Science: Productivity Tools</a> in 2022</li>
-                </ul>
-            </td>
-            <td>
-                <h3>Interests</h3>
-                <ul>
-                    <li>Data Analysis</li>
-                    <li>Data Visualisation</li>
-                    <li>Statistics and Mathematics</li>
-                    <li>Learning New Knowledge</li>
-                    <li>Reading, Hiking and Listen to Music</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-</body>
-</body>
+<tr>
+<td>
+    <h3>Education and Certification</h3>
+    <ul>
+        <li>Massey University, Auckland | Master in Accountancy</li>
+        <li>Achieved certification <a
+                href="https://courses.edx.org/certificates/727b5c8746044927b64949c3c6544de4?_gl=1*y244mi*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                Science: R Basics</a> in 2022 </li>
+        <li>Achieved certification <a
+                href="https://courses.edx.org/certificates/9469b06f65e04fd69cf9457ab9b5faae?_gl=1*17ocv1p*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                Science: Visualization</a> in 2022</li>
+        <li>Achieved certification <a
+                href="https://courses.edx.org/certificates/c7384f60d38e42fbab723630389f0e46?_gl=1*127i4ma*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                Science: Probability</a> in 2022</li>
+        <li>Achieved certification <a
+                href="https://courses.edx.org/certificates/26656df35d8c44ad8c61094b4ffb7069?_gl=1*1twwabc*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                Science: Productivity Tools</a> in 2022</li>
+    </ul>
+</td>
+<td>
+    <h3>Interests</h3>
+    <ul>
+        <li>Data Wrangling</li>
+        <li>Data Visualization</li>
+        <li>Statistical Modeling</li>
+        <li>Political Risk</li>
+        <li>Reading, Hiking and Listen to Music</li>
+    </ul>
+</td>
+</tr>
+</table>
 
-</html>
+    <hr>
+    <h1>Contact</h1>
+
+    <div class="container">
+        <h3 class="text-center">Please leave your valuable comments</h3>
+        <form name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+            <div class="form-group row">
+                <div class="col-6">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" class="form-control" id="first-name" name="first-name" required>
+                </div>
+                <div class="col-6">
+                    <label for="second-name">Last Name:</label>
+                    <input type="text" class="form-control" id="second-name" name="second-name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="example@example.com..."
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-control" id="message" name="message" rows="5"
+                    placeholder="Your message here and I'll answer as soon as possible." required></textarea>
+            </div>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary mr-3" style="font-weight: bold;">Submit</button>
+                <button type="reset" class="btn btn-secondary ml-3" style="font-weight: bold;">Reset</button>
+            </div>
+        </form>
+    </div>
+
+</body>
 ```
