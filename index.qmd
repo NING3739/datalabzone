@@ -58,10 +58,28 @@ listing:
     page-size: 3
 toc: false
 ---
-
 ::: header-text
 ::: content-container
 ::: header-block
+
+```{=html}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>welcome</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+<body>
+    <h1>Welcome to Data Lab Zone</h1>
+</body>
+
+</html>
+```
+
+
 Welcome to [Data Lab Zone](https://datalabzone.com/), a thriving community for diving into the captivating world of [R](https://www.r-project.org/), [python](https://www.python.org/) and statistics. Engage with my content, expand your knowledge, and connect with like-minded enthusiasts as we collectively explore the wonders of data science. Join in and elevate your skills!
 
 <br>
