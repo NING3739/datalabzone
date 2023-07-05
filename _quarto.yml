@@ -20,7 +20,7 @@ website:
   google-analytics: 
     anonymize-ip: true
     tracking-id: "G-QN8B58NY2E"
-
+  
   navbar:
     background: "#ECF2FF"
     logo: images/My-project-logo.png
@@ -40,7 +40,7 @@ website:
             href: about.qmd
           - text: "FAQ"
             href: faq.qmd
-
+  
   page-footer:
      background: "#ECF2FF"
      left: "&copy; 2023 [DLZ](index.qmd) create with ❤️ by [NING](about.qmd)."
@@ -68,6 +68,7 @@ format:
     code-block-border-left: "#2192FF"
     date-format: MMM DD, YYYY
     highlight-style: pygments
+    
     toc: true
     toc-depth: 2
     grid:

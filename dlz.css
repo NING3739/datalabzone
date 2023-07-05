@@ -31,7 +31,7 @@
 
 @media (max-width: 991px) {
   .navbar-logo {
-    max-height: 95px;
+    max-height: 90px;
     align-items: baseline;
   }
 }
@@ -39,11 +39,18 @@
 .navbar .navbar-toggler {
   border-width: 0.1px;
   order: -1;
+  margin-right: 0;
 }
 
 .navbar-toggler {
   border-radius: 3px;
-  background: none;
+  font-size: 1rem;
+  background-color: #4bbf73;
+}
+
+.navbar-toggler-icon {
+  height: 2em;
+  background-size: 150%;
 }
 
 .navbar-toggler:focus {
@@ -92,8 +99,12 @@
 
 @media (max-width: 991px) {
   .aa-DetachedSearchButton {
-    margin-top: 0;
+    margin-top: -1rem;
   }
+}
+
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+    color: #4bbf73;
 }
 
 .dropdown-item {
