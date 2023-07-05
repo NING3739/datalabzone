@@ -37,14 +37,17 @@
 }
 
 .navbar .navbar-toggler {
-  color: #B2B2B2;
-  border-color: #343a40;
   border-width: 0.1px;
+  order: -1;
 }
 
 .navbar-toggler {
   border-radius: 3px;
   background: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.01rem;
 }
 
 .navbar-dark{
@@ -73,7 +76,7 @@
 
 @media (max-width: 1200px) {
   .nav-item {
-    margin-right: 2rem;
+    margin-right: 0rem;
   }
 }
 
@@ -406,6 +409,10 @@ dd a {
   font-weight: 500;
 }
 
+b, strong {
+    font-weight: 500;
+}
+
 .table {
   color: black;
 }
@@ -535,6 +542,21 @@ div.quarto-post a {
 .quarto-grid-item img.thumbnail-image {
   object-fit: cover;
   height: 188px !important;
+}
+
+/*-- Listing pagination --*/
+.page-item .page-link:hover {
+    z-index: 3;
+    color: #fff;
+    background-color: #4bbf73;
+    border-color: #4bbf73;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #4c6793;
+    border-color: #4c6793;
 }
 
 /*-- Callout styles --*/
@@ -689,7 +711,7 @@ body:not(.floating) .nav-footer {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  margin-left: 20%;
+  margin-left: auto;
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 100%);
 }
 

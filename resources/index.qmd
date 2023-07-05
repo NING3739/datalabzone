@@ -1,0 +1,107 @@
+---
+pagetitle: Resources | Data Lab Zone
+description: "The ultimate go-to resource for R programming that you shouldn't miss."
+toc: false
+search: false
+comments: false
+back-to-top-navigation: false
+page-layout: article
+listing: 
+  id: resources
+  template: resources.ejs
+  contents: resources.yml
+---
+
+::: {#hero-banner .column-screen}
+::: {.grid .column-page}
+::: {.headline .g-col-lg-6 .g-col-12 .g-col-md-12}
+::: h1
+Resources
+:::
+
+The ultimate go-to resource for R programming that you shouldn't miss. 
+
+-   [Plots](#plots)
+-   [Cheatsheet](#cheatsheet)
+-   [Interactive Web Applications](#interactive-web-applications)
+:::
+
+```{r}
+#| classes: '.g-col-lg-6 .g-col-12 .g-col-md-12'
+#| echo: false
+source("carousel.R")
+carousel("gallery-carousel", 3000, 
+         yaml.load_file("carousel.yml"))
+```
+:::
+:::
+
+::: {#resources .column-page}
+:::
+
+```{=html}
+<style>
+
+#hero-banner {
+  padding-top: 35px;
+  background-color: #dee2e6;
+}
+
+#quarto-content main { 
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.headline {
+font-size: 1.25em;
+font-weight: 300;
+padding-bottom: 1em;
+}
+
+.headline p {
+  margin: 0;
+  padding-bottom: 0.2rem;
+}
+
+.headline a {
+  text-decoration: none;
+}
+
+.headline ul li {
+  margin-bottom: 0.3em;
+}
+
+.carousel.card {
+  padding-top: 2em;
+}
+
+.carousel img {
+  object-fit: cover;
+  width: 70%;
+  height: 100%;
+  margin-bottom: 110px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  margin-bottom: 110px;
+}
+
+.carousel-caption {
+  padding-top: 1em;
+}
+
+.touch {
+  
+}
+
+.card-img, .card-img-top, .card-img-bottom {
+    height: 300px;
+    width: 100%;
+}
+</style>
+```

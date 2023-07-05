@@ -28,8 +28,8 @@ comments: false
 <a href="https://twitter.com/ningli3739" class="fa fa-twitter"></a>
 <a href="https://github.com/NING3739/datalabzone" class="fa fa-github"></a>
 <p><em>Accountant, Data Science Enthusiast, Founder of <strong><a href="https://datalabzone.com/">Data
-            Lab
-            Zone</a></strong></em></p>
+    Lab
+    Zone</a></strong></em></p>
 </td>
 <td>
 <img src="https://github.com/NING3739/my-personal-website/blob/main/NING%20LI.jpeg?raw=true"
@@ -61,17 +61,17 @@ alt="NING's Profile Photo" class="round">
 <ul>
 <li>Massey University, Auckland | Master in Accountancy</li>
 <li>Achieved certification <a
-        href="https://courses.edx.org/certificates/727b5c8746044927b64949c3c6544de4?_gl=1*y244mi*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-        Science: R Basics</a> in 2022 </li>
+href="https://courses.edx.org/certificates/727b5c8746044927b64949c3c6544de4?_gl=1*y244mi*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+Science: R Basics</a> in 2022 </li>
 <li>Achieved certification <a
-        href="https://courses.edx.org/certificates/9469b06f65e04fd69cf9457ab9b5faae?_gl=1*17ocv1p*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-        Science: Visualization</a> in 2022</li>
+href="https://courses.edx.org/certificates/9469b06f65e04fd69cf9457ab9b5faae?_gl=1*17ocv1p*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+Science: Visualization</a> in 2022</li>
 <li>Achieved certification <a
-        href="https://courses.edx.org/certificates/c7384f60d38e42fbab723630389f0e46?_gl=1*127i4ma*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-        Science: Probability</a> in 2022</li>
+href="https://courses.edx.org/certificates/c7384f60d38e42fbab723630389f0e46?_gl=1*127i4ma*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+Science: Probability</a> in 2022</li>
 <li>Achieved certification <a
-        href="https://courses.edx.org/certificates/26656df35d8c44ad8c61094b4ffb7069?_gl=1*1twwabc*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-        Science: Productivity Tools</a> in 2022</li>
+href="https://courses.edx.org/certificates/26656df35d8c44ad8c61094b4ffb7069?_gl=1*1twwabc*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+Science: Productivity Tools</a> in 2022</li>
 </ul>
 </td>
 <td>

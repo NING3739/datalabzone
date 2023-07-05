@@ -32,6 +32,8 @@ website:
       - series/index.qmd
       - projects/index.qmd
       - talks/index.qmd
+      - text: "Resources"
+        href: resources/index.qmd
       - text: "About" 
         menu:
           - text: "About Me"

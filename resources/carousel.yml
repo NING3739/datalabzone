@@ -1,0 +1,14 @@
+- caption: "R Graphics"
+  image: "https://github.com/NING3739/my-personal-website/blob/main/plots.png?raw=true"
+  link: "#plots"
+  
+- caption: "Package Cheatsheet"
+  image: "https://github.com/NING3739/my-personal-website/blob/main/R_Cheat_Sheet.png?raw=true"
+  link: "#cheatsheet"
+  
+- caption: "Interactive Web Applications"
+  image: "https://github.com/NING3739/my-personal-website/blob/main/shiny.png?raw=true"
+  link: "#interactive-web-applications"
+
+
+  

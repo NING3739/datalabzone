@@ -58,28 +58,64 @@ listing:
     page-size: 3
 toc: false
 ---
+
 ::: header-text
 ::: content-container
 ::: header-block
-
 ```{=html}
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>welcome</title>
-    <link rel="stylesheet" href="welcome.css">
+  <meta charset="UTF-8" />
+  <title>welcome</title>
 </head>
+<style>
+  body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fafbfa;
+  }
+
+  div.welcome-animation h1 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 40px;
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #4c6793, #4bbf73, #4c6793);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 3.5s linear infinite;
+    position: relative;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position-x: -500%;
+    }
+
+    100% {
+      background-position-x: 500%;
+    }
+  }
+</style>
 
 <body>
+
+  <div class="welcome-animation">
     <h1>Welcome to Data Lab Zone</h1>
+  </div>
+
 </body>
 
 </html>
 ```
-
-
 Welcome to [Data Lab Zone](https://datalabzone.com/), a thriving community for diving into the captivating world of [R](https://www.r-project.org/), [python](https://www.python.org/) and statistics. Engage with my content, expand your knowledge, and connect with like-minded enthusiasts as we collectively explore the wonders of data science. Join in and elevate your skills!
 
 <br>
