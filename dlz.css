@@ -8,6 +8,10 @@
   text-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 11%);
 }
 
+.navbar-container {
+    width: 98%;
+}
+
 .navbar-brand, .navbar-brand.navbar-brand-logo {
   display: flex;
   padding: 0;
@@ -15,7 +19,7 @@
 }
 
 .navbar-brand.navbar-brand-logo {
-  margin-left: 1.5em;
+  margin-left: 0em;
 }
 
 @media (max-width: 991px) {
@@ -45,7 +49,6 @@
 .navbar-toggler {
   border-radius: 3px;
   font-size: 1rem;
-  background-color: #4bbf73;
 }
 
 .navbar-toggler-icon {
@@ -72,7 +75,7 @@
 }
 
 .nav-item {
-  margin-top: 5rem; 
+  margin-top: 4rem; 
   transition: all 0.5s ease-in;
 }
 
@@ -94,7 +97,7 @@
 }
 
 .aa-DetachedSearchButton {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 @media (max-width: 991px) {
