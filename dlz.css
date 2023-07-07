@@ -606,7 +606,7 @@ p code:not(.sourceCode) {
 .header-block {
   max-width: 1000px;
   margin: 0 auto;
-  padding-top: 3em;
+  padding-top: 0.5em;
   padding-bottom: 3em;
   box-sizing: border-box;
   border-bottom: 1px solid black;
