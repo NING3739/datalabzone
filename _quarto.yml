@@ -20,7 +20,7 @@ website:
   google-analytics: 
     anonymize-ip: true
     tracking-id: "G-QN8B58NY2E"
-  
+
   navbar:
     background: "#ECF2FF"
     logo: images/My-project-logo.png
@@ -55,6 +55,11 @@ website:
        - href: mailto:ln729500172@outlook.com
          icon: envelope
 
+# lightbox extenation 
+filters:
+  - lightbox
+lightbox: auto  
+
 format:
   html:
     theme: 
@@ -68,13 +73,12 @@ format:
     code-block-border-left: "#2192FF"
     date-format: MMM DD, YYYY
     highlight-style: pygments
-    
     toc: true
     toc-depth: 2
     grid:
       body-width: 1000px
       margin-width: 250px
-
+  
 comments: 
   giscus: 
     repo: NING3739/my-personal-website

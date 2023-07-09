@@ -1,7 +1,17 @@
-# Most basic barplot with `geom_bar()`
+# Barplot
+
+A barplot is used to display the relationship between a ***numeric*** and a ***categorical*** variable.
+
+In this case, I will going to **ggpplot2** and **echarts4r** packages to explain
+how to make barplot by R language. 
+
+## ggplot2
+
+`ggplot2` allows to build barplot thanks to the `geom_bar()`function. 
 
 ```{r}
 #| label: barplot
+
 # Load ggplot2
 library(ggplot2)
 
@@ -14,5 +24,35 @@ data <- data.frame(
 # Barplot
 ggplot(data, aes(x=name, y=value)) + 
   geom_bar(stat = "identity")
+```
 
+```{r}
+#| label: barplot_by_echarts4r
+
+# load package
+library(echarts4r)
+
+df <- data.frame(
+  x = seq(50),
+  y = rnorm(50, 10, 3),
+  z = rnorm(50, 11, 2),
+  w = rnorm(50, 9, 2)
+)
+
+df |> 
+  e_charts(x) |> 
+  e_bar(y, name = "Serie 1") |> 
+  e_step(z, name = "Serie 2") |> 
+  e_title("Bar and step charts")
+```
+
+```{r}
+#| label: pie
+
+mtcars |> 
+  head() |> 
+  tibble::rownames_to_column("model") |> 
+  e_charts(model) |> 
+  e_pie(carb) |> 
+  e_title("Pie chart")
 ```

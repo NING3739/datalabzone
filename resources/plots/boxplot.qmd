@@ -1,5 +1,6 @@
 ```{r}
 #| label: boxplot
+#| echo: false
 
 # Libraries
 library(tidyverse)
