@@ -1,0 +1,12 @@
+---
+toc: false
+---
+
+## Choose the right visualization for your data!
+
+![Chart Suggestions](https://github.com/NING3739/my-personal-website/blob/main/choosing-a-good-chart-09.png?raw=true){#fig-chart fig-alt="chart suggestions---a thought-starter" width="100%"}
+
+For more details:
+
+-   [Barplot](/resources/plots/barplot.qmd)
+-   [Boxplot](/resources/plots/boxplot.qmd)

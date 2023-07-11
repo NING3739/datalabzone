@@ -1,6 +1,9 @@
 - category: Plots
   description: "Frequently used R graphics summarized briefly."
   tiles:
+    - title: "Chart Suggestions"
+      href: "plots/chart_suggestions.qmd"
+      thumbnail: https://github.com/NING3739/my-personal-website/blob/main/choosing-a-good-chart-09.png?raw=true
     - title: "Barplot"
       subtitle: "Barplot"
       href: "plots/barplot.qmd"

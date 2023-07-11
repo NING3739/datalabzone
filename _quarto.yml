@@ -55,9 +55,10 @@ website:
        - href: mailto:ln729500172@outlook.com
          icon: envelope
 
-# lightbox extenation 
+# lightbox and code-fullscreen extenation 
 filters:
   - lightbox
+  - code-fullscreen
 lightbox: auto  
 
 format:

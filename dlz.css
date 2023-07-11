@@ -232,7 +232,8 @@ blockquote {
 .panel-caption, 
 .figure-caption, 
 figcaption {
-  color: black;
+  color: #94999c;
+  font-family: Nunito sans;
   font-size: 0.825rem;
   margin-bottom: 1rem;
 }
@@ -876,4 +877,17 @@ body:not(.floating) .nav-footer {
 
 .round:hover {
   transform: scale(1.1);
+}
+
+/*--- lightbox graph review ---*/
+.glightbox-mobile .glightbox-container .gslide-title {
+    color: #fff;
+    font-size: 1em;
+    text-transform: capitalize;
+}
+
+body:not(.glightbox-mobile) div.gslide-description .gslide-title {
+  color: var(--quarto-body-color);
+  background-color: var(--quarto-body-bg);
+  text-transform: capitalize;
 }
