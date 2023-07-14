@@ -6,6 +6,7 @@ back-to-top-navigation: false
 toc: false
 title-block-banner: false
 comments: false
+lightbox: false
 ---
 
 ```{=html}
@@ -28,11 +29,11 @@ comments: false
 <a href="https://twitter.com/ningli3739" class="fa fa-twitter"></a>
 <a href="https://github.com/NING3739/datalabzone" class="fa fa-github"></a>
 <p><em>Accountant, Data Science Enthusiast, Founder of <strong><a href="https://datalabzone.com/">Data
-    Lab
-    Zone</a></strong></em></p>
+Lab
+Zone</a></strong></em></p>
 </td>
 <td>
-<img src="https://github.com/NING3739/my-personal-website/blob/main/NING%20LI.jpeg?raw=true"
+<img src="https://github.com/NING3739/my-personal-website/blob/main/profile-1.png?raw=true"
 alt="NING's Profile Photo" class="round">
 </td>
 

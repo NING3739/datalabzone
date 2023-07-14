@@ -129,7 +129,7 @@
 /*-- quarto titles --*/
 #title-block-header {
   /*--margin: -1px 0 1.8em;--*/
-  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 30%);
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 20%);
   padding: 0.5em 0 0;
   position: relative;
   background-color: #dee2e6;
@@ -424,6 +424,21 @@ dd a {
   font-weight: 500;
 }
 
+
+a:hover,
+p > a:hover,
+b:hover, 
+strong a:hover,
+ul a:hover,
+dd a:hover {
+  text-decoration: none; 
+  color: #4BBF73;
+  font-weight: 500;
+}
+
+
+
+
 b, strong {
     font-weight: 500;
 }
@@ -498,11 +513,11 @@ div.quarto-post a {
 /*-- grid listing --*/
 .card {
   transition: all 0.2s ease-in;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.20);
 }
 
 .card:hover {
-  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.25);
 }
 
 .card:hover .card-img-top img {
@@ -544,7 +559,7 @@ div.quarto-post a {
 .quarto-grid-item .card-attribution {
   font-family: 'Roboto Slab';
   font-weight: 300;
-  color: black;
+  color: #007020;
   flex-grow: 10;
   align-items: flex-end;
 }
@@ -610,7 +625,7 @@ p code:not(.sourceCode) {
   padding-top: 0.5em;
   padding-bottom: 3em;
   box-sizing: border-box;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #4bbf73;
 }
 
 .listing-block {
@@ -618,7 +633,7 @@ p code:not(.sourceCode) {
   margin: 0 auto;
   padding-bottom: 1.8em;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0,0,0,.05);
+  border-bottom: 1px solid #daf3e2;
 }
 
 .listing-block h2 {
@@ -652,7 +667,7 @@ p code:not(.sourceCode) {
 /*-- Nav Footer Styles --*/
 .nav-footer {
     align-items: center;
-    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 100%);
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 20%);
     background-color: #dee2e6;
     color: black;
     display: flex;
@@ -727,7 +742,7 @@ body:not(.floating) .nav-footer {
   height: 200px;
   border-radius: 50%;
   margin-left: auto;
-  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 100%);
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 20%);
 }
 
 /*--- Remove Table Border ---*/

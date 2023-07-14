@@ -5,19 +5,38 @@
       href: "plots/chart_suggestions.qmd"
       thumbnail: https://github.com/NING3739/my-personal-website/blob/main/choosing-a-good-chart-09.png?raw=true
     - title: "Barplot"
-      subtitle: "Barplot"
-      href: "plots/barplot.qmd"
+      href: https://r-graph-gallery.com/barplot.html
       thumbnail: https://statisticsglobe.com/wp-content/uploads/2019/05/barplot-in-r-programming-language.png
+    
+    - title: "Histogram Plot"
+      href: https://r-graph-gallery.com/histogram.html
+      thumbnail: https://r-graph-gallery.com/220-basic-ggplot2-histogram_files/figure-html/unnamed-chunk-2-1.png
+    
+    - title: "Density Plot"
+      href: https://r-graph-gallery.com/density-plot.html
+      thumbnail: https://r-graph-gallery.com/21-distribution-plot-using-ggplot2_files/figure-html/unnamed-chunk-1-1.png
+    
     - title: "Boxplot"
-      subtitle: "Boxplot"
-      href: "plots/boxplot.qmd"
-      thumbnail: https://statisticsglobe.com/wp-content/uploads/2019/05/boxplot-in-r-programming-language.png
-
+      href: https://r-graph-gallery.com/boxplot.html
+      thumbnail: https://r-graph-gallery.com/89-box-and-scatter-plot-with-ggplot2_files/figure-html/unnamed-chunk-1-1.png
+    
+    - title: "Scatterplot"
+      href: https://r-graph-gallery.com/scatterplot.html
+      thumbnail: https://r-graph-gallery.com/272-basic-scatterplot-with-ggplot2_files/figure-html/unnamed-chunk-1-1.png
+    
+    - title: "QQ Plot"
+      href: https://www.learnbyexample.org/r-quantile-quantile-qq-plot-base-graph/
+      thumbnail: https://www.learnbyexample.org/wp-content/uploads/r/rqqplot01.png
+    
+    - title: "Pie Chart"
+      href: https://r-graph-gallery.com/pie-plot.html
+      thumbnail: https://r-graph-gallery.com/131-pie-plot-with-r_files/figure-html/thecode-1.png
+      
+      
 - category: Cheatsheet
   description: "The cheatsheets from Posit"
   tiles:
     - title: "ggplot2" 
-      subtitle: "ggplot2"
       href: https://github.com/rstudio/cheatsheets/blob/a201fc13fcad72df1373afbaea2587ab0f6e6f78/data-visualization.pdf
       thumbnail: https://ggplot2.tidyverse.org/logo.png
     - title: "tidyr" 

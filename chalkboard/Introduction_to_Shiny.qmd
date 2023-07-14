@@ -7,7 +7,7 @@ format:
   revealjs:
     chalkboard: true
     footer: "<https://datalabzone.com>"
-    logo: /images/My-project-logo.png
+    logo: /images/logo.png
     mainfont: "Atkinson Hyperlegible"
     theme: simple
     transition: slide

@@ -6,7 +6,6 @@ toc: false
 
 ![Chart Suggestions](https://github.com/NING3739/my-personal-website/blob/main/choosing-a-good-chart-09.png?raw=true){#fig-chart fig-alt="chart suggestions---a thought-starter" width="100%"}
 
-For more details:
+## Data visualization Books:
 
--   [Barplot](/resources/plots/barplot.qmd)
--   [Boxplot](/resources/plots/boxplot.qmd)
+[![](https://rafalab.dfci.harvard.edu/dsbook/logo.png){width="300"}](https://rafalab.dfci.harvard.edu/dsbook/r-basics.html) [![](https://images.manning.com/360/480/resize/book/f/b243764-db1c-4038-81ed-4b5292148955/Kabacoff-R-3ed-HI.png){width="300"}](https://livebook.manning.com/book/r-in-action-third-edition/part-1/)

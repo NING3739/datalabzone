@@ -3,8 +3,8 @@ project:
 
 website:
   title: "Data Lab Zone"
-  image: images/My-project-logo.png
-  favicon: images/My-project-favicon.png
+  image: images/logo.png
+  favicon: images/favicon.png
   twitter-card: 
     site: "@ningli3739"
   open-graph: true
@@ -22,8 +22,7 @@ website:
     tracking-id: "G-QN8B58NY2E"
 
   navbar:
-    background: "#ECF2FF"
-    logo: images/My-project-logo.png
+    logo: images/logo.png
     logo-alt: "Data Lab Zone brand"
     title: false
     collapse-below: lg
@@ -42,7 +41,6 @@ website:
             href: faq.qmd
   
   page-footer:
-     background: "#ECF2FF"
      left: "&copy; 2023 [DLZ](index.qmd) create with ❤️ by [NING](about.qmd)."
          
      right: 
@@ -55,10 +53,9 @@ website:
        - href: mailto:ln729500172@outlook.com
          icon: envelope
 
-# lightbox and code-fullscreen extenation 
+# lightbox extenation 
 filters:
   - lightbox
-  - code-fullscreen
 lightbox: auto  
 
 format:
@@ -71,9 +68,10 @@ format:
     code-link: true
     code-line-numbers: true
     code-block-bg: "#F0F0F0"
-    code-block-border-left: "#2192FF"
+    code-block-border-left: "#4bbf73"
     date-format: MMM DD, YYYY
     highlight-style: pygments
+    
     toc: true
     toc-depth: 2
     grid:
