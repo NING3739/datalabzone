@@ -1,4 +1,4 @@
-# [Data Lab Zone](https://datalabzone.com/) <img src="images/My-project-logo.png" align="right" width="120" />
+# [Data Lab Zone](https://datalabzone.com/) <img src="images/logo.png" align="right" width="120" />
 
 Welcome to **Data Lab Zone**, a thriving community for diving into the captivating world of *R*, *python* and *statistics*. Engage with my content, expand your knowledge, and connect with like-minded enthusiasts as we collectively explore the wonders of data science. Join in and elevate your skills!
 
