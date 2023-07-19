@@ -4,7 +4,7 @@ Welcome to **Data Lab Zone**, a thriving community for diving into the captivati
 
 # License
 
-This website under the [CC BY-NC-ND 4.0](LICENSE).
+This website under the [CC BY-NC-ND 4.0](LICENSE.md).
 
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
