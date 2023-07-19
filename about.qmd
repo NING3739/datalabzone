@@ -22,23 +22,23 @@ lightbox: false
 
 <body>
     <table>
-<tr>
-<td>
-<h1>NING LI</h1>
-<a href="mailto:ln729500172@outlook.com" class="fa fa-regular fa-envelope"></a>
-<a href="https://twitter.com/ningli3739" class="fa fa-twitter"></a>
-<a href="https://github.com/NING3739/datalabzone" class="fa fa-github"></a>
-<p><em>Accountant, Data Science Enthusiast, Founder of <strong><a href="https://datalabzone.com/">Data
-Lab
-Zone</a></strong></em></p>
-</td>
-<td>
-<img src="https://github.com/NING3739/my-personal-website/blob/main/profile-1.png?raw=true"
-alt="NING's Profile Photo" class="round">
-</td>
-
-</tr>
-</table>
+        <tr>
+            <td>
+                <h1>NING LI</h1>
+                <a href="mailto:ln729500172@outlook.com" class="fa fa-regular fa-envelope"></a>
+                <a href="https://twitter.com/ningli3739" class="fa fa-twitter"></a>
+                <a href="https://github.com/NING3739/datalabzone" class="fa fa-github"></a>
+                <p><em>Accountant, Data Science Enthusiast, Founder of <strong><a href="https://datalabzone.com/">Data
+                                Lab
+                                Zone</a></strong></em></p>
+            </td>
+            <td>
+                <img src="https://github.com/NING3739/my-personal-website/blob/main/profile-1.png?raw=true"
+                    alt="NING's Profile Photo" class="round">
+            </td>
+        </tr>
+    </table>
+    <hr>
 
     <p>Hello there! My name is Ning Li, and I am a fervent admirer of Data Science hailing from China 🇨🇳. <br>
     </p>
@@ -54,39 +54,41 @@ alt="NING's Profile Photo" class="round">
         or those who are keen to offer their innovative ideas, to get in touch with me. Please feel comfortable to reach
         out.<br />
     </p>
-
+    <hr>
+    
     <table>
-<tr>
-<td>
-<h3>Education and Certification</h3>
-<ul>
-<li>Massey University, Auckland | Master in Accountancy</li>
-<li>Achieved certification <a
-href="https://courses.edx.org/certificates/727b5c8746044927b64949c3c6544de4?_gl=1*y244mi*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-Science: R Basics</a> in 2022 </li>
-<li>Achieved certification <a
-href="https://courses.edx.org/certificates/9469b06f65e04fd69cf9457ab9b5faae?_gl=1*17ocv1p*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-Science: Visualization</a> in 2022</li>
-<li>Achieved certification <a
-href="https://courses.edx.org/certificates/c7384f60d38e42fbab723630389f0e46?_gl=1*127i4ma*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-Science: Probability</a> in 2022</li>
-<li>Achieved certification <a
-href="https://courses.edx.org/certificates/26656df35d8c44ad8c61094b4ffb7069?_gl=1*1twwabc*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
-Science: Productivity Tools</a> in 2022</li>
-</ul>
-</td>
-<td>
-<h3>Interests</h3>
-<ul>
-<li>Data Wrangling</li>
-<li>Data Visualization</li>
-<li>Statistical Modeling</li>
-<li>Political Risk</li>
-<li>Reading, Hiking and Listen to Music</li>
-</ul>
-</td>
-</tr>
-</table>
+        <tr>
+
+            <td>
+                <h3>Education and Certification</h3>
+                <ul>
+                    <li>Massey University, Auckland | Master in Accountancy</li>
+                    <li>Achieved certification <a
+                            href="https://courses.edx.org/certificates/727b5c8746044927b64949c3c6544de4?_gl=1*y244mi*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                            Science: R Basics</a> in 2022 </li>
+                    <li>Achieved certification <a
+                            href="https://courses.edx.org/certificates/9469b06f65e04fd69cf9457ab9b5faae?_gl=1*17ocv1p*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                            Science: Visualization</a> in 2022</li>
+                    <li>Achieved certification <a
+                            href="https://courses.edx.org/certificates/c7384f60d38e42fbab723630389f0e46?_gl=1*127i4ma*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                            Science: Probability</a> in 2022</li>
+                    <li>Achieved certification <a
+                            href="https://courses.edx.org/certificates/26656df35d8c44ad8c61094b4ffb7069?_gl=1*1twwabc*_ga*NTIzMzk2NTg5LjE2ODIzODIwMjc.*_ga_D3KS4KMDT0*MTY4MjM4MjAyNi4xLjEuMTY4MjM4MjA2Mi4wLjAuMA..">Data
+                            Science: Productivity Tools</a> in 2022</li>
+                </ul>
+            </td>
+            <td>
+                <h3>Interests</h3>
+                <ul>
+                    <li>Data Wrangling</li>
+                    <li>Data Visualization</li>
+                    <li>Statistical Modeling</li>
+                    <li>Political Risk</li>
+                    <li>Reading, Hiking and Listen to Music</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
 
     <hr>
     <h1>Contact</h1>
