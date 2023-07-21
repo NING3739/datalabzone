@@ -6,14 +6,14 @@ search: false
 comments: false
 back-to-top-navigation: false
 listing:
-  contents:
+    contents:
     - "presentations"
     - "!index.qmd"
     - "!chalkboard.qmd"
-  sort: "date desc"
-  type: grid
-  categories: true
-  sort-ui: false
-  filter-ui: false
-  page-size: 12
+    sort: "date desc"
+    type: grid
+    categories: true
+    sort-ui: false
+    filter-ui: false
+    page-size: 12
 ---

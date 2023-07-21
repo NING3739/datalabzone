@@ -907,6 +907,17 @@ table {
     color: #fff;
 }
 
+/* Button webr states */
+.btn-webr {
+  color: white;
+  background-color: black;
+}
+
+.btn-webr:hover {
+  background-color: #4bbf73;
+}
+
+
 /*--- profile animation ---*/
 .round {
   width: 230px;

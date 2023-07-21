@@ -40,16 +40,17 @@
       href: https://github.com/rstudio/cheatsheets/blob/a201fc13fcad72df1373afbaea2587ab0f6e6f78/data-visualization.pdf
       thumbnail: https://ggplot2.tidyverse.org/logo.png
     - title: "tidyr" 
-      subtitle: "tidyr"
       href: https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf
       thumbnail: https://tidyr.tidyverse.org/logo.png
 
 - category: Interactive Web Applications
-  description: "The interative applications by Shiny package"
+  description: "All kinds of interative web applications"
   tiles:
     - title: "Cost Calculator" 
-      subtitle: "a service fee calculator app"
+      subtitle: "A service fee calculator app"
       href: https://myshinyappforpractice.shinyapps.io/sheet/
       thumbnail: https://github.com/NING3739/my-personal-website/blob/main/cost%20calculator.png?raw=true
-    
-    
+    - title: "R Playground"
+      subtitle: "A live R playground based on web"
+      href: "livedemo/livedemo.qmd"
+      thumbnail: https://docs.r-wasm.org/webr/latest/images/webR.png

@@ -6,13 +6,13 @@ search: false
 comments: false
 back-to-top-navigation: false
 listing:
-  contents:
+    contents:
     - "R"
     - "!index.qmd"
-  sort: "date desc"
-  type: grid
-  categories: true
-  sort-ui: false
-  filter-ui: false
-  page-size: 12
+    sort: "date desc"
+    type: grid
+    categories: true
+    sort-ui: false
+    filter-ui: false
+    page-size: 12
 ---

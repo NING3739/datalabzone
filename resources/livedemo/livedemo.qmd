@@ -1,0 +1,59 @@
+---
+engine: knitr
+webr:
+  show-startup-message: false
+  show-header-message: false
+filters:
+  - webr
+toc: false
+---
+
+## Introduction
+
+This is a web-enabled code cell, powered by [quarto-webr extension](https://github.com/coatless/quarto-webr), where you have the freedom to play around and write any R code you desire.
+
+By default, the quarto-webr extension avoids loading or requesting additional packages. You can add extra packages when opening the document or on a per-code cell basis. To see available packages, execute the following R code (using WebR or just R):
+
+```{r}
+#| label: package
+#| echo: true
+#| eval: false
+available.packages(repos="https://repo.r-wasm.org/", type="source")
+```
+
+Packages may also be installed inside of a code cell through the built-in webr::install() function. For example, to install ggplot2, you would need to use: 
+
+```{r}
+#| label: webr_install
+#| echo: true
+#| eval: false
+webr::install("ggplot2")
+```
+
+## Playground
+Write your code here. 
+
+```{webr-r}
+# Create a sequence of values from -π to π with a step of 0.1
+x <- seq(-pi, pi, 0.1)
+
+# Plot the sine function (sin(x)) on the graph
+# Overlaying Graphs
+plot(x, sin(x),
+     main = "Overlaying Graphs",   # Set the main title of the plot
+     ylab = "",                    # Set the label for the y-axis (empty in this case)
+     type = "l",                   # Draw a line plot
+     col = "blue"                  # Set the color of the line to blue
+)
+
+# Add the cosine function (cos(x)) to the existing plot
+lines(x, cos(x), col = "red")      # Draw a line for the cosine function with a red color
+
+# Add a legend to the plot to distinguish between sin(x) and cos(x)
+legend("topleft",                 # Position the legend at the top-left of the plot
+       c("sin(x)", "cos(x)"),     # Names of the lines to be displayed in the legend
+       fill = c("blue", "red")    # Fill colors for the corresponding lines in the legend
+)
+
+```
+

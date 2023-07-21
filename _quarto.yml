@@ -53,9 +53,11 @@ website:
        - href: mailto:ln729500172@outlook.com
          icon: envelope
 
-# lightbox extenation 
+# lightbox and webr extenation 
 filters:
   - lightbox
+  - webr
+  - shinylive
 lightbox: auto  
 
 format:
