@@ -73,7 +73,6 @@ format:
     code-block-border-left: "#4bbf73"
     date-format: MMM DD, YYYY
     highlight-style: pygments
-    
     toc: true
     toc-depth: 2
     grid:
