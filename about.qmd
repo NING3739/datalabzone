@@ -18,16 +18,17 @@ lightbox: false
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NING's Profile Page</title>
     <link rel="stylesheet" href="dlz.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/c78ba93834.js" crossorigin="anonymous"></script>
+</head>
 
 <body>
     <table>
         <tr>
             <td>
                 <h1>NING LI</h1>
-                <a href="mailto:ln729500172@outlook.com" class="fa fa-regular fa-envelope"></a>
-                <a href="https://twitter.com/ningli3739" class="fa fa-twitter"></a>
-                <a href="https://github.com/NING3739/datalabzone" class="fa fa-github"></a>
+                <a href="mailto:ln729500172@outlook.com" class="fa-regular fa-envelope"></a>
+                <a href="https://twitter.com/ningli3739" class="fa-brands fa-x-twitter"></a>
+                <a href="https://github.com/NING3739/datalabzone" class="fa-brands fa-github"></a>
                 <p><em>Accountant, Data Science Enthusiast, Founder of <strong><a href="https://datalabzone.com/">Data
                                 Lab
                                 Zone</a></strong></em></p>

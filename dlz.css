@@ -651,9 +651,9 @@ p code:not(.sourceCode) {
 .listing-block {
   max-width: 1000px;
   margin: 0 auto;
-  padding-bottom: 1.8em;
+  padding-bottom: 4em;
   box-sizing: border-box;
-  border-bottom: 1px solid #daf3e2;
+  
 }
 
 .listing-block h2 {
@@ -782,32 +782,33 @@ table {
 }
 
 /*--- Social Media Icon ---*/
-.fa {
-  padding-left: 0;
-  padding-bottom: 20px;
-  font-size: 40px;
-  width: 30px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
+.fa-regular.fa-envelope {
+  color: #1E3050;
 }
 
-.fa:hover {
+.fa-regular.fa-envelope:hover {
   color: #4C6793;
   opacity: 0.7;
 }
 
-.fa-envelope {
-  color: #1E3050;
-}
-
-.fa-twitter {
+.fa-brands.fa-x-twitter {
   color: #55ACEE;
 }
 
-.fa-github {
+.fa-brands.fa-x-twitter:hover {
+  color: #7f9ccc;
+  opacity: 0.7;
+}
+
+.fa-brands.fa-github {
   color: black;
 }
+
+.fa-brands.fa-github:hover {
+  color: #2d6ce1;
+  opacity: 0.7;
+}
+
 
 /*--- contact form ---*/
 
@@ -836,7 +837,6 @@ table {
     padding-left: 15px;
     box-sizing: border-box;
 }
-
 
 
 /* contact form Animations */

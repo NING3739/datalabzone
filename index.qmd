@@ -21,41 +21,7 @@ listing:
     categories: false
     sort-ui: false
     filter-ui: false
-    #max-items: 3
-    page-size: 3
-  - id: blog
-    contents: 
-    - "/posts/blogsforr"
-    - "/posts/blogsforpythons/"
-    - "!index.qmd"
-    sort: "date desc"
-    type: grid
-    categories: false
-    sort-ui: false
-    filter-ui: false
-    #max-items: 3
-    page-size: 3
-  - id: series
-    contents: 
-    - "/series/R"
-    - "!index.qmd"
-    sort: "date desc"
-    type: grid
-    categories: false
-    sort-ui: false
-    filter-ui: false
-    #max-items: 3
-    page-size: 3
-  - id: talks
-    contents: 
-    - "/talks/presentations"
-    sort: "date desc"
-    type: grid
-    categories: false
-    sort-ui: false
-    filter-ui: false
-    #max-items: 3
-    page-size: 3
+    page-size: 12
 toc: false
 ---
 
@@ -69,55 +35,92 @@ toc: false
 <head>
   <meta charset="UTF-8" />
   <title>welcome</title>
+  <style>
+    body {
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #fafbfa;
+    }
+
+    div.welcome-animation h1 {
+      font-weight: 700;
+      text-align: center;
+      font-size: 40px;
+      font-family: Hack, sans-serif;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #4c6793, #4bbf73, #4c6793);
+      letter-spacing: 5px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3.5s linear infinite, colorChange 5s linear infinite; /* Add colorChange animation */
+      position: relative;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        background-position-x: -500%;
+      }
+
+      100% {
+        background-position-x: 500%;
+      }
+    }
+
+    @keyframes colorChange {
+      0%, 100% {
+        filter: hue-rotate(0deg);
+      }
+
+      50% {
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
 </head>
-<style>
-  body {
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #fafbfa;
-  }
-
-  div.welcome-animation h1 {
-    font-weight: 700;
-    text-align: center;
-    font-size: 40px;
-    font-family: Hack, sans-serif;
-    text-transform: uppercase;
-    background: linear-gradient(90deg, #4c6793, #4bbf73, #4c6793);
-    letter-spacing: 5px;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-repeat: no-repeat;
-    background-size: 80%;
-    animation: shine 3.5s linear infinite;
-    position: relative;
-  }
-
-  @keyframes shine {
-    0% {
-      background-position-x: -500%;
-    }
-
-    100% {
-      background-position-x: 500%;
-    }
-  }
-</style>
 
 <body>
-
   <div class="welcome-animation">
     <h1>Welcome to Data Lab Zone</h1>
   </div>
-
 </body>
 
 </html>
 ```
-Welcome to [Data Lab Zone](https://datalabzone.com/), a thriving community for diving into the captivating world of [R](https://www.r-project.org/), [python](https://www.python.org/) and statistics. Engage with my content, expand your knowledge, and connect with like-minded enthusiasts as we collectively explore the wonders of data science. Join in and elevate your skills!
+A thriving community for diving into the captivating world of [R](https://www.r-project.org/), [python](https://www.python.org/) and statistics. Engage with my content, expand your knowledge, and connect with like-minded enthusiasts as we collectively explore the wonders of data science. Join in and elevate your skills!
 
+```{=html}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .social-icon-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-icon-container a {
+    margin: 35px 15px 0px 15px;
+    font-size: 24px;
+    color: #333; /* Adjust the color as needed */
+    text-decoration: none; /* Remove underline on icons */
+  }
+</style>
+<script src="https://kit.fontawesome.com/c78ba93834.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+  <div class="social-icon-container">
+    <a href="mailto:ln729500172@outlook.com" class="fa-solid fa-envelope"></a>
+    <a href="https://twitter.com/ningli3739" class="fa-brands fa-x-twitter"></a>
+    <a href="https://github.com/NING3739/datalabzone" class="fa-brands fa-github"></a>
+  </div>
+</body>
+</html>
+```
 <br>
 
 ```{=html}
@@ -140,41 +143,7 @@ Welcome to [Data Lab Zone](https://datalabzone.com/), a thriving community for d
 :::
 :::
 
-::: content-container
-::: listing-block
-<a href="posts/index.qmd">
 
-## Daily Blogs
 
-</a>
 
-::: {#blog}
-:::
-:::
-:::
 
-::: content-container
-::: listing-block
-<a href="series/index.qmd">
-
-## R Language Series
-
-</a>
-
-::: {#series}
-:::
-:::
-:::
-
-::: content-container
-::: listing-block
-<a href="talks/index.qmd">
-
-## Recent Presentations
-
-</a>
-
-::: {#talks}
-:::
-:::
-:::
