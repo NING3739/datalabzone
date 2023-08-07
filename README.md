@@ -11,5 +11,4 @@ This website under the [CC BY-NC-ND 4.0](LICENSE.md).
 # Publish
 
 The website is powered by [Quarto](https://quarto.org/) publish system, and published on [Netlify](https://www.netlify.com/).
-
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9197989b-5cbb-41ca-843f-add96ca1574a/deploy-status)]([https://www.datalabzone.com/])
