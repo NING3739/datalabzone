@@ -2,6 +2,3 @@
   quarto-pub:
     - id: 961a123e-3d93-40f6-94c1-2a378c9be713
       url: 'https://ningli.quarto.pub/data-lab-zone'
-  netlify:
-    - id: 9197989b-5cbb-41ca-843f-add96ca1574a
-      url: 'https://www.datalabzone.com'
