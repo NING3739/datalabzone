@@ -4,11 +4,9 @@ Welcome to **Data Lab Zone**, a thriving community for diving into the captivati
 
 # License
 
-This website under the [CC BY-NC-ND 4.0](LICENSE.md).
-
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+This website under the [CC BY-NC-ND 4.0](LICENSE.md).[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 # Publish
 
-The website is powered by [Quarto](https://quarto.org/) publish system, and published on [Netlify](https://www.netlify.com/).
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9197989b-5cbb-41ca-843f-add96ca1574a/deploy-status)]([https://www.datalabzone.com/])
+The website is powered by [Quarto](https://quarto.org/) publish system, and published on [Github](https://github.com/NING3739/datalabzone).
+

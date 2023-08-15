@@ -1,7 +1,12 @@
 .Rproj.user
 .RData
 .Rhistory
+.gitattributes
+.DS_Store
 /_freeze
 /.quarto/
 /.luarc.json
 docs/LICENSE.html
+README_files
+README.html
+_publish.yml
