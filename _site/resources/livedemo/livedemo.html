@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Data Lab Zone – livedemo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QN8B58NY2E"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-QN8B58NY2E', { 'anonymize_ip': true});
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.31.0/min/vs/editor/editor.main.css">
+<style>
+  .monaco-editor pre {
+    background-color: unset !important;
+  }
+
+  .btn-webr {
+    background-color: #EEEEEE;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.31.0/min/vs/loader.js"></script><script type="module">
+
+  // Configure the Monaco Editor's loader
+  require.config({
+    paths: {
+      'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.31.0/min/vs'
+    }
+  });
+
+
+  // Start a timer
+  const initializeWebRTimerStart = performance.now();
+
+  // Determine if we need to install R packages
+  var installRPackagesList = [''];
+  // Check to see if we have an empty array, if we do set to skip the installation.
+  var setupRPackages = !(installRPackagesList.indexOf("") !== -1);
+
+  // Display a startup message?
+  var showStartupMessage = false;
+  var showHeaderMessage = false;
+  if (showStartupMessage) {
+
+    // Create the outermost div element
+    var quartoTitleMeta = document.createElement("div");
+    quartoTitleMeta.classList.add("quarto-title-meta");
+
+    // Create the first inner div element
+    var firstInnerDiv = document.createElement("div");
+
+    // Create the second inner div element with "WebR Status" heading 
+    // and contents
+    var secondInnerDiv = document.createElement("div");
+    secondInnerDiv.classList.add("quarto-title-meta-heading");
+    secondInnerDiv.innerText = "WebR Status";
+
+    // Add another inner div
+    var secondInnerDivContents = document.createElement("div");
+    secondInnerDivContents.classList.add("quarto-title-meta-contents");
+
+    // Describe the WebR state
+    var startupMessageWebR = document.createElement("p");
+    startupMessageWebR.innerText = "🟡 Loading...";
+    startupMessageWebR.setAttribute("id", "startup");
+    // Add `aria-live` to auto-announce the startup status to screen readers
+    startupMessageWebR.setAttribute("aria-live", "assertive");
+
+    // Put everything together
+    secondInnerDivContents.appendChild(startupMessageWebR);
+
+    // Add a status indicator for COOP and COEP Headers
+    if (showHeaderMessage) {
+      var crossOriginMessage = document.createElement("p");
+      crossOriginMessage.innerText = `${crossOriginIsolated ? '🟢' : '🟡'} COOP & COEP Headers`;
+      crossOriginMessage.setAttribute("id", "coop-coep-header");
+      secondInnerDivContents.appendChild(crossOriginMessage);
+    }
+
+    firstInnerDiv.appendChild(secondInnerDiv);
+    firstInnerDiv.appendChild(secondInnerDivContents);
+    quartoTitleMeta.appendChild(firstInnerDiv);
+
+    // Add new element as last child in header element
+    var header = document.getElementsByTagName("header")[0];
+    header.appendChild(quartoTitleMeta);
+  }
+
+  // Retrieve the webr.mjs
+  import { WebR } from "https://webr.r-wasm.org/v0.1.1/webr.mjs";
+
+  // Populate WebR options with defaults or new values based on 
+  // webr meta
+  globalThis.webR = new WebR({
+    "baseURL": "",
+    "serviceWorkerUrl": "",
+    "homedir": "/home/web_user"
+  });
+
+  // Initialization WebR
+  await globalThis.webR.init();
+
+  // Setup a shelter
+  globalThis.webRCodeShelter = await new globalThis.webR.Shelter();
+
+  // Installing Packages
+  if (showStartupMessage && setupRPackages) {
+    // If initialized, but we have packages to install switch status
+    startupMessageWebR.innerText = "🟡 Installing package dependencies..."
+    // Install packages
+    await globalThis.webR.installPackages(installRPackagesList)
+  }
+
+  // Switch to allowing code to be executed
+  document.querySelectorAll(".btn-webr").forEach((btn) => {
+    btn.innerText = "Run code";
+    btn.disabled = false;
+  });
+
+  // Stop timer
+  const initializeWebRTimerEnd = performance.now();
+
+  if (showStartupMessage) {
+    // If initialized, switch to a green light
+    startupMessageWebR.innerText = "🟢 Ready!"
+  }
+</script><link rel="stylesheet" href="../../dlz.css">
+</head>
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo.png" alt="Data Lab Zone brand" class="navbar-logo"></a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../posts/index.html" rel="" target="">
+ <span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../series/index.html" rel="" target="">
+ <span class="menu-text">Series</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html" rel="" target="">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks/index.html" rel="" target="">
+ <span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources/index.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">
+<li>
+    <a class="dropdown-item" href="../../about.html" rel="" target="">
+ <span class="dropdown-text">About Me</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../faq.html" rel="" target="">
+ <span class="dropdown-text">FAQ</span></a>
+  </li>  
+    </ul>
+</li>
+</ul>
+<div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlayGround</title>
+<style>
+        body {
+            /* https://coolors.co/f06449-ede6e3-7d82b8-36382e-613f75  */
+            --background-color: #ede6e3;
+            --wall-color: #36382e;
+            --joystick-color: #210124;
+            --joystick-head-color: #f06449;
+            --ball-color: #f06449;
+            --end-color: #7d82b8;
+            --text-color: #210124;
+
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            width: 100%;
+        }
+
+        #center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 30%;
+        }
+
+        #game {
+            /*-- display: grid; --*/
+            grid-template-columns: auto 150px;
+            grid-template-rows: 1fr auto 1fr;
+            gap: 30px;
+            perspective: 600px;
+        }
+
+        #maze {
+            position: relative;
+            grid-row: 1 / -1;
+            grid-column: 1;
+            width: 350px;
+            height: 315px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 80px
+        }
+
+        #end {
+            width: 65px;
+            height: 65px;
+            border: 5px dashed var(--end-color);
+            border-radius: 50%;
+        }
+
+        #joystick {
+            position: relative;
+            background-color: var(--joystick-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 150px 50px;
+            grid-row: 2;
+        }
+
+        #joystick-head {
+            position: relative;
+            background-color: var(--joystick-head-color);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            cursor: grab;
+
+            animation-name: glow;
+            animation-duration: 0.6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+            animation-delay: 4s;
+        }
+
+        @keyframes glow {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        .joystick-arrow:nth-of-type(1) {
+            position: absolute;
+            bottom: 55px;
+
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+
+            border-bottom: 10px solid var(--joystick-color);
+        }
+
+        .joystick-arrow:nth-of-type(2) {
+            position: absolute;
+            top: 55px;
+
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+
+            border-top: 10px solid var(--joystick-color);
+        }
+
+        .joystick-arrow:nth-of-type(3) {
+            position: absolute;
+            left: 55px;
+
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+
+            border-left: 10px solid var(--joystick-color);
+        }
+
+        .joystick-arrow:nth-of-type(4) {
+            position: absolute;
+            right: 55px;
+
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+
+            border-right: 10px solid var(--joystick-color);
+        }
+
+        #note {
+            grid-row: 3;
+            grid-column: 2;
+            text-align: center;
+            font-size: 0.8em;
+            color: var(--text-color);
+            transition: opacity 2s;
+        
+        }
+        
+        #credit {
+            font-size: 0.5em;
+            text-align: center;
+        }
+        
+        a:visited {
+            color: inherit;
+        }
+
+        .ball {
+            position: absolute;
+            margin-top: -5px;
+            margin-left: -5px;
+            border-radius: 50%;
+            background-color: var(--ball-color);
+            width: 10px;
+            height: 10px;
+        }
+
+        .wall {
+            position: absolute;
+            background-color: var(--wall-color);
+            transform-origin: top center;
+            margin-left: -5px;
+        }
+
+        .wall::before,
+        .wall::after {
+            display: block;
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: inherit;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .wall::before {
+            top: -5px;
+        }
+
+        .wall::after {
+            bottom: -5px;
+        }
+
+        .black-hole {
+            position: absolute;
+            margin-top: -9px;
+            margin-left: -9px;
+            border-radius: 50%;
+            background-color: black;
+            width: 18px;
+            height: 18px;
+        }   
+    </style>
+<div id="center">
+        <div id="game">
+            <div id="maze">
+                <div id="end"></div>
+            </div>
+            <div id="joystick">
+                <div class="joystick-arrow"></div>
+                <div class="joystick-arrow"></div>
+                <div class="joystick-arrow"></div>
+                <div class="joystick-arrow"></div>
+                <div id="joystick-head"></div>
+            </div>
+            <div id="note">
+                Click the joystick to start!
+                <p>Move every ball to the center. Ready for hard mode? Press H</p>
+            </div>
+            <div id="credit">
+                <p>Credit from: <a href="https://codepen.io/HunorMarton/pen/VwKwgxX">Tilting Maze Game</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        Math.minmax = (value, limit) => {
+            return Math.max(Math.min(value, limit), -limit);
+        };
+
+        const distance2D = (p1, p2) => {
+            return Math.sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2);
+        };
+
+        // Angle between the two points
+        const getAngle = (p1, p2) => {
+            let angle = Math.atan((p2.y - p1.y) / (p2.x - p1.x));
+            if (p2.x - p1.x < 0) angle += Math.PI;
+            return angle;
+        };
+
+        // The closest a ball and a wall cap can be
+        const closestItCanBe = (cap, ball) => {
+            let angle = getAngle(cap, ball);
+
+            const deltaX = Math.cos(angle) * (wallW / 2 + ballSize / 2);
+            const deltaY = Math.sin(angle) * (wallW / 2 + ballSize / 2);
+
+            return { x: cap.x + deltaX, y: cap.y + deltaY };
+        };
+
+        // Roll the ball around the wall cap
+        const rollAroundCap = (cap, ball) => {
+            // The direction the ball can't move any further because the wall holds it back
+            let impactAngle = getAngle(ball, cap);
+
+            // The direction the ball wants to move based on it's velocity
+            let heading = getAngle(
+                { x: 0, y: 0 },
+                { x: ball.velocityX, y: ball.velocityY }
+            );
+
+            // The angle between the impact direction and the ball's desired direction
+            // The smaller this angle is, the bigger the impact
+            // The closer it is to 90 degrees the smoother it gets (at 90 there would be no collision)
+            let impactHeadingAngle = impactAngle - heading;
+
+            // Velocity distance if not hit would have occurred
+            const velocityMagnitude = distance2D(
+                { x: 0, y: 0 },
+                { x: ball.velocityX, y: ball.velocityY }
+            );
+            // Velocity component diagonal to the impact
+            const velocityMagnitudeDiagonalToTheImpact =
+                Math.sin(impactHeadingAngle) * velocityMagnitude;
+
+            // How far should the ball be from the wall cap
+            const closestDistance = wallW / 2 + ballSize / 2;
+
+            const rotationAngle = Math.atan(
+                velocityMagnitudeDiagonalToTheImpact / closestDistance
+            );
+
+            const deltaFromCap = {
+                x: Math.cos(impactAngle + Math.PI - rotationAngle) * closestDistance,
+                y: Math.sin(impactAngle + Math.PI - rotationAngle) * closestDistance
+            };
+
+            const x = ball.x;
+            const y = ball.y;
+            const velocityX = ball.x - (cap.x + deltaFromCap.x);
+            const velocityY = ball.y - (cap.y + deltaFromCap.y);
+            const nextX = x + velocityX;
+            const nextY = y + velocityY;
+
+            return { x, y, velocityX, velocityY, nextX, nextY };
+        };
+
+        // Decreases the absolute value of a number but keeps it's sign, doesn't go below abs 0
+        const slow = (number, difference) => {
+            if (Math.abs(number) <= difference) return 0;
+            if (number > difference) return number - difference;
+            return number + difference;
+        };
+
+        const mazeElement = document.getElementById("maze");
+        const joystickHeadElement = document.getElementById("joystick-head");
+        const noteElement = document.getElementById("note"); // Note element for instructions and game won, game failed texts
+
+        let hardMode = false;
+        let previousTimestamp;
+        let gameInProgress;
+        let mouseStartX;
+        let mouseStartY;
+        let accelerationX;
+        let accelerationY;
+        let frictionX;
+        let frictionY;
+
+        const pathW = 25; // Path width
+        const wallW = 10; // Wall width
+        const ballSize = 10; // Width and height of the ball
+        const holeSize = 18;
+
+        const debugMode = false;
+
+        let balls = [];
+        let ballElements = [];
+        let holeElements = [];
+
+        resetGame();
+
+        // Draw balls for the first time
+        balls.forEach(({ x, y }) => {
+            const ball = document.createElement("div");
+            ball.setAttribute("class", "ball");
+            ball.style.cssText = `left: ${x}px; top: ${y}px; `;
+
+            mazeElement.appendChild(ball);
+            ballElements.push(ball);
+        });
+
+        // Wall metadata
+        const walls = [
+            // Border
+            { column: 0, row: 0, horizontal: true, length: 10 },
+            { column: 0, row: 0, horizontal: false, length: 9 },
+            { column: 0, row: 9, horizontal: true, length: 10 },
+            { column: 10, row: 0, horizontal: false, length: 9 },
+
+            // Horizontal lines starting in 1st column
+            { column: 0, row: 6, horizontal: true, length: 1 },
+            { column: 0, row: 8, horizontal: true, length: 1 },
+
+            // Horizontal lines starting in 2nd column
+            { column: 1, row: 1, horizontal: true, length: 2 },
+            { column: 1, row: 7, horizontal: true, length: 1 },
+
+            // Horizontal lines starting in 3rd column
+            { column: 2, row: 2, horizontal: true, length: 2 },
+            { column: 2, row: 4, horizontal: true, length: 1 },
+            { column: 2, row: 5, horizontal: true, length: 1 },
+            { column: 2, row: 6, horizontal: true, length: 1 },
+
+            // Horizontal lines starting in 4th column
+            { column: 3, row: 3, horizontal: true, length: 1 },
+            { column: 3, row: 8, horizontal: true, length: 3 },
+
+            // Horizontal lines starting in 5th column
+            { column: 4, row: 6, horizontal: true, length: 1 },
+
+            // Horizontal lines starting in 6th column
+            { column: 5, row: 2, horizontal: true, length: 2 },
+            { column: 5, row: 7, horizontal: true, length: 1 },
+
+            // Horizontal lines starting in 7th column
+            { column: 6, row: 1, horizontal: true, length: 1 },
+            { column: 6, row: 6, horizontal: true, length: 2 },
+
+            // Horizontal lines starting in 8th column
+            { column: 7, row: 3, horizontal: true, length: 2 },
+            { column: 7, row: 7, horizontal: true, length: 2 },
+
+            // Horizontal lines starting in 9th column
+            { column: 8, row: 1, horizontal: true, length: 1 },
+            { column: 8, row: 2, horizontal: true, length: 1 },
+            { column: 8, row: 3, horizontal: true, length: 1 },
+            { column: 8, row: 4, horizontal: true, length: 2 },
+            { column: 8, row: 8, horizontal: true, length: 2 },
+
+            // Vertical lines after the 1st column
+            { column: 1, row: 1, horizontal: false, length: 2 },
+            { column: 1, row: 4, horizontal: false, length: 2 },
+
+            // Vertical lines after the 2nd column
+            { column: 2, row: 2, horizontal: false, length: 2 },
+            { column: 2, row: 5, horizontal: false, length: 1 },
+            { column: 2, row: 7, horizontal: false, length: 2 },
+
+            // Vertical lines after the 3rd column
+            { column: 3, row: 0, horizontal: false, length: 1 },
+            { column: 3, row: 4, horizontal: false, length: 1 },
+            { column: 3, row: 6, horizontal: false, length: 2 },
+
+            // Vertical lines after the 4th column
+            { column: 4, row: 1, horizontal: false, length: 2 },
+            { column: 4, row: 6, horizontal: false, length: 1 },
+
+            // Vertical lines after the 5th column
+            { column: 5, row: 0, horizontal: false, length: 2 },
+            { column: 5, row: 6, horizontal: false, length: 1 },
+            { column: 5, row: 8, horizontal: false, length: 1 },
+
+            // Vertical lines after the 6th column
+            { column: 6, row: 4, horizontal: false, length: 1 },
+            { column: 6, row: 6, horizontal: false, length: 1 },
+
+            // Vertical lines after the 7th column
+            { column: 7, row: 1, horizontal: false, length: 4 },
+            { column: 7, row: 7, horizontal: false, length: 2 },
+
+            // Vertical lines after the 8th column
+            { column: 8, row: 2, horizontal: false, length: 1 },
+            { column: 8, row: 4, horizontal: false, length: 2 },
+
+            // Vertical lines after the 9th column
+            { column: 9, row: 1, horizontal: false, length: 1 },
+            { column: 9, row: 5, horizontal: false, length: 2 }
+        ].map((wall) => ({
+            x: wall.column * (pathW + wallW),
+            y: wall.row * (pathW + wallW),
+            horizontal: wall.horizontal,
+            length: wall.length * (pathW + wallW)
+        }));
+
+        // Draw walls
+        walls.forEach(({ x, y, horizontal, length }) => {
+            const wall = document.createElement("div");
+            wall.setAttribute("class", "wall");
+            wall.style.cssText = `
+      left: ${x}px;
+      top: ${y}px;
+      width: ${wallW}px;
+      height: ${length}px;
+      transform: rotate(${horizontal ? -90 : 0}deg);
+    `;
+
+            mazeElement.appendChild(wall);
+        });
+
+        const holes = [
+            { column: 0, row: 5 },
+            { column: 2, row: 0 },
+            { column: 2, row: 4 },
+            { column: 4, row: 6 },
+            { column: 6, row: 2 },
+            { column: 6, row: 8 },
+            { column: 8, row: 1 },
+            { column: 8, row: 2 }
+        ].map((hole) => ({
+            x: hole.column * (wallW + pathW) + (wallW / 2 + pathW / 2),
+            y: hole.row * (wallW + pathW) + (wallW / 2 + pathW / 2)
+        }));
+
+        joystickHeadElement.addEventListener("mousedown", function (event) {
+            if (!gameInProgress) {
+                mouseStartX = event.clientX;
+                mouseStartY = event.clientY;
+                gameInProgress = true;
+                window.requestAnimationFrame(main);
+                noteElement.style.opacity = 0;
+                joystickHeadElement.style.cssText = `
+        animation: none;
+        cursor: grabbing;
+      `;
+            }
+        });
+
+        window.addEventListener("mousemove", function (event) {
+            if (gameInProgress) {
+                const mouseDeltaX = -Math.minmax(mouseStartX - event.clientX, 15);
+                const mouseDeltaY = -Math.minmax(mouseStartY - event.clientY, 15);
+
+                joystickHeadElement.style.cssText = `
+        left: ${mouseDeltaX}px;
+        top: ${mouseDeltaY}px;
+        animation: none;
+        cursor: grabbing;
+      `;
+
+                const rotationY = mouseDeltaX * 0.8; // Max rotation = 12
+                const rotationX = mouseDeltaY * 0.8;
+
+                mazeElement.style.cssText = `
+        transform: rotateY(${rotationY}deg) rotateX(${-rotationX}deg)
+      `;
+
+                const gravity = 2;
+                const friction = 0.01; // Coefficients of friction
+
+                accelerationX = gravity * Math.sin((rotationY / 180) * Math.PI);
+                accelerationY = gravity * Math.sin((rotationX / 180) * Math.PI);
+                frictionX = gravity * Math.cos((rotationY / 180) * Math.PI) * friction;
+                frictionY = gravity * Math.cos((rotationX / 180) * Math.PI) * friction;
+            }
+        });
+
+        window.addEventListener("keydown", function (event) {
+            // If not an arrow key or space or H was pressed then return
+            if (![" ", "H", "h", "E", "e"].includes(event.key)) return;
+
+            // If an arrow key was pressed then first prevent default
+            event.preventDefault();
+
+            // If space was pressed restart the game
+            if (event.key == " ") {
+                resetGame();
+                return;
+            }
+
+            // Set Hard mode
+            if (event.key == "H" || event.key == "h") {
+                hardMode = true;
+                resetGame();
+                return;
+            }
+
+            // Set Easy mode
+            if (event.key == "E" || event.key == "e") {
+                hardMode = false;
+                resetGame();
+                return;
+            }
+        });
+
+        function resetGame() {
+            previousTimestamp = undefined;
+            gameInProgress = false;
+            mouseStartX = undefined;
+            mouseStartY = undefined;
+            accelerationX = undefined;
+            accelerationY = undefined;
+            frictionX = undefined;
+            frictionY = undefined;
+
+            mazeElement.style.cssText = `
+      transform: rotateY(0deg) rotateX(0deg)
+    `;
+
+            joystickHeadElement.style.cssText = `
+      left: 0;
+      top: 0;
+      animation: glow;
+      cursor: grab;
+    `;
+
+            if (hardMode) {
+                noteElement.innerHTML = `Click the joystick to start!
+        <p>Hard mode, Avoid black holes. Back to easy mode? Press E</p>`;
+            } else {
+                noteElement.innerHTML = `Click the joystick to start!
+        <p>Move every ball to the center. Ready for hard mode? Press H</p>`;
+            }
+            noteElement.style.opacity = 1;
+
+            balls = [
+                { column: 0, row: 0 },
+                { column: 9, row: 0 },
+                { column: 0, row: 8 },
+                { column: 9, row: 8 }
+            ].map((ball) => ({
+                x: ball.column * (wallW + pathW) + (wallW / 2 + pathW / 2),
+                y: ball.row * (wallW + pathW) + (wallW / 2 + pathW / 2),
+                velocityX: 0,
+                velocityY: 0
+            }));
+
+            if (ballElements.length) {
+                balls.forEach(({ x, y }, index) => {
+                    ballElements[index].style.cssText = `left: ${x}px; top: ${y}px; `;
+                });
+            }
+
+            // Remove previous hole elements
+            holeElements.forEach((holeElement) => {
+                mazeElement.removeChild(holeElement);
+            });
+            holeElements = [];
+
+            // Reset hole elements if hard mode
+            if (hardMode) {
+                holes.forEach(({ x, y }) => {
+                    const ball = document.createElement("div");
+                    ball.setAttribute("class", "black-hole");
+                    ball.style.cssText = `left: ${x}px; top: ${y}px; `;
+
+                    mazeElement.appendChild(ball);
+                    holeElements.push(ball);
+                });
+            }
+        }
+
+        function main(timestamp) {
+            // It is possible to reset the game mid-game. This case the look should stop
+            if (!gameInProgress) return;
+
+            if (previousTimestamp === undefined) {
+                previousTimestamp = timestamp;
+                window.requestAnimationFrame(main);
+                return;
+            }
+
+            const maxVelocity = 1.5;
+
+            // Time passed since last cycle divided by 16
+            // This function gets called every 16 ms on average so dividing by 16 will result in 1
+            const timeElapsed = (timestamp - previousTimestamp) / 16;
+
+            try {
+                // If mouse didn't move yet don't do anything
+                if (accelerationX != undefined && accelerationY != undefined) {
+                    const velocityChangeX = accelerationX * timeElapsed;
+                    const velocityChangeY = accelerationY * timeElapsed;
+                    const frictionDeltaX = frictionX * timeElapsed;
+                    const frictionDeltaY = frictionY * timeElapsed;
+
+                    balls.forEach((ball) => {
+                        if (velocityChangeX == 0) {
+                            // No rotation, the plane is flat
+                            // On flat surface friction can only slow down, but not reverse movement
+                            ball.velocityX = slow(ball.velocityX, frictionDeltaX);
+                        } else {
+                            ball.velocityX = ball.velocityX + velocityChangeX;
+                            ball.velocityX = Math.max(Math.min(ball.velocityX, 1.5), -1.5);
+                            ball.velocityX =
+                                ball.velocityX - Math.sign(velocityChangeX) * frictionDeltaX;
+                            ball.velocityX = Math.minmax(ball.velocityX, maxVelocity);
+                        }
+
+                        if (velocityChangeY == 0) {
+                            // No rotation, the plane is flat
+                            // On flat surface friction can only slow down, but not reverse movement
+                            ball.velocityY = slow(ball.velocityY, frictionDeltaY);
+                        } else {
+                            ball.velocityY = ball.velocityY + velocityChangeY;
+                            ball.velocityY =
+                                ball.velocityY - Math.sign(velocityChangeY) * frictionDeltaY;
+                            ball.velocityY = Math.minmax(ball.velocityY, maxVelocity);
+                        }
+
+                        // Preliminary next ball position, only becomes true if no hit occurs
+                        // Used only for hit testing, does not mean that the ball will reach this position
+                        ball.nextX = ball.x + ball.velocityX;
+                        ball.nextY = ball.y + ball.velocityY;
+
+                        if (debugMode) console.log("tick", ball);
+
+                        walls.forEach((wall, wi) => {
+                            if (wall.horizontal) {
+                                // Horizontal wall
+
+                                if (
+                                    ball.nextY + ballSize / 2 >= wall.y - wallW / 2 &&
+                                    ball.nextY - ballSize / 2 <= wall.y + wallW / 2
+                                ) {
+                                    // Ball got within the strip of the wall
+                                    // (not necessarily hit it, could be before or after)
+
+                                    const wallStart = {
+                                        x: wall.x,
+                                        y: wall.y
+                                    };
+                                    const wallEnd = {
+                                        x: wall.x + wall.length,
+                                        y: wall.y
+                                    };
+
+                                    if (
+                                        ball.nextX + ballSize / 2 >= wallStart.x - wallW / 2 &&
+                                        ball.nextX < wallStart.x
+                                    ) {
+                                        // Ball might hit the left cap of a horizontal wall
+                                        const distance = distance2D(wallStart, {
+                                            x: ball.nextX,
+                                            y: ball.nextY
+                                        });
+                                        if (distance < ballSize / 2 + wallW / 2) {
+                                            if (debugMode && wi > 4)
+                                                console.warn("too close h head", distance, ball);
+
+                                            // Ball hits the left cap of a horizontal wall
+                                            const closest = closestItCanBe(wallStart, {
+                                                x: ball.nextX,
+                                                y: ball.nextY
+                                            });
+                                            const rolled = rollAroundCap(wallStart, {
+                                                x: closest.x,
+                                                y: closest.y,
+                                                velocityX: ball.velocityX,
+                                                velocityY: ball.velocityY
+                                            });
+
+                                            Object.assign(ball, rolled);
+                                        }
+                                    }
+
+                                    if (
+                                        ball.nextX - ballSize / 2 <= wallEnd.x + wallW / 2 &&
+                                        ball.nextX > wallEnd.x
+                                    ) {
+                                        // Ball might hit the right cap of a horizontal wall
+                                        const distance = distance2D(wallEnd, {
+                                            x: ball.nextX,
+                                            y: ball.nextY
+                                        });
+                                        if (distance < ballSize / 2 + wallW / 2) {
+                                            if (debugMode && wi > 4)
+                                                console.warn("too close h tail", distance, ball);
+
+                                            // Ball hits the right cap of a horizontal wall
+                                            const closest = closestItCanBe(wallEnd, {
+                                                x: ball.nextX,
+                                                y: ball.nextY
+                                            });
+                                            const rolled = rollAroundCap(wallEnd, {
+                                                x: closest.x,
+                                                y: closest.y,
+                                                velocityX: ball.velocityX,
+                                                velocityY: ball.velocityY
+                                            });
+
+                                            Object.assign(ball, rolled);
+                                        }
+                                    }
+
+                                    if (ball.nextX >= wallStart.x && ball.nextX <= wallEnd.x) {
+                                        // The ball got inside the main body of the wall
+                                        if (ball.nextY < wall.y) {
+                                            // Hit horizontal wall from top
+                                            ball.nextY = wall.y - wallW / 2 - ballSize / 2;
+                                        } else {
+                                            // Hit horizontal wall from bottom
+                                            ball.nextY = wall.y + wallW / 2 + ballSize / 2;
+                                        }
+                                        ball.y = ball.nextY;
+                                        ball.velocityY = -ball.velocityY / 3;
+
+                                        if (debugMode && wi > 4)
+                                            console.error("crossing h line, HIT", ball);
+                                    }
+                                }
+                            } else {
+                                // Vertical wall
+
+                                if (
+                                    ball.nextX + ballSize / 2 >= wall.x - wallW / 2 &&
+                                    ball.nextX - ballSize / 2 <= wall.x + wallW / 2
+                                ) {
+                                    // Ball got within the strip of the wall
+                                    // (not necessarily hit it, could be before or after)
+
+                                    const wallStart = {
+                                        x: wall.x,
+                                        y: wall.y
+                                    };
+                                    const wallEnd = {
+                                        x: wall.x,
+                                        y: wall.y + wall.length
+                                    };
+
+                                    if (
+                                        ball.nextY + ballSize / 2 >= wallStart.y - wallW / 2 &&
+                                        ball.nextY < wallStart.y
+                                    ) {
+                                        // Ball might hit the top cap of a horizontal wall
+                                        const distance = distance2D(wallStart, {
+                                            x: ball.nextX,
+                                            y: ball.nextY
+                                        });
+                                        if (distance < ballSize / 2 + wallW / 2) {
+                                            if (debugMode && wi > 4)
+                                                console.warn("too close v head", distance, ball);
+
+                                            // Ball hits the left cap of a horizontal wall
+                                            const closest = closestItCanBe(wallStart, {
+                                                x: ball.nextX,
+                                                y: ball.nextY
+                                            });
+                                            const rolled = rollAroundCap(wallStart, {
+                                                x: closest.x,
+                                                y: closest.y,
+                                                velocityX: ball.velocityX,
+                                                velocityY: ball.velocityY
+                                            });
+
+                                            Object.assign(ball, rolled);
+                                        }
+                                    }
+
+                                    if (
+                                        ball.nextY - ballSize / 2 <= wallEnd.y + wallW / 2 &&
+                                        ball.nextY > wallEnd.y
+                                    ) {
+                                        // Ball might hit the bottom cap of a horizontal wall
+                                        const distance = distance2D(wallEnd, {
+                                            x: ball.nextX,
+                                            y: ball.nextY
+                                        });
+                                        if (distance < ballSize / 2 + wallW / 2) {
+                                            if (debugMode && wi > 4)
+                                                console.warn("too close v tail", distance, ball);
+
+                                            // Ball hits the right cap of a horizontal wall
+                                            const closest = closestItCanBe(wallEnd, {
+                                                x: ball.nextX,
+                                                y: ball.nextY
+                                            });
+                                            const rolled = rollAroundCap(wallEnd, {
+                                                x: closest.x,
+                                                y: closest.y,
+                                                velocityX: ball.velocityX,
+                                                velocityY: ball.velocityY
+                                            });
+
+                                            Object.assign(ball, rolled);
+                                        }
+                                    }
+
+                                    if (ball.nextY >= wallStart.y && ball.nextY <= wallEnd.y) {
+                                        // The ball got inside the main body of the wall
+                                        if (ball.nextX < wall.x) {
+                                            // Hit vertical wall from left
+                                            ball.nextX = wall.x - wallW / 2 - ballSize / 2;
+                                        } else {
+                                            // Hit vertical wall from right
+                                            ball.nextX = wall.x + wallW / 2 + ballSize / 2;
+                                        }
+                                        ball.x = ball.nextX;
+                                        ball.velocityX = -ball.velocityX / 3;
+
+                                        if (debugMode && wi > 4)
+                                            console.error("crossing v line, HIT", ball);
+                                    }
+                                }
+                            }
+                        });
+
+                        // Detect is a ball fell into a hole
+                        if (hardMode) {
+                            holes.forEach((hole, hi) => {
+                                const distance = distance2D(hole, {
+                                    x: ball.nextX,
+                                    y: ball.nextY
+                                });
+
+                                if (distance <= holeSize / 2) {
+                                    // The ball fell into a hole
+                                    holeElements[hi].style.backgroundColor = "red";
+                                    throw Error("The ball fell into a hole");
+                                }
+                            });
+                        }
+
+                        // Adjust ball metadata
+                        ball.x = ball.x + ball.velocityX;
+                        ball.y = ball.y + ball.velocityY;
+                    });
+
+                    // Move balls to their new position on the UI
+                    balls.forEach(({ x, y }, index) => {
+                        ballElements[index].style.cssText = `left: ${x}px; top: ${y}px; `;
+                    });
+                }
+
+                // Win detection
+                if (
+                    balls.every(
+                        (ball) => distance2D(ball, { x: 350 / 2, y: 315 / 2 }) < 65 / 2
+                    )
+                ) {
+                    noteElement.innerHTML = `Congrats, you did it!
+        ${!hardMode ? "<p>Press H for hard mode</p>" : ""}
+        <p>
+          Follow me
+          <a href="https://twitter.com/ningli3739" , target="_blank"
+            >@ningli3739</a
+          >
+        </p>`;
+                    noteElement.style.opacity = 1;
+                    gameInProgress = false;
+                } else {
+                    previousTimestamp = timestamp;
+                    window.requestAnimationFrame(main);
+                }
+            } catch (error) {
+                if (error.message == "The ball fell into a hole") {
+                    noteElement.innerHTML = `A ball fell into a black hole! Press space to reset the game.
+        <p>
+          Back to easy? Press E
+        </p>`;
+                    noteElement.style.opacity = 1;
+                    gameInProgress = false;
+                } else throw error;
+            }
+        }
+
+    </script><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This is a web-enabled code cell, powered by <a href="https://github.com/coatless/quarto-webr">quarto-webr extension</a>, where you have the freedom to play around and write any R code you desire.</p>
+<p>By default, the quarto-webr extension avoids loading or requesting additional packages. You can add extra packages when opening the document or on a per-code cell basis. To see available packages, execute the following R code (using WebR or just R):</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/available.packages.html">available.packages</a></span><span class="op">(</span>repos<span class="op">=</span><span class="st">"https://repo.r-wasm.org/"</span>, type<span class="op">=</span><span class="st">"source"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Packages may also be installed inside of a code cell through the built-in webr::install() function. For example, to install ggplot2, you would need to use:</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">webr</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="playground" class="level2"><h2 class="anchored" data-anchor-id="playground">Playground</h2>
+<p>Write your code here.</p>
+<button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-1">Loading
+  webR...</button>
+<div id="webr-editor-1"></div>
+<div id="webr-code-output-1" aria-live="assertive">
+  <pre style="visibility: hidden"></pre>
+</div>
+<script type="module">
+  // Retrieve webR code cell information
+  const runButton = document.getElementById("webr-run-button-1");
+  const outputDiv = document.getElementById("webr-code-output-1");
+  const editorDiv = document.getElementById("webr-editor-1");
+
+  // Add a light grey outline around the code editor
+  editorDiv.style.border = "1px solid #eee";
+
+  // Load the Monaco Editor and create an instance
+  let editor;
+  require(['vs/editor/editor.main'], function () {
+    editor = monaco.editor.create(editorDiv, {
+      value: `# Create a sequence of values from -π to π with a step of 0.1
+x <- seq(-pi, pi, 0.1)
+
+# Plot the sine function (sin(x)) on the graph
+# Overlaying Graphs
+plot(x, sin(x),
+     main = "Overlaying Graphs",   # Set the main title of the plot
+     ylab = "",                    # Set the label for the y-axis (empty in this case)
+     type = "l",                   # Draw a line plot
+     col = "blue"                  # Set the color of the line to blue
+)
+
+# Add the cosine function (cos(x)) to the existing plot
+lines(x, cos(x), col = "red")      # Draw a line for the cosine function with a red color
+
+# Add a legend to the plot to distinguish between sin(x) and cos(x)
+legend("topleft",                 # Position the legend at the top-left of the plot
+       c("sin(x)", "cos(x)"),     # Names of the lines to be displayed in the legend
+       fill = c("blue", "red")    # Fill colors for the corresponding lines in the legend
+)
+`,
+      language: 'r',
+      theme: 'vs-light',
+      automaticLayout: true,           // TODO: Could be problematic for slide decks
+      scrollBeyondLastLine: false,
+      minimap: {
+        enabled: false
+      },
+      fontSize: '17.5rem',               // Bootstrap is 1 rem
+      renderLineHighlight: "none",     // Disable current line highlighting
+      hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
+    });
+
+    // Add a keydown event listener for Shift+Enter using the addCommand method
+    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
+      // Code to run when Shift+Enter is pressed
+      executeCode(editor.getValue());
+    });
+
+    // Add a keydown event listener for Ctrl+Enter to run selected code
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
+      // Get the selected text from the editor
+      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+      // Code to run when Ctrl+Enter is pressed (run selected code)
+      executeCode(selectedText);
+    });
+
+    // Dynamically modify the height of the editor window if new lines are added.
+    let ignoreEvent = false;
+    const updateHeight = () => {
+      const contentHeight = editor.getContentHeight();
+      // We're avoiding a width change
+      //editorDiv.style.width = `${width}px`;
+      editorDiv.style.height = `${contentHeight}px`;
+      try {
+        ignoreEvent = true;
+
+        // The key to resizing is this call
+        editor.layout();
+      } finally {
+        ignoreEvent = false;
+      }
+    };
+
+    // Register an on change event for when new code is added to the editor window
+    editor.onDidContentSizeChange(updateHeight);
+
+    // Manually re-update height to account for the content we inserted into the call
+    updateHeight();
+  });
+
+  // Function to execute the code (accepts code as an argument)
+  async function executeCode(codeToRun) {
+    // Disable run button for code cell active
+    runButton.disabled = true;
+
+    // Create a canvas variable for graphics
+    let canvas = undefined;
+
+    // Initialize webR
+    await globalThis.webR.init();
+
+    // Setup a webR canvas
+    await webR.evalRVoid("canvas(width=504, height=360)");
+
+    // Capture output data from evaluating the code
+    const result = await webRCodeShelter.captureR(codeToRun, {
+      withAutoprint: true,
+      captureStreams: true,
+      captureConditions: false,
+      env: webR.objs.emptyEnv,
+    });
+
+    // Start attempting to parse the result data
+    try {
+
+      // Stop creating images
+      await webR.evalRVoid("dev.off()");
+
+      // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
+      const out = result.output.filter(
+        evt => evt.type == "stdout" || evt.type == "stderr"
+      ).map((evt) => evt.data).join("\n");
+
+      // Clean the state
+      const msgs = await webR.flush();
+
+      // Output each image stored
+      msgs.forEach(msg => {
+        if (msg.type === "canvasExec") {
+          if (!canvas) {
+            canvas = document.createElement("canvas");
+            canvas.setAttribute("width", 2 * 504);
+            canvas.setAttribute("height", 2 * 360);
+            canvas.style.width = "700px";
+            canvas.style.display = "block";
+            canvas.style.margin = "auto";
+          }
+          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
+        }
+      });
+
+      // Nullify the outputDiv of content
+      outputDiv.innerHTML = "";
+
+      // Design an output object for messages
+      const pre = document.createElement("pre");
+      if (/\S/.test(out)) {
+        // Display results as text
+        const code = document.createElement("code");
+        code.innerText = out;
+        pre.appendChild(code);
+      } else {
+        // If nothing is present, hide the element.
+        pre.style.visibility = "hidden";
+      }
+      outputDiv.appendChild(pre);
+
+      // Place the graphics on the canvas
+      if (canvas) {
+        const p = document.createElement("p");
+        p.appendChild(canvas);
+        outputDiv.appendChild(p);
+      }
+    } finally {
+      // Clean up the remaining code
+      webRCodeShelter.purge();
+      runButton.disabled = false;
+    }
+  }
+
+  // Add a click event listener to the run button
+  runButton.onclick = function () {
+    executeCode(editor.getValue());
+  };
+</script>
+
+</section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><script src="https://giscus.app/client.js" data-repo="NING3739/my-personal-website" data-repo-id="R_kgDOIYBxAA" data-category="Comments" data-category-id="DIC_kwDOIYBxAM4CS2io" data-mapping="url" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">© 2023 <a href="index.qmd">DLZ</a> create with ❤️ by <a href="about.qmd">NING</a>.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NING3739/datalabzone/edit/main/resources/livedemo/livedemo.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/NING3739/datalabzone/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+<li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/NING3739/datalabzone">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ningli3739">
+      <i class="bi bi-twitter" role="img" aria-label="Twitter">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:ln729500172@outlook.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+</div>
+  </div>
+</footer>
+
+
+</body></html>

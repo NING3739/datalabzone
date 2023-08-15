@@ -96,7 +96,7 @@ lightbox: false
 
     <div class="container">
         <h3 class="text-center">Please leave your valuable comments</h3>
-        <form name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+        <form name="contact-form" method="POST" action="/process_form.php">
             <div class="form-group row">
                 <div class="col-6">
                     <label for="first-name">First Name:</label>

@@ -9,9 +9,9 @@ website:
     site: "@ningli3739"
   open-graph: true
   #publish site on quarto pub use site-path
-  #site-path: "/data-lab-zone/"
+  site-path: "/data-lab-zone/"
   #publish site on netlify use site-url
-  site-url: "https://datalabzone.com/"
+  #site-url: "https://datalabzone.com/"
   repo-url: "https://github.com/NING3739/datalabzone"
   repo-actions: 
      - edit
