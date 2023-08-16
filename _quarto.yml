@@ -21,6 +21,9 @@ website:
   google-analytics: 
     anonymize-ip: true
     tracking-id: "G-QN8B58NY2E"
+  cookie-consent:
+    style: interstitial
+    palette: light
 
   navbar:
     logo: images/logo.png

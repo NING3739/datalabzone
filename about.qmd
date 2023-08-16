@@ -127,7 +127,7 @@ lightbox: false
     <script>
         // Initialize EmailJS with your public key
         emailjs.init("Ia3I7nVj_IKTWIQiK");
-        
+
         function submitForm(event) {
             event.preventDefault();
 
@@ -135,7 +135,7 @@ lightbox: false
             var lastName = document.getElementById('second-name').value;
             var email = document.getElementById('email').value;
             var message = document.getElementById('message').value;
-            
+
             // Set EmailJS service ID (replace with your actual EmailJS service ID)
             var serviceID = "service_o9pcpec";
 
@@ -150,8 +150,6 @@ lightbox: false
             emailjs.send(serviceID, "template_lz7zxch", emailParams)
                 .then(function (response) {
                     console.log("Email sent:", response);
-
-                    // Redirect to success page
                     window.location.href = "success.html";
                 })
                 .catch(function (error) {
