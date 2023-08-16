@@ -125,6 +125,9 @@ lightbox: false
     </div>
 
     <script>
+        // Initialize EmailJS with your public key
+        emailjs.init("Ia3I7nVj_IKTWIQiK");
+        
         function submitForm(event) {
             event.preventDefault();
 
@@ -138,13 +141,13 @@ lightbox: false
 
 
             var emailParams = {
-                first_name: firstName,
-                last_name: lastName,
+                from_name: firstName + " " + lastName,
+                to_name: "NING",
                 email: email,
                 message: message
             };
 
-            emailjs.send("serviceID", "template_lz7zxch", emailParams)
+            emailjs.send(serviceID, "template_lz7zxch", emailParams)
                 .then(function (response) {
                     console.log("Email sent:", response);
 

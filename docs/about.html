@@ -252,6 +252,9 @@ In addition, I find the practical applications of the R language in tackling <st
     </div>
 
     <script>
+        // Initialize EmailJS with your public key
+        emailjs.init("Ia3I7nVj_IKTWIQiK");
+        
         function submitForm(event) {
             event.preventDefault();
 
@@ -265,13 +268,13 @@ In addition, I find the practical applications of the R language in tackling <st
 
 
             var emailParams = {
-                first_name: firstName,
-                last_name: lastName,
+                from_name: firstName + " " + lastName,
+                to_name: "NING",
                 email: email,
                 message: message
             };
 
-            emailjs.send("serviceID", "template_lz7zxch", emailParams)
+            emailjs.send(serviceID, "template_lz7zxch", emailParams)
                 .then(function (response) {
                     console.log("Email sent:", response);
 
