@@ -132,9 +132,6 @@ lightbox: false
             var lastName = document.getElementById('second-name').value;
             var email = document.getElementById('email').value;
             var message = document.getElementById('message').value;
-
-            // Set EmailJS user ID (replace with your actual EmailJS user ID)
-            emailjs.init(""user_your_emailjs_user_id"");
             
             // Set EmailJS service ID (replace with your actual EmailJS service ID)
             var serviceID = "service_o9pcpec";
@@ -147,12 +144,12 @@ lightbox: false
                 message: message
             };
 
-            emailjs.send("serviceID", "template_your_template_id", emailParams)
+            emailjs.send("serviceID", "template_lz7zxch", emailParams)
                 .then(function (response) {
                     console.log("Email sent:", response);
 
                     // Redirect to success page
-                    window.location.href = "docs/success.html";
+                    window.location.href = "success.html";
                 })
                 .catch(function (error) {
                     console.error("Email sending failed:", error);
