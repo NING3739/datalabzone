@@ -147,7 +147,7 @@ lightbox: false
                 message: message
             };
 
-            emailjs.send(serviceID, "template_eiz20hy", emailParams)
+            emailjs.send(serviceID, "template_rbgzx4o", emailParams)
                 .then(function (response) {
                     console.log("Email sent:", response);
                     window.location.href = "success.html";
